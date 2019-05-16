@@ -1,0 +1,79 @@
+<view class="personl_group">
+    <view class="personl_avater" hover-class="none" hover-stop-propagation="false">
+        
+    </view>
+    <view class="p_name" hover-class="none" hover-stop-propagation="false">
+        某某某
+    </view>
+    <view class="p_tap" hover-class="none" hover-stop-propagation="false">
+        普通用户
+    </view>
+</view>
+
+<view class='grid_wrap'>
+
+  <view class='grid_item'></view>
+   <view class='grid_item'></view>
+    <view class='grid_item'></view>
+     <view class='grid_item'></view>
+      <view class='grid_item'></view>
+       <view class='grid_item'></view>
+        <view class='grid_item'></view>
+         <view class='grid_item'></view>
+</view>
+
+<view class='other_wrap'>
+  <view class='other_title'>
+    大家都在拼 <text class='iconfont iconjiantou'></text>
+  </view>
+  <scroll-view scroll-x class='scroll_wrap'>
+    <view class='scroll_item'>
+      <image class='item_img'></image>
+      <view class='title line1'>酵石斛修复四件套</view>
+      <view class='price_group'>
+        <text class='price'>¥ 1</text>
+        <view class='tap'>抢购</view>
+      </view>
+    </view>
+    <view class='scroll_item'>
+      <image class='item_img'></image>
+      <view class='title line1'>酵石斛修复四件套</view>
+      <view class='price_group'>
+        <text class='price'>¥ 1</text>
+        <view class='tap'>抢购</view>
+      </view>
+    </view>
+    <view class='scroll_item'>
+      <image class='item_img'></image>
+      <view class='title line1'>酵石斛修复四件套</view>
+      <view class='price_group'>
+        <text class='price'>¥ 1</text>
+        <view class='tap'>抢购</view>
+      </view>
+    </view>
+    <view class='scroll_item'>
+      <image class='item_img'></image>
+      <view class='title line1'>酵石斛修复四件套</view>
+      <view class='price_group'>
+        <text class='price'>¥ 1</text>
+        <view class='tap'>抢购</view>
+      </view>
+    </view>
+    <view class='scroll_item'>
+      <image class='item_img'></image>
+      <view class='title line1'>酵石斛修复四件套</view>
+      <view class='price_group'>
+        <text class='price'>¥ 1</text>
+        <view class='tap'>抢购</view>
+      </view>
+    </view>
+    <view class='scroll_item'>
+      <image class='item_img'></image>
+      <view class='title line1'>酵石斛修复四件套</view>
+      <view class='price_group'>
+        <text class='price'>¥ 1</text>
+        <view class='tap'>抢购</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
