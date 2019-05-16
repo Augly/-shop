@@ -1,0 +1,16 @@
+<view class="adder_picker">
+  <view class='title'>预约门店</view>
+  <view class='mintitle'>
+    <text>美素派徐家汇店</text>
+    <text class='iconfont iconjiantou'></text>
+  </view>
+</view>
+<view class="adder_picker">
+  <view class='title'>预约时间</view>
+  <view class='mintitle'>
+    <text>2019年4月10日 10:00-11:00</text>
+    <text class='iconfont iconjiantou'></text>
+  </view>
+</view>
+
+<view class='sure_button'>确 认 预 约</view>

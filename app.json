@@ -1,7 +1,11 @@
 {
   "pages": [
+    "pages/index/productRes/productRes",
+    "pages/index/productRes/comment_list/comment_list",
+    "pages/index/index/index",
     "pages/personl/personl",
-    "pages/index/index"
+    "pages/index/selection/selection",
+    "pages/yy/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

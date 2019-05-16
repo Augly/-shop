@@ -1,0 +1,20 @@
+<view class="banner">
+  <text class='iconfont iconsaoyisao'></text>
+</view>
+<view class='search_group'>
+  <text class='iconfont iconsousuo'></text>
+  <input class='seacher_ipt' placeholder='Search' placeholder-class='seacher_ipt'></input>
+  <text class='iconfont iconquxiao1'></text>
+</view>
+<!-- <block wx:for="{{items}}"> -->
+<view class="list" hover-class="none" hover-stop-propagation="false">
+  <view class="list_head" hover-class="none" hover-stop-propagation="false">
+    <text class="title" selectable="false" space="false" decode="false">门店名称</text>
+    <text class="distance" selectable="false" space="false" decode="false">2 km</text>
+  </view>
+  <view class="list_adder" hover-class="none" hover-stop-propagation="false">
+    <text class="iconfont  iconweizhi" selectable="false" space="false" decode="false"></text>
+    <view class="adder" hover-class="none" hover-stop-propagation="false">门店地址门店地址门店地址门店地址</view>
+  </view>
+</view>
+<!-- </block> -->

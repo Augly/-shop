@@ -158,3 +158,11 @@
 page{
    background-color: RGBA(239, 239, 244, 1);
 }
+button::after{
+border:none;
+}
+input{
+outline:none;
+border:none;
+list-style: none;
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "Look_around": "/components/Look_around/Look_around",
+    "Banner": "/components/Banner/Banner",
+    "Have_a_look": "/components/Have_a_look/Have_a_look",
+    "Evalist": "/components/Evalist/Evalist"
+    
+  }
+}

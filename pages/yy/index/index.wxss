@@ -1,0 +1,55 @@
+.adder_picker {
+  width: 702rpx;
+  height: 77rpx;
+  background: #45d0ae;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  box-sizing: border-box;
+  padding: 0rpx 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.mintitle {
+  width: 550rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.iconjiantou {
+  font-size: 28rpx;
+}
+
+.sure_button {
+  width: 638rpx;
+  height: 79rpx;
+  background: rgba(69, 208, 174, 1);
+  border-radius: 10rpx;
+  position: absolute;
+  bottom: 42rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-size: 33rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

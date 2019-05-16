@@ -1,0 +1,25 @@
+<Banner></Banner>
+<view class='product_res'>
+  <view class='price_group'>
+    <text class='price_title'>¥ 588</text>
+    <text class='price_number'>已售 4000+</text>
+  </view>
+  <view class='dec'>
+    <view class='dec_res'>
+      <view class='title'>医用冷敷贴(小火柴)</view>
+      <view class='mintitle'>天然植物黄金 低温发酵萃取</view>
+    </view>
+    <text class='iconfont iconfenxiang'></text>
+  </view>
+</view>
+<view class='select_gg'>
+  <text class='select_title'>选择规格</text>
+  <text class='iconfont iconjiantou'></text>
+</view>
+<Evalist show-all="{{true}}"></Evalist>
+<view class="tab_group p_t" hover-class="none" hover-stop-propagation="false">
+  拼团活动
+  <text class="iconfont iconjiantou" selectable="false" space="false" decode="false"></text>
+</view>
+<Look_around></Look_around>
+<Have_a_look style="margin-top"></Have_a_look>

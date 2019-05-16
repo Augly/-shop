@@ -1,0 +1,6 @@
+{
+  
+  "usingComponents": {
+    "Evalist": "/components/Evalist/Evalist"
+  }
+}

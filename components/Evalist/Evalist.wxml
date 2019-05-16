@@ -1,0 +1,28 @@
+<view class='eval_head'>
+  <text class='eva_title'>评价(10000+)</text>
+  <text class='eva_mintitle'>好评度</text>
+  <text class='eva_rate'>100%</text>
+</view>
+<view class='eval_wrap'>
+  <view class='eval_tapWrap'>
+    <view class='eval_item'>效果好</view>
+    <view class='eval_item'>效果好</view>
+    <view class='eval_item'>效果好</view>
+    <view class='eval_item'>效111果好</view>
+  </view>
+  <view class='eval_list_wrap'>
+    <view class="list">
+      <view class='list_head'>
+        <image class='list_head_avater' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558036090867&di=d8c386aaa5789dccaab00002eb285f52&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201312%2F05%2F20131205171748_BeJcN.thumb.600_0.jpeg'></image>
+        <view class='list_head_name'>仇益阳</view>
+        <start only-read="{{read}}" style="margin-left:auto"></start>
+      </view>
+      <view class='list_content'>评价评价评价评价评价，评价评价评价评价评价评价评价。评价评价评价评价评价，评价评价评价评价评价评价评价。评价评价评价评价评价评价评价，评价评价评价评价评价评价评价。评价评价评价评价评价评价评价。</view>
+      <view class='list_img_wrap'>
+        <image class='list_img' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558036090867&di=d8c386aaa5789dccaab00002eb285f52&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201312%2F05%2F20131205171748_BeJcN.thumb.600_0.jpeg'></image>
+      </view>
+      <view class='list_tip'>酵石斛修复四件套 X 1</view>
+    </view>
+  </view>
+  <view class='look_all' wx:if="{{showAll}}">查看全部评价</view>
+</view>

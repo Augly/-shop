@@ -8,5 +8,7 @@
     "backgroundColorTop": "#ffffff",
     "backgroundColorBottom": "#353535",
     "onReachBottomDistance": 50,
-  "usingComponents": {}
+  "usingComponents": {
+    "look_a_look":"/components/Have_a_look/Have_a_look"
+  }
 }
