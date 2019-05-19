@@ -6,7 +6,7 @@ Component({
   properties: {
     onlyRead:{
       type:Boolean,
-      value:false
+      value:true
     },
     score:{
       type:Number,

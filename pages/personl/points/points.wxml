@@ -1,0 +1,37 @@
+<view class="head_group">
+  <view class='point_group'>
+    我的积分：
+    <text class='point_number'>100</text>
+  </view>
+  <view class='grade_group'>
+    当前等级
+    <view class='grade_number'>V2</view>
+  </view>
+
+  <view class='pro_group'>
+    <text class='title'>V1</text>
+    <text class='mintitle'>成长值 100/200</text>
+    <text class='title'>V2</text>
+    <view class='pro_now' style='width:40%'></view>
+  </view>
+</view>
+
+<view class='list_wrap'>
+  <view class='list_head'>积分明细</view>
+  <view class='list_content'>
+    <view class='list_item'>
+      <view class='item_date'>2019/03/05 15:30</view>
+      <view class='item_res'>
+        <view class='res_left'>购买单部位脂肪管理</view>
+        <view class='res_score'>+ 50</view>
+      </view>
+    </view>
+    <view class='list_item'>
+      <view class='item_date'>2019/03/05 15:30</view>
+      <view class='item_res'>
+        <view class='res_left'>购买单部位脂肪管理</view>
+        <view class='res_score'>+ 50</view>
+      </view>
+    </view>
+  </view>
+</view>

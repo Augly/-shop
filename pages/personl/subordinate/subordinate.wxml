@@ -1,0 +1,7 @@
+<view class="list_item">
+    <image class="avter" src="" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <view class="item_res" hover-class="none" hover-stop-propagation="false">
+        <view class="title" hover-class="none" hover-stop-propagation="false">某某某</view>
+        <view class="data" hover-class="none" hover-stop-propagation="false">注册时间：2019/05/16</view>
+    </view>
+</view>

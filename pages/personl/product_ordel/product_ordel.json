@@ -1,0 +1,12 @@
+{
+  "navigationBarBackgroundColor": "#45D0AE",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "产品订单",
+  "navigationStyle": "default",
+  "backgroundColor": "#ffffff",
+  "backgroundTextStyle": "dark",
+  "backgroundColorTop": "#ffffff",
+  "backgroundColorBottom": "#353535",
+  "onReachBottomDistance": 50,
+  "usingComponents": {}
+}

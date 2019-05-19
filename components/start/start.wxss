@@ -8,9 +8,13 @@
   -ms-flex-align: center;
   align-items: center;
 }
-.iconaixinkuaizhuang{
+
+.iconaixinkuaizhuang,
+.iconxingxing {
   color: rgba(69, 208, 174, 1);
 }
-.iconaixinxiantiao{
+
+.iconaixinxiantiao,
+.iconxingxingxian {
   color: rgba(170, 170, 170, 1)
 }

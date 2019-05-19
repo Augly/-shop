@@ -1,0 +1,17 @@
+<view class='list_wrap'>
+  <view class='list'>
+    <view class='title'>退款原因：</view>
+    <view class='mintitle'>请选择退款原因</view>
+    <view class='iconfont iconjiantou'></view>
+  </view>
+  <view class='list'>
+    <view class='title'>
+      退款金额：
+    </view>
+    <view class='mintitle'>
+      ¥ 388
+    </view>
+  </view>
+</view>
+
+<view class='sure_button'>提交</view>

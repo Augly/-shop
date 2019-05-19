@@ -1,0 +1,23 @@
+<view class="item">
+  <view class='item_head_group'>
+    <image class='avater'></image>
+    <view class='name'>某某某</view>
+    <view class='date'>2019/03/05 15:30</view>
+  </view>
+  <view class='item_content'>
+    <view class='content_list'>
+      <image class='avater'></image>
+      <view class='list_res'>
+        <view class='title'>基础水光肌管理</view>
+        <view class='mintitle'>
+          数量：1
+          <text class='score'>积分：100</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='item_result'>
+    <text class='title'>所获积分：</text>
+    100
+  </view>
+</view>

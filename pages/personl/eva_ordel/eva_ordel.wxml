@@ -1,0 +1,29 @@
+<view class='wrap'>
+  <view class='eva_product'>
+    <image class='eva_img'></image>
+    <view class='eva_name'>11</view>
+    <view class='eva_status'></view>
+  </view>
+  <view class='start_group'>
+    <start only-read="{{read}}" font-size="{{fontSize}}"></start>
+  </view>
+  <textarea class='text_wrap' placeholder='为了下次给您更好的服务，请留下您的宝贵意见，对您和我们都很重要'></textarea>
+  <view class='eva_upimg_wrap'>
+    <view class='eva_upimg_mask'>
+      <image class='eva_upimg'></image>
+      <text class='iconfont iconshanchuguanbicha2'></text>
+    </view>
+    <view class='eva_upimg_wrap_add'>
+      <text class='iconfont iconzhaopian'></text>
+      <text class='eva_up_title'>添加照片/视频</text>
+    </view>
+  </view>
+</view>
+
+<view class='start_wrap'>
+  <view class='start_list'>
+    <view class='start_list_title'>店铺环境
+    </view>
+    <start only-read="{{read}}"></start>
+  </view>
+</view>

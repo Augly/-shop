@@ -1,5 +1,12 @@
 {
   "pages": [
+    "pages/personl/product_ordel/product_ordel",
+    "pages/personl/eva_ordel/eva_ordel",
+    "pages/personl/serve_sale/serve_sale",
+    "pages/personl/serve_ordel/serve_ordel",
+    "pages/personl/distribution_ordel/distribution_ordel",
+    "pages/personl/subordinate/subordinate",
+    "pages/personl/points/points",
     "pages/index/productRes/productRes",
     "pages/index/productRes/comment_list/comment_list",
     "pages/index/index/index",
