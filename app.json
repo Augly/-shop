@@ -1,9 +1,13 @@
 {
   "pages": [
+    "pages/personl/ordel_details/ordel_details",
     "pages/personl/product_ordel/product_ordel",
+    "pages/personl/service/service",
+    "pages/personl/serve_ordel/serve_ordel",
+    "pages/personl/Regiment/Regiment",
     "pages/personl/eva_ordel/eva_ordel",
     "pages/personl/serve_sale/serve_sale",
-    "pages/personl/serve_ordel/serve_ordel",
+    
     "pages/personl/distribution_ordel/distribution_ordel",
     "pages/personl/subordinate/subordinate",
     "pages/personl/points/points",

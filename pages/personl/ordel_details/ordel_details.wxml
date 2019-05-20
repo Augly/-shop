@@ -1,0 +1,116 @@
+<view class='status'>
+  <text class='iconfont icondengdaishouhuo-'></text>
+  <text class='title'>等待收货</text>
+  <text class='title' style='margin-left: auto'>顺丰快递</text>
+</view>
+
+<view class='content'>
+  <view class='adder_info'>
+    <view class='list'>
+      <text class='iconfont icondengdaishouhuo'></text>
+      <view class='adder_res'>
+        <view class='adder_title'>商家备货中，物流信息跟踪</view>
+        <view class='adder_mintitle'>2019-03-29</view>
+      </view>
+      <text class='iconfont iconjiantou'></text>
+    </view>
+    <view class='list'>
+      <text class='iconfont iconweizhi'></text>
+      <view class='adder_res'>
+        <view class='adder_title'>某某某  156****8888</view>
+        <view class='adder_mintitle'>地址：地址</view>
+      </view>
+    </view>
+  </view>
+  <view class='product_info'>
+      <view class="item">
+                <view class='item_head_group'>
+                        <view class="item_head" hover-class="none" hover-stop-propagation="false">
+                            05小时38分20秒后失效
+                        </view>
+                </view>
+                <view class='item_content'>
+                    <view class="item_logo">
+                        <view class='item_logo_tap'></view>
+                    </view>
+                    <view class='item_res'>
+                        <view class='item_title line2'>
+                            红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的
+                        </view>
+                        <view class='item_price_group'>
+                            <view class='item_p_price'>
+                                <view class='item_unprice'>6人团，数量：1</view>
+                                <view class='item_price'>¥ 388</view>
+                                <!-- <view class='item_number'>6人团</view> -->
+                            </view>
+                            <view class='item_status_group'>
+                                <!-- <view class="sure_button" hover-class="none" hover-stop-propagation="false">再拼一次</view> -->
+                                <!-- <view class="finied_button" hover-class="none" hover-stop-propagation="false">我再想想</view> -->
+                                <view class="cendel_button" hover-class="none" hover-stop-propagation="false">再次购买</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+  </view>
+  <view class='call_customer'>
+    <text class='iconfont iconliaotian'></text>
+    <text>联系我们</text>
+    
+  </view>
+  <view class='ordel_info'>
+    <view class='list'>
+      <view class='list_item'>
+        <view class='item_title'>订单编号：</view>
+        <view class='item_res'>1234567890</view>
+        <view class='copy_button'>复制</view>
+      </view>
+       <view class='list_item'>
+        <view class='item_title'>下单时间：</view>
+        <view class='item_res'>2019-03-27  20:00:15</view>
+      </view>
+    </view>
+    <view class='list'>
+      <view class='list_item'>
+        <view class='item_title'>支付方式：</view>
+        <view class='item_res'>微信支付</view>
+        <!-- <view class='copy_button'>复制</view> -->
+      </view>
+       <view class='list_item'>
+        <view class='item_title'>支付时间：</view>
+        <view class='item_res'>2019-03-27  20:00:15</view>
+      </view>
+    </view><view class='list'>
+      <view class='list_item'>
+        <view class='item_title'>配送方式：</view>
+        <view class='item_res'>顺丰快递</view>
+      </view>
+       <view class='list_item'>
+        <view class='item_title'>发票类型：</view>
+        <view class='item_res'>不开发票</view>
+      </view>
+    </view>
+  </view>
+  <view class='price_info'>
+    <view class='main_title'>
+      <text>商品总额</text>
+      <text>¥ 388</text>
+    </view>
+    <view class='main_title' style='border-bottom:none'>
+      <text>运费</text>
+      <text>+ ¥ 0</text>
+    </view>
+    <view class='main_scope'>
+      <text class='s_title'>申请退款</text>
+      <view class='s_button'>
+        再次购买
+      </view>
+      <view class='s_button'>
+        我要催单
+      </view>
+      <view class='s_button s_sure'>
+        确认收货
+      </view>
+    </view>
+  </view>
+</view>

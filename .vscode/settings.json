@@ -1,0 +1,8 @@
+{
+    "less.compile": {
+        "outExt": ".wxss"
+    },
+    "autoprefixer.formatOnSave": false,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true
+}
