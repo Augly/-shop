@@ -1,5 +1,9 @@
 {
   "pages": [
+    "pages/personl/shopping_cart/shopping_cart",
+    "pages/personl/adder_edit/adder_edit",
+    "pages/personl/adder/adder",
+    "pages/personl/fill_order/fill_order",
     "pages/personl/ordel_details/ordel_details",
     "pages/personl/product_ordel/product_ordel",
     "pages/personl/service/service",
@@ -7,7 +11,6 @@
     "pages/personl/Regiment/Regiment",
     "pages/personl/eva_ordel/eva_ordel",
     "pages/personl/serve_sale/serve_sale",
-    
     "pages/personl/distribution_ordel/distribution_ordel",
     "pages/personl/subordinate/subordinate",
     "pages/personl/points/points",

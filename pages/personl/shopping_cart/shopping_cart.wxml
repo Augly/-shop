@@ -1,0 +1,45 @@
+<view class="tip">
+  <text class='iconfont iconweizhi1'></text>
+  <text class='tip_title'>显示默认收货地址</text>
+  <text class='iconfont iconjiantou'></text>
+</view>
+<view class='scope_group'>
+  <view class='scope_tip'>
+    编辑
+  </view>
+</view>
+<view class='content'>
+  <view class='product_info'>
+    <view class="item">
+      <view class='item_head_group'>
+        <text class='iconfont iconunxuanze'></text>
+        <text class='iconfont iconshouye'></text>
+        <text class='item_head_title'>美素派淮海中路店</text>
+        <text class='item_head_mintitle'>已免邮费</text>
+      </view>
+      <view class='item_content'>
+      <text class='iconfont iconunxuanze'></text>
+        <view class="item_logo">
+          <!-- <view class='item_logo_tap'></view> -->
+        </view>
+        <view class='item_res'>
+          <view class='item_title line2'>
+            红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的
+          </view>
+          <view class='item_price_group'>
+            <view class='item_p_price'>
+              <view class='item_price'>¥ 388</view>
+              <!-- <view class='item_number'>6人团</view> -->
+            </view>
+            <view class='buy_group'>
+          <text class='iconfont iconjian'></text> 1
+          <text class='iconfont iconjia'></text>
+        </view>
+          </view>
+        </view>
+         
+      </view>
+
+    </view>
+  </view>
+</view>

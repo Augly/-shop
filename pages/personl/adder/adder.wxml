@@ -1,0 +1,22 @@
+<view class='list'>
+  <view class='list_user_group'>
+    <view class='list_name'>
+      <text class='title'>某某某</text>
+      <text>156 8888 8888</text>
+    </view>
+    <view class='list_scope'>
+      <view class='scope_item'>
+        <text class='iconfont  iconiconset0136'></text>
+        <text>编辑</text>
+      </view>
+      <view class='scope_item'>
+        <text class='iconfont  iconshanchu'></text>
+        <text>删除</text>
+      </view>
+    </view>
+  </view>
+  <view class='list_detail'>
+    <view class='list_tip'>默认</view>
+    <view class='list_adder'>上海市徐汇区XXXXXXXXXXXXXXXXXX</view>
+  </view>
+</view>

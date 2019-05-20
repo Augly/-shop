@@ -1,0 +1,68 @@
+<view class='content'>
+<view class='adder_info'>
+  <view class='adder_res'>
+    <view class='adder_userinfo'>某某某  156****8888</view>
+    <view class='adder_adder'>
+      <view class='adder_tip'>默认</view>
+      <view class='adder_detail'>地址地址地址地址地址地址地址地址地址</view>
+    </view>
+  </view>
+  <text class='iconfont iconjiantou'></text>
+</view>
+  <view class='call_customer'>
+    <text>支付方式</text>
+    <text>微信支付</text>
+  </view>
+  <view class='product_info'>
+    <view class="item">
+      <view class='item_head_group'>
+        <view class="item_head" hover-class="none" hover-stop-propagation="false">
+          美素派淮海中路店
+        </view>
+      </view>
+      <view class='item_content'>
+        <view class="item_logo">
+          <!-- <view class='item_logo_tap'></view> -->
+        </view>
+        <view class='item_res'>
+          <view class='item_title line2'>
+            红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的
+          </view>
+          <view class='item_price_group'>
+            <view class='item_p_price'>
+              <view class='item_unprice'>产品说明文字</view>
+              <view class='item_price'>¥ 388</view>
+              <!-- <view class='item_number'>6人团</view> -->
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='item_buy_number'>
+        <text>购买数量</text>
+        <view class='buy_group'>
+          <text class='iconfont iconjian'></text> 1
+          <text class='iconfont iconjia'></text>
+        </view>
+      </view>
+      <view class='item_buy_number'>
+        <text>配送方式</text>
+        <text>默认邮寄</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='ordel_info'>
+    <text class='ordel_info_title'>留言</text>
+    <textarea class='text_wrap' placeholder='建议留言前先与商家沟通确认' placeholder-class=''></textarea>
+  </view>
+  <view class='price_info'>
+    <view class='main_title'>
+      <text>商品总额</text>
+      <text>¥ 388</text>
+    </view>
+    <view class='main_title' style='border-bottom:none'>
+      <text>运费</text>
+      <text>+ ¥ 0</text>
+    </view>
+  </view>
+</view>

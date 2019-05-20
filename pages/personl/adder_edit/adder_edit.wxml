@@ -1,0 +1,32 @@
+<view class="edit_warp">
+  <view class='list'>
+    <view class='list_title'>收货人</view>
+    <input class='list_detail' placeholder='请填写收货人' placeholder-class='list_detail'></input>
+    <!-- <text class='iconfont iconjiantou'></text> -->
+  </view>
+  <view class='list'>
+    <view class='list_title'>手机号码</view>
+    <input class='list_detail' placeholder='请填写联系电话' placeholder-class='list_detail'></input>
+    <!-- <text class='iconfont iconjiantou'></text> -->
+  </view>
+  <view class='list'>
+    <view class='list_title'>所在地区</view>
+    <view class='list_detail'>请选择所在地区</view>
+    <text class='iconfont iconjiantou'></text>
+  </view>
+  <view class='list' style='height:168rpx;'>
+    <view class='list_title'>详细地址</view>
+    <textarea class='text_detail' placeholder='请填写详细地址' placeholder-class='text_detail'></textarea>
+  </view>
+  <view class='list' style='border:none'>
+    <view class='list_mintitle'>设置默认地址</view>
+
+    <switch style='margin-left:auto' color='rgba(69, 208, 174, 1)'></switch>
+  </view>
+  <view class='tip'>
+  提醒：每次下单时会使用该地址，实际下单地址会根据 您购物切换的地区进行智能判断，请在下单时确认哦！
+  </view>
+</view>
+
+
+<view class='save_button'>保 存</view>

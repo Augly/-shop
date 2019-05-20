@@ -1,0 +1,116 @@
+.list {
+    width: 100%;
+    height: auto;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10rpx;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 20rpx 34rpx;
+    margin-top: 18rpx;
+
+    .list_user_group {
+        width: 100%;
+        height: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+
+        .list_name {
+            font-size: 30rpx;
+            font-family: Helvetica-Light;
+            font-weight: 300;
+            color: rgba(136, 136, 136, 1);
+
+            .title {
+                font-size: 36rpx;
+                font-family: PingFangSC-Regular;
+                font-weight: 400;
+                color: rgba(53, 53, 53, 1);
+                margin-right: 15rpx;
+            }
+        }
+
+        .list_scope {
+            width: 240rpx;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+            color: rgba(136, 136, 136, 1);
+
+            .scope_item {
+                width: 50%;
+                height: 100%;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-pack: end;
+                -ms-flex-pack: end;
+                justify-content: flex-end;
+
+                .iconfont {
+                    font-size: 30rpx;
+                    margin-right: 10rpx;
+                }
+
+                font-size: 25rpx;
+            }
+        }
+    }
+
+    .list_detail {
+        width: 100%;
+        height: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        margin-top: 25rpx;
+
+        .list_tip {
+            width: 53rpx;
+            height: 25rpx;
+            border: 1rpx solid rgba(136, 136, 136, 1);
+            border-radius: 5rpx;
+            font-size: 20rpx;
+            font-family: PingFangSC-Light;
+            font-weight: 300;
+            color: rgba(136, 136, 136, 1);
+            text-align: center;
+            line-height: 25rpx;
+        }
+
+        .tip_active {
+            background: rgba(69, 208, 174, 1);
+            border: 1rpx solid rgba(69, 208, 174, 1);
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .list_adder {
+            width: 618rpx;
+            font-size: 24rpx;
+            font-family: PingFangSC-Light;
+            font-weight: 300;
+            color: rgba(53, 53, 53, 1);
+        }
+    }
+}
