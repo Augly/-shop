@@ -1,9 +1,13 @@
 {
   "pages": [
+    "pages/personl/delegation_error/delegation_error",
+    "pages/personl/delegation/delegation",
+    "pages/personl/assemble_error/assemble_error",
+    "pages/personl/delegation_success/delegation_success",
     "pages/personl/appointment_success/appointment_success",
-    "pages/personl/assemble_result/assemble_result",
+    "pages/personl/assemble_success/assemble_success",
     "pages/personl/join_delegation/join_delegation",
-    
+    "pages/personl/assemble_result/assemble_result",
     "pages/personl/shopping_cart/shopping_cart",
     "pages/personl/adder_edit/adder_edit",
     "pages/personl/adder/adder",

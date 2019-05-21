@@ -1,0 +1,10 @@
+{
+
+  "navigationBarTitleText": "参团成功",
+
+  "usingComponents": {
+    "Look_around": "/components/Look_around/Look_around",
+    "Step": "/components/Step/Step",
+    "Tapswiper": "/components/Tapswiper/Tapswiper"
+  }
+}

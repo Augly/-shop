@@ -1,0 +1,63 @@
+<view class='wrap'>
+    <!-- <Tapswiper /> -->
+    <!-- <text class='iconfont iconchenggong'></text> -->
+    <view class='tip'>开团成功</view>
+    <view class='time_group'>
+        <view class='time_group_group'>
+            剩 余
+            <view class='time_group_group_item'>10</view>
+            天
+            <view class='time_group_group_item'>46</view>
+            时
+            <view class='time_group_group_item'>30</view>
+            分
+            <view class='time_group_group_item'>10</view>
+            秒
+        </view>
+    </view>
+    <view class='status'>
+        还差
+        <text class='status_number'>5人</text>
+        ，赶快邀请好友来拼团吧
+    </view>
+    
+    <view class='personl_group'>
+        <view class='personl_item'>
+            <view class='personl_logo'></view>
+        </view>
+        <view class='personl_item'>
+            <view class='personl_logo'></view>
+        </view>
+        <view class='personl_item'>
+            <view class='personl_logo'></view>
+        </view>
+        <view class='personl_item'>
+            <view class='personl_logo'></view>
+        </view>
+        <view class='personl_item'>
+            <view class='personl_logo'></view>
+        </view>
+        <view class='personl_item'>
+            <view class='personl_logo'></view>
+        </view>
+    </view>
+    <view class='sure_button'>邀请好友参团</view>
+    <!-- <view class='note_tip'>分享好友越多，成团越快</view> -->
+</view>
+<view class='res'>
+    <view class='res_item'>
+        <view class='item_title'>拼团商品</view>
+        <view class='item_mintitle'>水木莳酵石斛修复四件套</view>
+        <text class='iconfont iconjiantou'></text>
+    </view>
+    <view class='res_item'>
+        <view class='item_title'>拼团时间</view>
+        <view class='item_mintitle'>2019-03-05-11:30:20</view>
+    </view>
+    <view class='res_item' style='border:none'>
+        <view class='item_title'>拼团进度</view>
+    </view>
+</view>
+<Step active_step='3' />
+<!-- <view class='look_around_title'>随便逛逛</view> -->
+<Look_around></Look_around>

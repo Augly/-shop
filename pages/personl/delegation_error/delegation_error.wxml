@@ -1,0 +1,74 @@
+<!-- <Tapswiper />
+<view class='detail'>
+    <image class='detail_img'></image>
+    <view class='detail_title_group'>
+        <view class='detail_title'>酵石斛修复四件套</view>
+        <view class='detail_mintitle'>每人每天限参与一次</view>
+    </view>
+    <view class='price_group'>
+        <view class='price'>¥ 588</view>
+        <view class='price_more'>拼省70元</view>
+        <view class='price_number'>4000人已拼</view>
+    </view>
+</view> -->
+<view class='wrap'>
+    <view class='tip'>已成团</view>
+    <!-- <view class='time_group'>
+        <view class='time_group_group'>
+            剩 余
+            <view class='time_group_group_item'>10</view>
+            天
+            <view class='time_group_group_item'>46</view>
+            时
+            <view class='time_group_group_item'>30</view>
+            分
+            <view class='time_group_group_item'>10</view>
+            秒
+        </view>
+    </view> -->
+    <view class='status'>亲，来晚一步哦</view>
+    <view class='personl_group'>
+        <view class='personl_item'>
+            <view class='personl_logo'></view>
+        </view>
+        <view class='personl_item'>
+            <view class='personl_logo'></view>
+        </view>
+        <view class='personl_item'>
+            <view class='personl_logo'></view>
+        </view>
+        <view class='personl_item'>
+            <view class='personl_logo'></view>
+        </view>
+        <view class='personl_item'>
+            <view class='personl_logo'></view>
+        </view>
+        <view class='personl_item'>
+            <view class='personl_logo'></view>
+        </view>
+    </view>
+    <view class='sure_button'>查看更多拼团商品</view>
+    <!-- <view class='note_tip'>分享好友越多，成团越快</view> -->
+</view>
+<!-- <view class='res'>
+  <view class='res_item'>
+    <view class='item_title'>拼团商品</view>
+    <view class='item_mintitle'>水木莳酵石斛修复四件套</view>
+    <text class='iconfont iconjiantou'></text>
+  </view>
+  <view class='res_item'>
+    <view class='item_title'>拼团时间</view>
+    <view class='item_mintitle'>2019-03-05-11:30:20</view>
+  </view>
+  <view class='res_item' style='border:none'>
+    <view class='item_title'>拼团进度</view>a
+  </view>
+</view> -->
+<!-- <Step active_step='3' /> -->
+<view class='rule'>
+    <view class='rule_title'>拼团须知</view>
+    <view class='rule_mintitle'>好友拼团/人满发货/不满极速退款</view>
+    <text class='iconfont iconjiantou'></text>
+</view>
+<view class='look_around_title'>随便逛逛</view>
+<Look_around></Look_around>

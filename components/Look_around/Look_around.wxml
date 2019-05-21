@@ -16,10 +16,10 @@
             <view class="pt_price_wrap" hover-class="none" hover-stop-propagation="false">
                 <view class="pt_price_left" hover-class="none" hover-stop-propagation="false">
                     <view class="pt_price_and_ptn" hover-class="none" hover-stop-propagation="false">
-                        <text class="price" selectable="false" space="false" decode="false"> ¥ 1.00</text>
-                        <text class="pt_number" selectable="false" space="false" decode="false">3人团</text>
+                        <view class="price">¥ 1.00</view>
+                        <view class="pt_number">3人团</view>
                     </view>
-                    <text class="buied_number" selectable="false" space="false" decode="false">4000 人已买</text>
+                    <view class="buied_number">4000 人已买</view>
                 </view>
                 <view class="t_tap" hover-class="none" hover-stop-propagation="false"></view>
             </view>
@@ -41,10 +41,10 @@
             <view class="pt_price_wrap" hover-class="none" hover-stop-propagation="false">
                 <view class="pt_price_left" hover-class="none" hover-stop-propagation="false">
                     <view class="pt_price_and_ptn" hover-class="none" hover-stop-propagation="false">
-                        <text class="price" selectable="false" space="false" decode="false">¥ 1.00</text>
-                        <text class="pt_number" selectable="false" space="false" decode="false">3人团</text>
+                        <view class="price">¥ 1.00</view>
+                        <view class="pt_number">3人团</view>
                     </view>
-                    <text class="buied_number" selectable="false" space="false" decode="false"> 4000 人已买</text>
+                    <view class="buied_number">4000 人已买</view>
                 </view>
                 <view class="t_tap" hover-class="none" hover-stop-propagation="false"></view>
             </view>

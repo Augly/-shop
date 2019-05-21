@@ -1,0 +1,16 @@
+{
+  "navigationBarBackgroundColor": "#45D0AE",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "拼团成功",
+  "navigationStyle": "default",
+  "backgroundColor": "#ffffff",
+  "backgroundTextStyle": "dark",
+  "backgroundColorTop": "#ffffff",
+  "backgroundColorBottom": "#353535",
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "Look_around": "/components/Look_around/Look_around",
+    "Step": "/components/Step/Step",
+    "Tapswiper": "/components/Tapswiper/Tapswiper"
+  }
+}
