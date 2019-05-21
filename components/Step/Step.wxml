@@ -1,0 +1,12 @@
+<view class="step_wrap">
+  <view class='step_content'>
+    <view class="step_item {{index<active_step?'step_item_active':''}}" wx:for="{{step_list}}" wx:for-item="item" wx:for-index="index">
+      <view class='step_top'>
+        <view class="{{index==0?'line_white':'line'}}"></view>
+        <view class='step'>{{index+1}}</view>
+        <view class="{{index==3?'line_white':'line'}}"></view>
+      </view>
+      <view class='step_title'>{{item.title}}</view>
+    </view>
+  </view>
+</view>

@@ -43,3 +43,11 @@
     </view>
   </view>
 </view>
+
+<view class='nav_bottom'>
+  <text class='iconfont iconunxuanze'></text>
+  <text class='nav_tip'>全选</text>
+  <text class='nav_title'>合计：</text>
+  <view class='nav_price'>￥388</view>
+  <view class='nav_sure'>去结算(5)</view>
+</view>

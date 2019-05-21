@@ -1,0 +1,277 @@
+.banner_wrap {
+    width: 100%;
+    position: relative;
+    height: 522rpx;
+
+    .swiper_wrap {
+        width: 100%;
+        height: 522rpx;
+
+        .swiper_item {
+            width: 100%;
+            height: 522rpx;
+
+            .slide-image {
+                width: 100%;
+                height: 522rpx;
+            }
+        }
+    }
+
+    .tap_swiper {
+        width: 351rpx;
+        height: 54rpx;
+        background: rgba(0, 0, 0, 1);
+        opacity: 0.5;
+        border-radius: 27rpx;
+        overflow: hidden;
+        position: absolute;
+        top: 33rpx;
+        left: 28rpx;
+
+        .tap_swiper_item {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            box-sizing: border-box;
+            padding: 0rpx 10rpx 0rpx 8rpx;
+            align-items: center;
+
+            .tap_swiper_item_logo {
+                width: 44rpx;
+                height: 44rpx;
+                border-radius: 22rpx;
+                background: red;
+            }
+
+            .tap_swiper_item_res {
+                width: 240rpx;
+                height: 100%;
+                line-height: 54rpx;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 24rpx;
+                font-family: PingFangSC-Regular;
+                font-weight: 400;
+                color: rgba(255, 255, 255, 1);
+                font-size: 24rpx;
+                color: rgba(255, 255, 255, 1);
+                margin-left: 17rpx;
+            }
+
+            .iconjiantou {
+                font-size: 24rpx;
+                color: rgba(255, 255, 255, 1);
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+.price_group {
+    width: 100%;
+    height: 88rpx;
+    background: rgba(69, 208, 174, 1);
+    box-sizing: border-box;
+    padding: 12rpx 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .price_l {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .un_price {
+            font-size: 20rpx;
+            font-family: Helvetica-Light;
+            font-weight: 300;
+            text-decoration: line-through;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .price {
+            font-size: 48rpx;
+            font-family: Helvetica;
+            font-weight: 400;
+            line-height: 48rpx;
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+
+    .time_group {
+        width: 240rpx;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .time_group_title {
+            font-size: 20rpx;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .time_group_group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27rpx;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 1);
+
+            .time_group_group_item {
+                display: inline-block;
+                padding: 0rpx 6rpx;
+                height: 34rpx;
+                background: rgba(63, 63, 63, 1);
+                border-radius: 5rpx;
+                font-size: 24rpx;
+                font-family: PingFangSC-Regular;
+                font-weight: 400;
+                color: rgba(255, 255, 255, 1);
+                line-height: 34rpx;
+                margin-left: 5rpx;
+                margin-right: 5rpx;
+            }
+        }
+    }
+}
+
+.product_res {
+    width: 100%;
+    height: 202rpx;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    padding: 0rpx 29rpx;
+    margin-bottom: 22rpx;
+
+    .res_top {
+        width: 100%;
+        height: 130rpx;
+        box-sizing: border-box;
+        padding: 30rpx 0rpx;
+        border-bottom: 1rpx solid rgba(243, 244, 247, 1);
+
+        .title {
+            font-size: 36rpx;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(63, 63, 63, 1);
+        }
+
+        .mintitle {
+            font-size: 20rpx;
+            font-family: PingFangSC-Light;
+            font-weight: 300;
+            color: rgba(147, 147, 147, 1);
+        }
+    }
+
+    .res_bottom {
+        width: 100%;
+        height: 70rpx;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .res_type {
+            width: 160rpx;
+            height: 40rpx;
+            background-color: red;
+        }
+
+        .res_number_group {
+            font-size: 24rpx;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(147, 147, 147, 1);
+            display: flex;
+            align-items: center;
+
+            .res_number {
+                font-size: 25rpx;
+                font-family: Helvetica-Light;
+                font-weight: 300;
+                color: rgba(147, 147, 147, 1);
+                margin-right: 10rpx;
+            }
+        }
+    }
+}
+
+.shop_group {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .shop_item {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .shop_title {
+            font-size: 39rpx;
+            font-family: Helvetica;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .shop_mintitle {
+            font-size: 23rpx;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+
+    .zj {
+        background-color: rgba(106, 106, 106, 1)
+    }
+
+    .pt {
+        background-color: rgba(69, 208, 174, 1);
+    }
+}
+
+.more_group {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .more_item {
+        width: 250rpx;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(69, 208, 174, 0.7);
+
+        .shop_title {
+            font-size: 39rpx;
+            font-family: Helvetica;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .shop_mintitle {
+            font-size: 23rpx;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+}

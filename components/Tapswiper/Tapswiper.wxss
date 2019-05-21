@@ -1,0 +1,48 @@
+@import "/app.wxss";
+
+.tap_swiper {
+  width: 351rpx;
+  height: 54rpx;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 27rpx;
+  overflow: hidden;
+  position: absolute;
+  top: 33rpx;
+  left: 28rpx;
+}
+
+.tap_swiper .tap_swiper_item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0rpx 10rpx 0rpx 8rpx;
+  align-items: center;
+}
+
+.tap_swiper .tap_swiper_item .tap_swiper_item_logo {
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 22rpx;
+  background: red;
+}
+
+.tap_swiper .tap_swiper_item .tap_swiper_item_res {
+  width: 240rpx;
+  height: 100%;
+  line-height: 54rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #ffffff;
+  margin-left: 17rpx;
+}
+
+.tap_swiper .tap_swiper_item .iconjiantou {
+  font-size: 24rpx;
+  color: #ffffff;
+  margin-left: auto;
+}
