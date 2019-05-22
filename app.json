@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/personl/adder/adder",
+    "pages/personl/adder_edit/adder_edit",
     "pages/index/index/index",
     "pages/index/productRes/productRes",
-    
     "pages/personl/delegation_error/delegation_error",
     "pages/personl/delegation/delegation",
     "pages/personl/assemble_error/assemble_error",
@@ -12,8 +13,8 @@
     "pages/personl/join_delegation/join_delegation",
     "pages/personl/assemble_result/assemble_result",
     "pages/personl/shopping_cart/shopping_cart",
-    "pages/personl/adder_edit/adder_edit",
-    "pages/personl/adder/adder",
+    
+    
     "pages/personl/fill_order/fill_order",
     "pages/personl/ordel_details/ordel_details",
     "pages/personl/product_ordel/product_ordel",
@@ -25,7 +26,6 @@
     "pages/personl/distribution_ordel/distribution_ordel",
     "pages/personl/subordinate/subordinate",
     "pages/personl/points/points",
-    
     "pages/index/productRes/comment_list/comment_list",
     "pages/personl/personl",
     "pages/index/selection/selection",
@@ -36,6 +36,39 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "MIS’PIE",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#FFFFFF",
+    "selectedColor": "#FFFFFF",
+    "backgroundColor": "#45D0AE",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index/index",
+        "text": "首页",
+        "iconPath": "/static/images/index.png",
+        "selectedIconPath": "/static/images/index_select.png"
+      },
+      {
+        "pagePath": "pages/personl/shopping_cart/shopping_cart",
+        "text": "商城",
+        "iconPath": "/static/images/shop.png",
+        "selectedIconPath": "/static/images/shop_select.png"
+      },
+      {
+        "pagePath": "pages/personl/adder/adder",
+        "text": "团购",
+        "iconPath": "/static/images/tuan.png",
+        "selectedIconPath": "/static/images/tuan_select.png"
+      },
+      {
+        "pagePath": "pages/personl/personl",
+        "text": "我的",
+        "iconPath": "/static/images/User.png",
+        "selectedIconPath": "/static/images/User_24.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

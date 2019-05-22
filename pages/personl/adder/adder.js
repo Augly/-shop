@@ -1,18 +1,19 @@
 // pages/personl/adder/adder.js
+const app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   
   },
 
   /**
@@ -21,7 +22,28 @@ Page({
   onReady: function () {
 
   },
-
+  /**
+   * 获取地址列表
+   */
+  getAdderList(){
+    app.config.ajax('GET', {
+      token: wx.getStorageSync('token')
+    }, 'address/list', (res) => {
+      this.setData({
+        list: res.data
+      })
+    })
+  },
+  /**
+   * 设置默认地址
+   */
+  setAdder(){
+    app.config.ajax('PUT', {
+      token: wx.getStorageSync('token')
+    }, `address/setdefault/${e}/${datatype}`, (res) => {
+      
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

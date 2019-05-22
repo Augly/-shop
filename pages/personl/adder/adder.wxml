@@ -1,8 +1,8 @@
-<view class='list'>
+<view class='list' wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
   <view class='list_user_group'>
     <view class='list_name'>
-      <text class='title'>某某某</text>
-      <text>156 8888 8888</text>
+      <text class='title'>{{item.name}}</text>
+      <text>{{item.mobile}}</text>
     </view>
     <view class='list_scope'>
       <view class='scope_item'>
@@ -16,7 +16,7 @@
     </view>
   </view>
   <view class='list_detail'>
-    <view class='list_tip'>默认</view>
-    <view class='list_adder'>上海市徐汇区XXXXXXXXXXXXXXXXXX</view>
+    <view class="list_tip {{item.is_default==0?'':'tip_active'}}">默认</view>
+    <view class='list_adder'>{{item.add_less}}{{item.add_more}}</view>
   </view>
 </view>
