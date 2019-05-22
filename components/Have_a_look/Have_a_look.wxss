@@ -94,7 +94,7 @@
 
 .tap {
   width: 49rpx;
-  height: 22rpx;
+  height: 26rpx;
   background: rgba(69, 208, 174, 1);
   border-radius: 5rpx;
   display: -webkit-box;
@@ -107,6 +107,7 @@
   -ms-flex-pack: center;
   justify-content: center;
   font-size: 18rpx;
+  line-height: 26rpx;
   font-family: PingFangSC-Regular;
   font-weight: 400;
   color: rgba(255, 255, 255, 1);

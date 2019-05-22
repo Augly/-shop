@@ -1,8 +1,8 @@
 <view class="banner_wrap" hover-class="none" hover-stop-propagation="false">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" interval="{{interval}}" duration="{{duration}}" class="swiper_wrap">
-        <block wx:for="{{imgUrls}}">
+        <block wx:for="{{imgList}}">
             <swiper-item class="swiper_item">
-                <image src="{{item}}" class="slide-image" />
+                <image src="{{item.img_url}}" class="slide-image" />
             </swiper-item>
         </block>
     </swiper>

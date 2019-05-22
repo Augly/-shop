@@ -65,7 +65,8 @@ function timeForm(time) {
       day: day,
       hour: hour,
       minute: minute,
-      week: str
+      week: str,
+      timeStr: timeStr
     },
     btTime: btTimeStr
   };
@@ -85,8 +86,8 @@ function mytoast(main, successData) {
         }, 1500)
       }
     },
-    fail: function (res) { },
-    complete: function (res) { },
+    fail: function (res) {},
+    complete: function (res) {},
   })
 }
 /**
@@ -138,8 +139,8 @@ function rem(height, successData) {
       }
       successData(myheight)
     },
-    fail: function (res) { },
-    complete: function (res) { },
+    fail: function (res) {},
+    complete: function (res) {},
   })
 }
 
@@ -153,8 +154,8 @@ function remW(height, successData) {
       }
       successData(myheight)
     },
-    fail: function (res) { },
-    complete: function (res) { },
+    fail: function (res) {},
+    complete: function (res) {},
   })
 }
 /**
@@ -189,8 +190,8 @@ function getuid(successData, errorData) {
         }
       })
     },
-    fail: function (res) { },
-    complete: function (res) { },
+    fail: function (res) {},
+    complete: function (res) {},
   })
 }
 /**
@@ -224,12 +225,15 @@ function getData(e, name) {
 function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   var methonType = "application/json";
   //访问的主域名
-  var https = "http://yueke.dazhu-ltd.cn/user"
+  var https = "https://prize.frp.meditool.cn/api/"
   if (Type === 'PUT') {
     methonType = "application/x-www-form-urlencoded"
   }
   if (Type == 'FORM') {
     methonType = "application/form-data"
+  }
+  if (Type == 'GET') {
+    methonType = "application/json"
   }
   if (Type == "POST") {
     methonType = "application/x-www-form-urlencoded"
@@ -237,9 +241,9 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   wx.showLoading({
     title: '数据加载中',
     mask: true,
-    success: function (res) { },
-    fail: function (res) { },
-    complete: function (res) { },
+    success: function (res) {},
+    fail: function (res) {},
+    complete: function (res) {},
   })
   if (Type != 'img') {
     wx.request({
@@ -251,20 +255,16 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
       data: params,
       success: (res) => {
         wx.hideLoading()
-        if (res.data.code == 1) {
-          successData(res)
-        } else if (res.data.code == -1) {
-          //登陆超时
-          mytoast('登陆超时')
-          wx.clearStorage('user_token')
-          wx.redirectTo({
-            url: '/pages/login/login',
-            success: function (res) { },
-            fail: function (res) { },
-            complete: function (res) { },
-          })
+        if (res.data.status == 0) {
+          successData(res.data)
+        } else if (res.data.status == -3) {
+          mytoast('请登录')
         } else {
-          mytoast(res.data.msg)
+          try {
+            mytoast(res.data.msg)
+          } catch (err) {
+
+          }
         }
       },
       error(res) {

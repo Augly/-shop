@@ -1,8 +1,8 @@
 <swiper class='tap_swiper' autoplay interval="2000" circular vertical>
-    <block wx:for="{{imgUrls}}">
+    <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
         <swiper-item class="tap_swiper_item">
-            <image class='tap_swiper_item_logo'></image>
-            <view class='tap_swiper_item_res'>xxxx6秒前发起了拼团xxxx6秒前发起了拼团</view>
+            <image class='tap_swiper_item_logo' src="{{item.head_url}}"></image>
+            <view class='tap_swiper_item_res'>{{item.nick_name}}在{{item.payment_time}}购买了此商品</view>
             <text class='iconfont iconjiantou'></text>
         </swiper-item>
     </block>

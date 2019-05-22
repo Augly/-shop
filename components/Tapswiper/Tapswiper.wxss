@@ -1,5 +1,3 @@
-@import "/app.wxss";
-
 .tap_swiper {
   width: 351rpx;
   height: 54rpx;
@@ -24,7 +22,6 @@
   width: 44rpx;
   height: 44rpx;
   border-radius: 22rpx;
-  background: red;
 }
 
 .tap_swiper .tap_swiper_item .tap_swiper_item_res {

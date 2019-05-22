@@ -6,70 +6,59 @@
       </swiper-item>
     </block>
   </swiper>
-  <swiper class='tap_swiper' autoplay interval="2000" circular vertical>
-    <block wx:for="{{imgUrls}}">
-      <swiper-item class="tap_swiper_item">
-        <image class='tap_swiper_item_logo'></image>
-        <view class='tap_swiper_item_res'>xxxx6秒前发起了拼团xxxx6秒前发起了拼团</view>
-        <text class='iconfont iconjiantou'></text>
-      </swiper-item>
-    </block>
-  </swiper>
+  <Tapswiper list="{{latest_data}}" />
 </view>
 <view class='price_group'>
   <view class='price_l'>
-    <view class='un_price'>¥ 588.00</view>
-    <view class='price'>¥ 188</view>
+    <view class='un_price'>¥ {{details.market_price}}</view>
+    <view class='price'>¥ {{details.shop_price}}</view>
   </view>
-  <view class='time_group'>
+  <!-- <view class='time_group'>
     <view class='time_group_title'>距离结束还剩</view>
     <view class='time_group_group'>
-      <view class='time_group_group_item'>10</view>天
-      <view class='time_group_group_item'>46</view>时
-      <view class='time_group_group_item'>30</view>分
-      <view class='time_group_group_item'>10</view>秒
+      <view class='time_group_group_item'>10</view>
+      天
+      <view class='time_group_group_item'>46</view>
+      时
+      <view class='time_group_group_item'>30</view>
+      分
+      <view class='time_group_group_item'>10</view>
+      秒
     </view>
-  </view>
+  </view> -->
 </view>
-
 <view class='product_res'>
   <view class='res_top'>
-    <view class='title'>
-      酵石斛修复四件套
-    </view>
-    <view class='mintitle'>说明性文字，优惠类文字</view>
+    <view class='title'>{{details.goods_name}}</view>
+    <view class='mintitle'>{{details.goods_brief}}</view>
   </view>
   <view class='res_bottom'>
     <view class='res_type'></view>
-    <view class='res_number_group'>
-      <view class='res_number'>4000</view>
-      人已拼
-    </view>
+    <view class='res_number_group'>{{details.goods_sell_num}}人已拼</view>
   </view>
 </view>
-
-<Have_a_look/>
+<Have_a_look list="{{hot_data}}" />
 <view class='more_group'>
   <view class='more_item' style=' background: rgba(69, 208, 174, 0.3);'>
-    <view class='shop_title'>¥ 588</view>
-    <view class='shop_mintitle'>二人团</view>
-  </view>
-  <view class='more_item' style=' background: rgba(69, 208, 174, 0.5);'>
-    <view class='shop_title'>¥ 588</view>
+    <view class='shop_title'>¥ {{details.three_group_price}}</view>
     <view class='shop_mintitle'>三人团</view>
   </view>
+  <view class='more_item' style=' background: rgba(69, 208, 174, 0.5);'>
+    <view class='shop_title'>¥ {{details.five_group_price}}</view>
+    <view class='shop_mintitle'>五人团</view>
+  </view>
   <view class='more_item' style=' background: rgba(69, 208, 174, 0.7);'>
-    <view class='shop_title'>¥ 588</view>
-    <view class='shop_mintitle'>四人团</view>
+    <view class='shop_title'>¥ {{details.eight_group_price}}</view>
+    <view class='shop_mintitle'>八人团</view>
   </view>
 </view>
 <view class='shop_group'>
   <view class='shop_item zj'>
-    <view class='shop_title'>¥ 588</view>
+    <view class='shop_title'>¥ {{details.market_price}}</view>
     <view class='shop_mintitle'>直接购买</view>
   </view>
   <view class='shop_item pt'>
-    <view class='shop_title'>¥ 188</view>
+    <view class='shop_title'>¥ {{details.shop_price}}</view>
     <view class='shop_mintitle'>发起拼团</view>
   </view>
 </view>

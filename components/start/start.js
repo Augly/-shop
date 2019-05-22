@@ -4,17 +4,17 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    onlyRead:{
-      type:Boolean,
-      value:true
+    onlyRead: {
+      type: Boolean,
+      value: true
     },
-    score:{
-      type:Number,
-      value:3
+    score: {
+      type: Number,
+      value: 0
     },
-    fontSize:{
-      type:String,
-      value:'30rpx'
+    fontSize: {
+      type: String,
+      value: '30rpx'
     }
   },
 
@@ -30,9 +30,9 @@ Component({
    */
   methods: {
     tabStart(e) {
-      if (this.data.onlyRead){
-        
-      }else{
+      if (this.data.onlyRead) {
+
+      } else {
         this.setData({
           score: e.currentTarget.dataset.index
         })
@@ -40,7 +40,7 @@ Component({
           score: this.data.score,
         }
         this.triggerEvent('tabStart', eventDetail)
-        }
       }
+    }
   }
 })

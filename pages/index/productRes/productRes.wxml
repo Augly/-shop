@@ -1,13 +1,13 @@
 <Banner></Banner>
 <view class='product_res'>
   <view class='price_group'>
-    <text class='price_title'>¥ 588</text>
-    <text class='price_number'>已售 4000+</text>
+    <text class='price_title'>¥ {{details.market_price}}</text>
+    <text class='price_number'>已售 {{details.goods_sell_num}}</text>
   </view>
   <view class='dec'>
     <view class='dec_res'>
-      <view class='title'>医用冷敷贴(小火柴)</view>
-      <view class='mintitle'>天然植物黄金 低温发酵萃取</view>
+      <view class='title'>{{details.goods_name}}</view>
+      <view class='mintitle'>{{details.goods_brief}}</view>
     </view>
     <text class='iconfont iconfenxiang'></text>
   </view>
@@ -16,10 +16,26 @@
   <text class='select_title'>选择规格</text>
   <text class='iconfont iconjiantou'></text>
 </view>
-<Evalist show-all="{{true}}"></Evalist>
+<Evalist show-all="{{true}}" list="{{list}}" count="{{count}}"></Evalist>
 <view class="tab_group p_t" hover-class="none" hover-stop-propagation="false">
   拼团活动
   <text class="iconfont iconjiantou" selectable="false" space="false" decode="false"></text>
 </view>
-<Look_around></Look_around>
-<Have_a_look style="margin-top"></Have_a_look>
+<Look_around list="{{hot_data}}" bind:getId="getId"></Look_around>
+
+<view class='bottom_group'>
+  <view class='bottom_more'>
+    <view class='more_item'>
+      <text class='iconfont iconliaotian'></text>
+      <view class='more_title'>联系客服</view>
+    </view>
+     <view class='more_item'>
+      <view class='brid'>111</view>
+      <text class='iconfont icongouwuche'></text>
+      <view class='more_title'>购物车</view>
+    </view>
+  </view>
+  <view class='bottom_cart'>加入购物车</view>
+  <view class='bottom_buy'>立即购买</view>
+</view>
+<!-- <Have_a_look style="margin-top" list="{{hot_data}}"></Have_a_look> -->

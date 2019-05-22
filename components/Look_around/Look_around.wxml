@@ -1,54 +1,32 @@
-<view class="p_t_wrap" hover-class="none" hover-stop-propagation="false">
-    <!-- <block wx:for="{{p_t_list}}"> -->
-    <view class="pt_item" hover-class="none" hover-stop-propagation="false">
-        <view class="pt_tap" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="pt_img" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="pt_res" hover-class="none" hover-stop-propagation="false">
-            <view class="title line1" hover-class="none" hover-stop-propagation="false">
-                酵石斛修复四件套酵石斛修复四件套酵石斛修复四件套
-            </view>
-            <view class="mintitle line2" hover-class="none" hover-stop-propagation="false">
-                天然植物黄金天然植物黄金天然植物黄金天然植物黄金天然植物黄金 低温发酵萃取
-            </view>
-        </view>
-        <view class="pt_main_res" hover-class="none" hover-stop-propagation="false">
-            <view class="un_price" hover-class="none" hover-stop-propagation="false">¥ 588.00</view>
-            <view class="pt_price_wrap" hover-class="none" hover-stop-propagation="false">
-                <view class="pt_price_left" hover-class="none" hover-stop-propagation="false">
-                    <view class="pt_price_and_ptn" hover-class="none" hover-stop-propagation="false">
-                        <view class="price">¥ 1.00</view>
-                        <view class="pt_number">3人团</view>
-                    </view>
-                    <view class="buied_number">4000 人已买</view>
+<view class="p_t_wrap" hover-class="none" hover-stop-propagation="false" >
+    <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+        <view class="pt_item" hover-class="none" hover-stop-propagation="false" catchtap='getItem' data-id='{{item.goods_id}}'>
+            <view class="pt_tap" hover-class="none" hover-stop-propagation="false"></view>
+            <image class='pt_tap' src="/static/images/type{{item.group_rules}}.png"></image>
+            <image class='pt_img' src='{{item.goods_thumb}}'></image>
+            <view class="pt_res" hover-class="none" hover-stop-propagation="false">
+                <view class="title line1" hover-class="none" hover-stop-propagation="false">
+                    {{item.goods_name}}
                 </view>
-                <view class="t_tap" hover-class="none" hover-stop-propagation="false"></view>
-            </view>
-        </view>
-    </view>
-    <view class="pt_item" hover-class="none" hover-stop-propagation="false">
-        <view class="pt_tap" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="pt_img" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="pt_res" hover-class="none" hover-stop-propagation="false">
-            <view class="title line1" hover-class="none" hover-stop-propagation="false">
-                酵石斛修复四件套酵石斛修复四件套酵石斛修复四件套
-            </view>
-            <view class="mintitle line2" hover-class="none" hover-stop-propagation="false">
-                天然植物黄金天然植物黄金天然植物黄金天然植物黄金天然植物黄金 低温发酵萃取
-            </view>
-        </view>
-        <view class="pt_main_res" hover-class="none" hover-stop-propagation="false">
-            <view class="un_price" hover-class="none" hover-stop-propagation="false">¥ 588.00</view>
-            <view class="pt_price_wrap" hover-class="none" hover-stop-propagation="false">
-                <view class="pt_price_left" hover-class="none" hover-stop-propagation="false">
-                    <view class="pt_price_and_ptn" hover-class="none" hover-stop-propagation="false">
-                        <view class="price">¥ 1.00</view>
-                        <view class="pt_number">3人团</view>
-                    </view>
-                    <view class="buied_number">4000 人已买</view>
+                <view class="mintitle line2" hover-class="none" hover-stop-propagation="false">
+                    {{item.goods_brief}}
                 </view>
-                <view class="t_tap" hover-class="none" hover-stop-propagation="false"></view>
+            </view>
+            <view class="pt_main_res" hover-class="none" hover-stop-propagation="false">
+                <view class="un_price" hover-class="none" hover-stop-propagation="false">
+                    ¥  {{item.market_price}}
+                </view>
+                <view class="pt_price_wrap" hover-class="none" hover-stop-propagation="false">
+                    <view class="pt_price_left" hover-class="none" hover-stop-propagation="false">
+                        <view class="pt_price_and_ptn" hover-class="none" hover-stop-propagation="false">
+                            <view class="price">¥ {{item.three_group_price}}</view>
+                            <view class="pt_number">3人团</view>
+                        </view>
+                        <view class="buied_number">{{item.goods_sell_num}} 人已买</view>
+                    </view>
+                    <image class='t_tap' src='/static/images/tuan.png'></image>
+                </view>
             </view>
         </view>
-    </view>
-    <!-- </block> -->
+    </block>
 </view>

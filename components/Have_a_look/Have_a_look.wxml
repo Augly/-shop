@@ -1,55 +1,18 @@
 <view class='other_wrap'>
   <view class='other_title'>
-    大家都在拼 <text class='iconfont iconjiantou'></text>
+    大家都在拼
+    <text class='iconfont iconjiantou'></text>
   </view>
   <scroll-view scroll-x class='scroll_wrap'>
-    <view class='scroll_item'>
-      <image class='item_img'></image>
-      <view class='title line1'>酵石斛修复四件套</view>
-      <view class='price_group'>
-        <text class='price'>¥ 1</text>
-        <view class='tap'>抢购</view>
+    <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+      <view class='scroll_item'>
+        <image class='item_img' src="{{item.goods_thumb}}"></image>
+        <view class='title line1'>{{item.goods_name}}</view>
+        <view class='price_group'>
+          <text class='price'>¥ {{item.shop_price}}</text>
+          <view class='tap'>抢购</view>
+        </view>
       </view>
-    </view>
-    <view class='scroll_item'>
-      <image class='item_img'></image>
-      <view class='title line1'>酵石斛修复四件套</view>
-      <view class='price_group'>
-        <text class='price'>¥ 1</text>
-        <view class='tap'>抢购</view>
-      </view>
-    </view>
-    <view class='scroll_item'>
-      <image class='item_img'></image>
-      <view class='title line1'>酵石斛修复四件套</view>
-      <view class='price_group'>
-        <text class='price'>¥ 1</text>
-        <view class='tap'>抢购</view>
-      </view>
-    </view>
-    <view class='scroll_item'>
-      <image class='item_img'></image>
-      <view class='title line1'>酵石斛修复四件套</view>
-      <view class='price_group'>
-        <text class='price'>¥ 1</text>
-        <view class='tap'>抢购</view>
-      </view>
-    </view>
-    <view class='scroll_item'>
-      <image class='item_img'></image>
-      <view class='title line1'>酵石斛修复四件套</view>
-      <view class='price_group'>
-        <text class='price'>¥ 1</text>
-        <view class='tap'>抢购</view>
-      </view>
-    </view>
-    <view class='scroll_item'>
-      <image class='item_img'></image>
-      <view class='title line1'>酵石斛修复四件套</view>
-      <view class='price_group'>
-        <text class='price'>¥ 1</text>
-        <view class='tap'>抢购</view>
-      </view>
-    </view>
+    </block>
   </scroll-view>
 </view>

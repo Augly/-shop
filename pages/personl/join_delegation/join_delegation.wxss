@@ -1,35 +1,34 @@
+page {
+  padding-bottom: 200rpx;
+}
 .banner_wrap {
   width: 100%;
   position: relative;
   height: 522rpx;
 }
-
 .banner_wrap .swiper_wrap {
   width: 100%;
   height: 522rpx;
 }
-
 .banner_wrap .swiper_wrap .swiper_item {
   width: 100%;
   height: 522rpx;
 }
-
 .banner_wrap .swiper_wrap .swiper_item .slide-image {
   width: 100%;
   height: 522rpx;
 }
-
 .banner_wrap .tap_swiper {
   width: 351rpx;
   height: 54rpx;
-  background: rgba(0, 0, 0, 0.5);
+  background: #000000;
+  opacity: 0.5;
   border-radius: 27rpx;
   overflow: hidden;
   position: absolute;
   top: 33rpx;
   left: 28rpx;
 }
-
 .banner_wrap .tap_swiper .tap_swiper_item {
   width: 100%;
   height: 100%;
@@ -38,14 +37,12 @@
   padding: 0rpx 10rpx 0rpx 8rpx;
   align-items: center;
 }
-
 .banner_wrap .tap_swiper .tap_swiper_item .tap_swiper_item_logo {
   width: 44rpx;
   height: 44rpx;
   border-radius: 22rpx;
   background: red;
 }
-
 .banner_wrap .tap_swiper .tap_swiper_item .tap_swiper_item_res {
   width: 240rpx;
   height: 100%;
@@ -59,13 +56,11 @@
   color: #ffffff;
   margin-left: 17rpx;
 }
-
 .banner_wrap .tap_swiper .tap_swiper_item .iconjiantou {
   font-size: 24rpx;
   color: #ffffff;
   margin-left: auto;
 }
-
 .price_group {
   width: 100%;
   height: 88rpx;
@@ -76,13 +71,11 @@
   align-items: center;
   justify-content: space-between;
 }
-
 .price_group .price_l {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 .price_group .price_l .un_price {
   font-size: 20rpx;
   font-family: Helvetica-Light;
@@ -90,7 +83,6 @@
   text-decoration: line-through;
   color: #ffffff;
 }
-
 .price_group .price_l .price {
   font-size: 48rpx;
   font-family: Helvetica;
@@ -98,7 +90,6 @@
   line-height: 48rpx;
   color: #ffffff;
 }
-
 .price_group .time_group {
   width: 240rpx;
   height: 100%;
@@ -107,14 +98,12 @@
   justify-content: space-between;
   align-items: center;
 }
-
 .price_group .time_group .time_group_title {
   font-size: 20rpx;
   font-family: PingFangSC-Regular;
   font-weight: 400;
   color: #ffffff;
 }
-
 .price_group .time_group .time_group_group {
   display: flex;
   align-items: center;
@@ -124,7 +113,6 @@
   font-weight: 400;
   color: #ffffff;
 }
-
 .price_group .time_group .time_group_group .time_group_group_item {
   display: inline-block;
   padding: 0rpx 6rpx;
@@ -139,7 +127,6 @@
   margin-left: 5rpx;
   margin-right: 5rpx;
 }
-
 .product_res {
   width: 100%;
   height: 202rpx;
@@ -148,7 +135,6 @@
   padding: 0rpx 29rpx;
   margin-bottom: 22rpx;
 }
-
 .product_res .res_top {
   width: 100%;
   height: 130rpx;
@@ -156,21 +142,18 @@
   padding: 30rpx 0rpx;
   border-bottom: 1rpx solid #f3f4f7;
 }
-
 .product_res .res_top .title {
   font-size: 36rpx;
   font-family: PingFangSC-Regular;
   font-weight: 400;
   color: #3f3f3f;
 }
-
 .product_res .res_top .mintitle {
   font-size: 20rpx;
   font-family: PingFangSC-Light;
   font-weight: 300;
   color: #939393;
 }
-
 .product_res .res_bottom {
   width: 100%;
   height: 70rpx;
@@ -178,13 +161,11 @@
   align-items: center;
   justify-content: space-between;
 }
-
 .product_res .res_bottom .res_type {
   width: 160rpx;
   height: 40rpx;
   background-color: red;
 }
-
 .product_res .res_bottom .res_number_group {
   font-size: 24rpx;
   font-family: PingFangSC-Regular;
@@ -193,7 +174,6 @@
   display: flex;
   align-items: center;
 }
-
 .product_res .res_bottom .res_number_group .res_number {
   font-size: 25rpx;
   font-family: Helvetica-Light;
@@ -201,15 +181,15 @@
   color: #939393;
   margin-right: 10rpx;
 }
-
 .shop_group {
   width: 100%;
   height: 100rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  bottom: 0;
 }
-
 .shop_group .shop_item {
   width: 50%;
   height: 100%;
@@ -218,37 +198,33 @@
   align-items: center;
   justify-content: center;
 }
-
 .shop_group .shop_item .shop_title {
   font-size: 39rpx;
   font-family: Helvetica;
   font-weight: 400;
   color: #ffffff;
 }
-
 .shop_group .shop_item .shop_mintitle {
   font-size: 23rpx;
   font-family: PingFangSC-Regular;
   font-weight: 400;
   color: #ffffff;
 }
-
 .shop_group .zj {
   background-color: #6a6a6a;
 }
-
 .shop_group .pt {
   background-color: #45d0ae;
 }
-
 .more_group {
   width: 100%;
   height: 100rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  bottom: 100rpx;
 }
-
 .more_group .more_item {
   width: 250rpx;
   height: 100%;
@@ -258,14 +234,12 @@
   justify-content: center;
   background: rgba(69, 208, 174, 0.7);
 }
-
 .more_group .more_item .shop_title {
   font-size: 39rpx;
   font-family: Helvetica;
   font-weight: 400;
   color: #ffffff;
 }
-
 .more_group .more_item .shop_mintitle {
   font-size: 23rpx;
   font-family: PingFangSC-Regular;

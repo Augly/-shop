@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/index/index/index",
+    "pages/index/productRes/productRes",
+    
     "pages/personl/delegation_error/delegation_error",
     "pages/personl/delegation/delegation",
     "pages/personl/assemble_error/assemble_error",
@@ -22,9 +25,8 @@
     "pages/personl/distribution_ordel/distribution_ordel",
     "pages/personl/subordinate/subordinate",
     "pages/personl/points/points",
-    "pages/index/productRes/productRes",
+    
     "pages/index/productRes/comment_list/comment_list",
-    "pages/index/index/index",
     "pages/personl/personl",
     "pages/index/selection/selection",
     "pages/yy/index/index"

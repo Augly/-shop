@@ -1,18 +1,61 @@
 // pages/index/productRes/productRes.js
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    details: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getDetail(options)
+    this.getFirst(options)
+  },
+  //获取产品详情
+  getDetail(options) {
+    app.config.ajax('GET', {
+      token: wx.getStorageSync('token'),
+    }, `shop/details/${options.goodId}/${options.datatype}`, (res) => {
+      this.setData({
+        details: res.data.details,
+        hot_data: res.data.hot_data,
+        latest_data:   res.data.latest_data
+      })
+    })
+  },
+  getFirst(options) {
+    app.config.ajax('GET', {
+      token: wx.getStorageSync('token'),
+    }, `shop/evaluates/${options.goodId}/1`, (res) => {
+      this.setData({
+        count: res.data.eval_count,
+        list: res.data.evaluates
+      })
+    })
+  },
+  getId(e) {
+    this.getDetail(e.detail)
+    this.getFirst(e.detail)
+    this.goTop()
+  },
+  //回到顶部
+  goTop: function () { // 一键回到顶部
+    if (wx.pageScrollTo) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+      })
+    }
   },
 
   /**

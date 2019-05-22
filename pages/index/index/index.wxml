@@ -1,37 +1,45 @@
-<Banner></Banner>
-<view class="tab_group tab_select" hover-class="none" hover-stop-propagation="false">
-    <view class="tab_item tab_active" hover-class="none" hover-stop-propagation="false">热门产品</view>
-    <view class="tab_item" hover-class="none" hover-stop-propagation="false">热门项目</view>
+<Banner img-list="{{imgUrls}}"></Banner>
+<view class="tab_group tab_select" hover-class="none" hover-stop-propagation="false" catchtap='tab_change'>
+    <view class="tab_item {{tab_index==0?'tab_active':''}}" hover-class="none" hover-stop-propagation="false" data-id='0'>
+        热门产品
+    </view>
+    <view class="tab_item {{tab_index==0?'':'tab_active'}}" hover-class="none" hover-stop-propagation="false" data-id='1'>
+        热门项目
+    </view>
 </view>
 <view class="product_wrap" hover-class="none" hover-stop-propagation="false">
-    <!-- <block wx:for="{{list}}"> -->
-    <view class="item" hover-class="none" hover-stop-propagation="false">
-        <view class="item_res" hover-class="none" hover-stop-propagation="false">
-            <view class="item_img_wrap" hover-class="none" hover-stop-propagation="false">
-                <image class="tap" src="" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
-                <image class="" src="" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
-            </view>
-            <view class='item_res_wrap'>
-                <view class="describe" hover-class="none" hover-stop-propagation="false">
-                    <view class="title line1" hover-class="none" hover-stop-propagation="false">
-                        酵石斛修复四件套酵石斛修复四件套酵石斛修复四件套
-                    </view>
-                    <view class="mintitle line2" hover-class="none" hover-stop-propagation="false">
-                        天然植物黄金天然植物黄金天然植物黄金天然植物黄金天然植物黄金 低温发酵萃取
-                    </view>
+    <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <view class="item" hover-class="none" hover-stop-propagation="false" data-goodId='{{item.goods_id}}' bindtap='getmore'>
+            <view class="item_res" hover-class="none" hover-stop-propagation="false">
+                <view class="item_img_wrap" hover-class="none" hover-stop-propagation="false">
+                    <image class="tap" src="/static/images/type1.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                    <image class="" src="{{item.goods_thumb}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
                 </view>
-                <view class="t_tap" hover-class="none" hover-stop-propagation="false"></view>
+                <view class='item_res_wrap'>
+                    <view class="describe" hover-class="none" hover-stop-propagation="false">
+                        <view class="title line1" hover-class="none" hover-stop-propagation="false">
+                            {{item.goods_name}}
+                        </view>
+                        <view class="mintitle line2" hover-class="none" hover-stop-propagation="false">
+                            {{item.goods_brief}}
+                        </view>
+                    </view>
+                    <image class="t_tap" src="/static/images/gouwuche.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                </view>
+            </view>
+            <view class="item_scope" hover-class="none" hover-stop-propagation="false">
+                <view class="price" selectable="false" space="false" decode="false">
+                    ¥ {{item.shop_price}}
+                </view>
+                <view class="buied_number" selectable="false" space="false" decode="false">
+                    {{item.goods_sell_num}} 人已买
+                </view>
             </view>
         </view>
-        <view class="item_scope" hover-class="none" hover-stop-propagation="false">
-            <text class="price" selectable="false" space="false" decode="false">¥ 588</text>
-            <text class="buied_number" selectable="false" space="false" decode="false"> 4000 人已买 </text>
-        </view>
-    </view>
-    <!-- </block> -->
+    </block>
 </view>
 <view class="tab_group p_t" hover-class="none" hover-stop-propagation="false">
     拼团活动
     <text class="iconfont iconjiantou" selectable="false" space="false" decode="false"></text>
 </view>
-<Look_around></Look_around>
+<Look_around list="{{group_data}}" bind:getId="getId"></Look_around>

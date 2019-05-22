@@ -7,6 +7,14 @@ Component({
     showAll:{
       type:Boolean,
       value:false
+    },
+    list:{
+      type:Array,
+      value:[]
+    },
+    count:{
+      type:Number,
+      value:0
     }
   },
   
