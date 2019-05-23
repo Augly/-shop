@@ -225,7 +225,7 @@ function getData(e, name) {
 function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   var methonType = "application/json";
   //访问的主域名
-  var https = "https://ceshi.mayspie.com/api/"
+  var https = "https://prize.frp.meditool.cn/api/"
   if (Type === 'PUT') {
     methonType = "application/x-www-form-urlencoded"
   }
