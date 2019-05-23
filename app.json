@@ -1,8 +1,12 @@
 {
   "pages": [
+    
+    "pages/personl/shopping_cart/shopping_cart",
+    "pages/index/index/index",
+    "pages/index/selection/selection",
     "pages/personl/adder/adder",
     "pages/personl/adder_edit/adder_edit",
-    "pages/index/index/index",
+    
     "pages/index/productRes/productRes",
     "pages/personl/delegation_error/delegation_error",
     "pages/personl/delegation/delegation",
@@ -12,7 +16,7 @@
     "pages/personl/assemble_success/assemble_success",
     "pages/personl/join_delegation/join_delegation",
     "pages/personl/assemble_result/assemble_result",
-    "pages/personl/shopping_cart/shopping_cart",
+   
     
     
     "pages/personl/fill_order/fill_order",
@@ -28,7 +32,6 @@
     "pages/personl/points/points",
     "pages/index/productRes/comment_list/comment_list",
     "pages/personl/personl",
-    "pages/index/selection/selection",
     "pages/yy/index/index"
   ],
   "window": {

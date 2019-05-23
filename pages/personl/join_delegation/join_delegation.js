@@ -2,6 +2,7 @@
 const app = getApp()
 Page({
   data: {
+    showmore:false,
     imgUrls: [
       'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
       'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
@@ -19,6 +20,19 @@ Page({
   onLoad: function (options) {
     this.getDetail(options)
     this.getFirst(options)
+    wx.getSystemInfo({ //获取屏幕高度
+      success: (res => {
+        this.setData({
+          screenHeight: res.screenHeight
+        })
+      })
+    })
+  },
+  fq(e){
+    console.log(e.scrollTop)
+    this.setData({
+      showmore:true
+    })
   },
   //获取产品详情
   getDetail(options) {
@@ -63,6 +77,11 @@ Page({
     this.getFirst(e.detail)
     this.goTop()
   },
+  hide(){
+    this.setData({
+      showmore:false
+    })
+  },
   onReady: function () {
 
   },
@@ -84,7 +103,8 @@ Page({
   onShareAppMessage: function () {
 
   },
-  onPageScroll: function () {
+  onPageScroll: function (e) {
+    // console.log(e, this.data.screenHeight)
 
   },
   //item(index,pagePath,text)

@@ -1,4 +1,5 @@
-<Banner img-list="{{imgUrls}}"></Banner>
+
+  <Banner img-list="{{imgUrls}}" shop="{{shop}}"></Banner>
 <view class="tab_group tab_select" hover-class="none" hover-stop-propagation="false" catchtap='tab_change'>
     <view class="tab_item {{tab_index==0?'tab_active':''}}" hover-class="none" hover-stop-propagation="false" data-id='0'>
         热门产品
@@ -43,3 +44,5 @@
     <text class="iconfont iconjiantou" selectable="false" space="false" decode="false"></text>
 </view>
 <Look_around list="{{group_data}}" bind:getId="getId"></Look_around>
+
+

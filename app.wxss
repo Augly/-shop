@@ -174,3 +174,4 @@ input {
   border: none;
   list-style: none;
 }
+@import "/utils/animation.wxss"

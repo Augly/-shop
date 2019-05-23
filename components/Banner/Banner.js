@@ -7,6 +7,9 @@ Component({
     imgList:{
       type:Array,
       value:[]
+    },
+    shop:{
+      type:Object
     }
   },
 
@@ -19,13 +22,19 @@ Component({
     indicatorColor: 'rgba(255, 255, 255, 1)',
     indicatorActiveColor: 'rgba(69, 208, 174, 1)',
     interval: 1000,
-    duration: 1000
+    duration: 1000,
   },
-
   /**
    * 组件的方法列表
    */
   methods: {
-
+    select_shop(){
+      wx.navigateTo({
+        url: '/pages/index/selection/selection',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }
   }
 })

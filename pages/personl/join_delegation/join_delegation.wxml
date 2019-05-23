@@ -1,3 +1,5 @@
+
+<view class='page' bindtap='hide'>
 <view class="banner_wrap" hover-class="none" hover-stop-propagation="false">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" interval="{{interval}}" duration="{{duration}}" class="swiper_wrap">
     <block wx:for="{{imgUrls}}">
@@ -38,7 +40,7 @@
   </view>
 </view>
 <Have_a_look list="{{hot_data}}" />
-<view class='more_group'>
+<view class="more_group Augly-fadeinL" wx:if="{{showmore}}">
   <view class='more_item' style=' background: rgba(69, 208, 174, 0.3);'>
     <view class='shop_title'>¥ {{details.three_group_price}}</view>
     <view class='shop_mintitle'>三人团</view>
@@ -57,8 +59,10 @@
     <view class='shop_title'>¥ {{details.market_price}}</view>
     <view class='shop_mintitle'>直接购买</view>
   </view>
-  <view class='shop_item pt'>
+  <view class='shop_item pt' catchtap='fq'>
     <view class='shop_title'>¥ {{details.shop_price}}</view>
     <view class='shop_mintitle'>发起拼团</view>
   </view>
 </view>
+</view>
+

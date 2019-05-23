@@ -1,20 +1,31 @@
-<view class="banner">
+<view class="banner_wrap">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" interval="{{interval}}" duration="{{duration}}" class="swiper_wrap">
+        <block wx:for="{{bannerlist}}" wx:for-item="item" wx:for-index="index">
+            <swiper-item class="swiper_item">
+                <image src="{{item.img_url}}" class="slide-image" />
+            </swiper-item>
+        </block>
+    </swiper>
   <text class='iconfont iconsaoyisao'></text>
 </view>
 <view class='search_group'>
   <text class='iconfont iconsousuo'></text>
-  <input class='seacher_ipt' placeholder='Search' placeholder-class='seacher_ipt'></input>
+  <input class='seacher_ipt' placeholder='Search' placeholder-class='seacher_ipt' bindinput='getValue'></input>
   <text class='iconfont iconquxiao1'></text>
 </view>
-<!-- <block wx:for="{{items}}"> -->
-<view class="list" hover-class="none" hover-stop-propagation="false">
-  <view class="list_head" hover-class="none" hover-stop-propagation="false">
-    <text class="title" selectable="false" space="false" decode="false">门店名称</text>
-    <text class="distance" selectable="false" space="false" decode="false">2 km</text>
+<block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+  <view class="list" hover-class="none" hover-stop-propagation="false" bindtap='setShop' data-id='{{item}}'>
+    <view class="list_head" hover-class="none" hover-stop-propagation="false">
+      <view class="title" selectable="false" space="false" decode="false">{{item.s_name}}</view>
+      <view class="distance" selectable="false" space="false" decode="false">
+        {{item.distance}}
+      </view>
+    </view>
+    <view class="list_adder" hover-class="none" hover-stop-propagation="false">
+      <text class="iconfont  iconweizhi" selectable="false" space="false" decode="false"></text>
+      <view class="adder" hover-class="none" hover-stop-propagation="false">
+        {{item.s_address}}
+      </view>
+    </view>
   </view>
-  <view class="list_adder" hover-class="none" hover-stop-propagation="false">
-    <text class="iconfont  iconweizhi" selectable="false" space="false" decode="false"></text>
-    <view class="adder" hover-class="none" hover-stop-propagation="false">门店地址门店地址门店地址门店地址</view>
-  </view>
-</view>
-<!-- </block> -->
+</block>

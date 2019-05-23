@@ -10,34 +10,35 @@
 </view>
 <view class='content'>
   <view class='product_info'>
-    <view class="item">
+    <view class="item" >
       <view class='item_head_group'>
         <text class='iconfont iconunxuanze'></text>
         <text class='iconfont iconshouye'></text>
-        <text class='item_head_title'>美素派淮海中路店</text>
+        <text class='item_head_title'>{{shopName?shopName:'未知店铺'}}</text>
         <text class='item_head_mintitle'>已免邮费</text>
       </view>
-      <view class='item_content'>
-      <text class='iconfont iconunxuanze'></text>
-        <view class="item_logo">
-          <!-- <view class='item_logo_tap'></view> -->
-        </view>
+      <view class='item_content' wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+        <text class="iconfont {{item.check?'iconxuanze':'iconunxuanze'}} " catchtap='changeCheck'></text>
+        <image class='item_logo' src='{{item.goods_thumb}}'></image>
+        <!-- <view class="item_logo">
+          <view class='item_logo_tap'></view>
+        </view> -->
         <view class='item_res'>
           <view class='item_title line2'>
-            红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的
+            {{item.goods_name}}
           </view>
           <view class='item_price_group'>
             <view class='item_p_price'>
-              <view class='item_price'>¥ 388</view>
+              <view class='item_price'>¥ {{item.shop_price}}</view>
               <!-- <view class='item_number'>6人团</view> -->
             </view>
             <view class='buy_group'>
-          <text class='iconfont iconjian'></text> 1
-          <text class='iconfont iconjia'></text>
-        </view>
+              <text class='iconfont iconjian'></text> {{item.goods_num}}
+              <text class='iconfont iconjia'></text>
+            </view>
           </view>
         </view>
-         
+
       </view>
 
     </view>

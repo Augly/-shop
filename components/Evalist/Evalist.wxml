@@ -1,9 +1,10 @@
 <view class='eval_head'>
-  <text class='eva_title'>评价({{count>1000?'1000+':count}})</text>
+  <text class='eva_title'>评价({{count>1000?'1000+' :count}})</text>
+
   <!-- <text class='eva_mintitle'>好评度</text>
   <text class='eva_rate'>100%</text> -->
 </view>
-<view class='eval_wrap'>
+<view class='eval_wrap' wx:if="{{list.length>0}}">
   <!-- <view class='eval_tapWrap'>
     <view class='eval_item'>效果好</view>
     <view class='eval_item'>效果好</view>

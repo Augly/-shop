@@ -22,6 +22,7 @@ Page({
   },
   onLoad: function () {
     let s = setInterval(() => {
+      console.log(wx.getStorageSync('token'))
       if (wx.getStorageSync('token')) {
         clearInterval(s)
         app.config.ajax('GET', {
@@ -37,7 +38,7 @@ Page({
           })
         })
       }
-    }, 100);
+    }, 1000);
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -125,7 +126,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      shop: wx.getStorageSync('shop')
+    })
   },
 
   /**

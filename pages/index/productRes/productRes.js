@@ -7,15 +7,41 @@ Page({
    * 页面的初始数据
    */
   data: {
-    details: null
+    details: null,
+    mask:false,
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      goodId: options.goodId
+    })
     this.getDetail(options)
     this.getFirst(options)
+  },
+  //加入购物车
+  join_cart(){
+    app.config.ajax('PUT', {
+      token: wx.getStorageSync('token'),
+    }, `shop/addcart/${this.data.goodId}`, (res) => {
+      console.log(res)
+      
+    })
+  },
+  //关闭弹框
+  hidemask(){
+    this.setData({
+      mask:false
+    })
+  },
+  //打开弹框
+  showmask(){
+    this.setData({
+      mask: true
+    })
   },
   //获取产品详情
   getDetail(options) {
@@ -27,6 +53,7 @@ Page({
         hot_data: res.data.hot_data,
         latest_data:   res.data.latest_data
       })
+      this.goTop()
     })
   },
   getFirst(options) {
@@ -42,7 +69,7 @@ Page({
   getId(e) {
     this.getDetail(e.detail)
     this.getFirst(e.detail)
-    this.goTop()
+    
   },
   //回到顶部
   goTop: function () { // 一键回到顶部

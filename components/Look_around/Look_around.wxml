@@ -24,7 +24,7 @@
                         </view>
                         <view class="buied_number">{{item.goods_sell_num}} 人已买</view>
                     </view>
-                    <image class='t_tap' src='/static/images/tuan.png'></image>
+                    <image class='t_tap' src='/static/images/tuan_select.png'></image>
                 </view>
             </view>
         </view>

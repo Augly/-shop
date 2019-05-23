@@ -1,8 +1,27 @@
-.banner {
+page{
+  padding-bottom: 50rpx;
+}
+
+.banner_wrap {
   width: 100%;
   height: 584rpx;
   background-color: RGBA(184, 184, 184, 1);
   position: relative;
+}
+
+.banner_wrap .swiper_wrap {
+  width: 100%;
+  height: 584rpx;
+}
+
+.banner_wrap .swiper_wrap .swiper_item {
+  width: 100%;
+ height: 584rpx;
+}
+
+.banner_wrap .swiper_wrap .swiper_item .slide-image {
+  width: 100%;
+ height: 584rpx;
 }
 
 .iconsaoyisao {
