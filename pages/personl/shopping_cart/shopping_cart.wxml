@@ -4,51 +4,47 @@
   <text class='iconfont iconjiantou'></text>
 </view>
 <view class='scope_group'>
-  <view class='scope_tip'>
-    编辑
-  </view>
+  <view class='scope_tip' bindtap='changeEdit'>{{edit?'编辑':'完成'}}</view>
 </view>
-<view class='content'>
+<scroll-view class="content" scroll-y style="height:{{myheight}}px">
   <view class='product_info'>
-    <view class="item" >
+    <view class="item">
       <view class='item_head_group'>
-        <text class='iconfont iconunxuanze'></text>
+        <text class="iconfont {{all_check?'iconxuanze':'iconunxuanze'}}" catchtap='checkAll'></text>
         <text class='iconfont iconshouye'></text>
         <text class='item_head_title'>{{shopName?shopName:'未知店铺'}}</text>
         <text class='item_head_mintitle'>已免邮费</text>
       </view>
       <view class='item_content' wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
-        <text class="iconfont {{item.check?'iconxuanze':'iconunxuanze'}} " catchtap='changeCheck'></text>
+        <text class="iconfont {{item.check?'iconxuanze':'iconunxuanze'}}" catchtap='checkItem' data-index='{{index}}'></text>
         <image class='item_logo' src='{{item.goods_thumb}}'></image>
         <!-- <view class="item_logo">
           <view class='item_logo_tap'></view>
         </view> -->
         <view class='item_res'>
-          <view class='item_title line2'>
-            {{item.goods_name}}
-          </view>
+          <view class='item_title line2'>{{item.goods_name}}</view>
           <view class='item_price_group'>
             <view class='item_p_price'>
               <view class='item_price'>¥ {{item.shop_price}}</view>
               <!-- <view class='item_number'>6人团</view> -->
             </view>
             <view class='buy_group'>
-              <text class='iconfont iconjian'></text> {{item.goods_num}}
-              <text class='iconfont iconjia'></text>
+              <text class='iconfont iconjian' catchtap='plus' data-item='{{item}}' data-index='{{index}}'></text> {{item.goods_num}}
+              <text class='iconfont iconjia' catchtap='reduce' data-item='{{item}}' data-index='{{index}}'></text>
             </view>
           </view>
         </view>
-
       </view>
 
     </view>
   </view>
-</view>
-
+</scroll-view>
 <view class='nav_bottom'>
-  <text class='iconfont iconunxuanze'></text>
-  <text class='nav_tip'>全选</text>
-  <text class='nav_title'>合计：</text>
-  <view class='nav_price'>￥388</view>
-  <view class='nav_sure'>去结算(5)</view>
+  <text class="iconfont {{all_check?'iconxuanze':'iconunxuanze'}}" catchtap='checkAll'></text>
+  <block wx:if="{{!edit}}">
+    <text class='nav_tip'>全选</text>
+    <text class='nav_title'>合计：</text>
+    <view class='nav_price'>￥{{sum}}</view>
+  </block>
+  <view class='nav_sure'>{{edit?'删除':'去结算('+number+')'}}</view>
 </view>

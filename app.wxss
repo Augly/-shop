@@ -174,4 +174,5 @@ input {
   border: none;
   list-style: none;
 }
+::-webkit-scrollbar {display:none}
 @import "/utils/animation.wxss"
