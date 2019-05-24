@@ -9,7 +9,7 @@ Page({
   data: {
     details: null,
     mask:false,
-
+    car_count:0,
   },
 
   /**
@@ -27,8 +27,12 @@ Page({
     app.config.ajax('PUT', {
       token: wx.getStorageSync('token'),
     }, `shop/addcart/${this.data.goodId}`, (res) => {
-      console.log(res)
-      
+      console.log(212)
+      let car_count = this.data.car_count
+      car_count++
+      this.setData({
+        car_count: car_count
+      })
     })
   },
   //关闭弹框
@@ -51,7 +55,8 @@ Page({
       this.setData({
         details: res.data.details,
         hot_data: res.data.hot_data,
-        latest_data:   res.data.latest_data
+        latest_data:   res.data.latest_data,
+        car_count: res.data.car_count
       })
       this.goTop()
     })

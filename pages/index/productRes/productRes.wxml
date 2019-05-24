@@ -12,10 +12,6 @@
     <text class='iconfont iconfenxiang'></text>
   </view>
 </view>
-<view class='select_gg'>
-  <text class='select_title'>选择规格</text>
-  <text class='iconfont iconjiantou'></text>
-</view>
 <Evalist show-all="{{true}}" list="{{list}}" count="{{count}}"></Evalist>
 <view class="tab_group p_t" hover-class="none" hover-stop-propagation="false">
   拼团活动
@@ -30,12 +26,12 @@
       <view class='more_title'>联系客服</view>
     </view>
     <view class='more_item'>
-      <view class='brid'>111</view>
+      <view class='brid' wx:if="{{car_count>0}}">{{car_count}}</view>
       <text class='iconfont icongouwuche'></text>
       <view class='more_title'>购物车</view>
     </view>
   </view>
-  <view class='bottom_cart' bindtap='showmask'>加入购物车</view>
+  <view class='bottom_cart' bindtap='join_cart'>加入购物车</view>
   <view class='bottom_buy' bindtap='showmask'>立即购买</view>
 </view>
 <!-- <Have_a_look style="margin-top" list="{{hot_data}}"></Have_a_look> -->

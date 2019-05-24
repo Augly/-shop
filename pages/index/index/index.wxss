@@ -5,62 +5,7 @@ page {
   padding-bottom: 24rpx;
 }
 
-.banner_wrap {
-  width: 100%;
-  height: 650rpx;
-  position: relative;
-}
 
-.banner_wrap .swiper_wrap {
-  width: 100%;
-  height: 650rpx;
-}
-
-.banner_wrap .swiper_wrap .swiper_item {
-  width: 100%;
-  height: 650rpx;
-}
-
-.banner_wrap .swiper_wrap .swiper_item .slide-image {
-  width: 100%;
-  height: 650rpx;
-}
-
-.banner_wrap .search_group {
-  width: 702rpx;
-  height: 61rpx;
-  background: rgba(255, 255, 255, 1);
-  border-radius: 10rpx;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0rpx 32rpx;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 14rpx;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.banner_wrap .search_group .shop_name {
-  font-size: 24rpx;
-  font-weight: 400;
-  color: rgba(63, 63, 63, 1);
-}
-
-.banner_wrap .search_group .iconsaoyisao {
-  font-size: 40rpx;
-  font-weight: 200;
-  color: #3f3f3f;
-}
 
 .tab_group {
   width: 702rpx;

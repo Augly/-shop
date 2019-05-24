@@ -1,19 +1,19 @@
-<view class="tip">
+<view class="tip" bindtap='select_adder' wx:if="{{list.length>0}}">
   <text class='iconfont iconweizhi1'></text>
-  <text class='tip_title'>显示默认收货地址</text>
+  <text class='tip_title'>{{defautAdder==''?'显示默认收货地址':defautAdder}}</text>
   <text class='iconfont iconjiantou'></text>
 </view>
-<view class='scope_group'>
-  <view class='scope_tip' bindtap='changeEdit'>{{edit?'编辑':'完成'}}</view>
+<view class='scope_group' wx:if="{{list.length>0}}">
+  <view class='scope_tip' bindtap='changeEdit'>{{edit?'完成':'编辑'}}</view>
 </view>
-<scroll-view class="content" scroll-y style="height:{{myheight}}px">
+<scroll-view class="content" scroll-y style="height:{{myheight}}px" wx:if="{{list.length>0}}">
   <view class='product_info'>
     <view class="item">
       <view class='item_head_group'>
         <text class="iconfont {{all_check?'iconxuanze':'iconunxuanze'}}" catchtap='checkAll'></text>
         <text class='iconfont iconshouye'></text>
         <text class='item_head_title'>{{shopName?shopName:'未知店铺'}}</text>
-        <text class='item_head_mintitle'>已免邮费</text>
+        <text class='item_head_mintitle'>{{maxPrice==0?'已免邮费':maxPrice}}</text>
       </view>
       <view class='item_content' wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
         <text class="iconfont {{item.check?'iconxuanze':'iconunxuanze'}}" catchtap='checkItem' data-index='{{index}}'></text>
@@ -39,12 +39,15 @@
     </view>
   </view>
 </scroll-view>
-<view class='nav_bottom'>
+<view class='nodata' wx:else>
+  您的购物车为空~
+</view>
+<view class='nav_bottom' wx:if="{{list.length>0}}">
   <text class="iconfont {{all_check?'iconxuanze':'iconunxuanze'}}" catchtap='checkAll'></text>
   <block wx:if="{{!edit}}">
     <text class='nav_tip'>全选</text>
     <text class='nav_title'>合计：</text>
     <view class='nav_price'>￥{{sum}}</view>
   </block>
-  <view class='nav_sure'>{{edit?'删除':'去结算('+number+')'}}</view>
+  <view class='nav_sure' bindtap='scope'>{{edit?'删除':'去结算('+number+')'}}</view>
 </view>

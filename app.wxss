@@ -174,5 +174,13 @@ input {
   border: none;
   list-style: none;
 }
+.nodata{
+  width: 100%;
+  height: 400rpx;
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+  text-align: center;
+  line-height: 400rpx;
+}
 ::-webkit-scrollbar {display:none}
 @import "/utils/animation.wxss"

@@ -1,1 +1,135 @@
-.list{width:100%;height:auto;background:#fff;border-radius:10rpx;-webkit-box-sizing:border-box;box-sizing:border-box;padding:20rpx 34rpx;margin-top:18rpx}.list .list_user_group{width:100%;height:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.list .list_user_group .list_name{font-size:30rpx;font-family:Helvetica-Light;font-weight:300;color:#888}.list .list_user_group .list_name .title{font-size:36rpx;font-family:PingFangSC-Regular;font-weight:400;color:#353535;margin-right:15rpx}.list .list_user_group .list_scope{width:240rpx;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;color:#888}.list .list_user_group .list_scope .scope_item{width:50%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;font-size:25rpx}.list .list_user_group .list_scope .scope_item .iconfont{font-size:30rpx;margin-right:10rpx}.list .list_detail{width:100%;height:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-top:25rpx}.list .list_detail .list_tip{width:53rpx;height:25rpx;border:1rpx solid #888;border-radius:5rpx;font-size:20rpx;font-family:PingFangSC-Light;font-weight:300;color:#888;text-align:center;line-height:25rpx}.list .list_detail .tip_active{background:#45d0ae;border:1rpx solid #45d0ae;color:#fff}.list .list_detail .list_adder{width:618rpx;font-size:24rpx;font-family:PingFangSC-Light;font-weight:300;color:#353535}
+page {
+  padding-bottom: 200rpx;
+}
+.list {
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  border-radius: 10rpx;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20rpx 34rpx;
+  margin-top: 18rpx;
+}
+.list .list_user_group {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.list .list_user_group .list_name {
+  font-size: 30rpx;
+  font-family: Helvetica-Light;
+  font-weight: 300;
+  color: #888888;
+}
+.list .list_user_group .list_name .title {
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #353535;
+  margin-right: 15rpx;
+}
+.list .list_user_group .list_scope {
+  width: 240rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  color: #888888;
+}
+.list .list_user_group .list_scope .scope_item {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-size: 25rpx;
+}
+.list .list_user_group .list_scope .scope_item .iconfont {
+  font-size: 30rpx;
+  margin-right: 10rpx;
+}
+.list .list_detail {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 25rpx;
+}
+.list .list_detail .list_tip {
+  width: 53rpx;
+  height: 25rpx;
+  border: 1rpx solid #888888;
+  border-radius: 5rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Light;
+  font-weight: 300;
+  color: #888888;
+  text-align: center;
+  line-height: 26rpx;
+}
+.list .list_detail .tip_active {
+  background: #45d0ae;
+  border: 1rpx solid #45d0ae;
+  color: #ffffff;
+}
+.list .list_detail .list_adder {
+  width: 618rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Light;
+  font-weight: 300;
+  color: #353535;
+}
+.add_wrap {
+  width: 100%;
+  height: 200rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add_button {
+  width: 638rpx;
+  height: 79rpx;
+  background: #45d0ae;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 33rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+}
+.add_button .iconjia {
+  font-size: 40rpx;
+  margin-right: 10rpx;
+}
