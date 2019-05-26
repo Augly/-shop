@@ -1,0 +1,14 @@
+{
+  "navigationBarBackgroundColor": "#45D0AE",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的分销",
+  "navigationStyle": "default",
+  "backgroundColor": "#ffffff",
+  "backgroundTextStyle": "dark",
+  "backgroundColorTop": "#ffffff",
+  "backgroundColorBottom": "#353535",
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "look_a_look": "/components/Have_a_look/Have_a_look"
+  }
+}

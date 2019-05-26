@@ -1,0 +1,46 @@
+<Banner img-list="{{imgUrls}}" shop="{{shop}}"></Banner>
+<view class="tab_group tab_select" hover-class="none" hover-stop-propagation="false">
+    <view class="tab_item {{index==tab_index?'tab_active':''}}" hover-class="none" hover-stop-propagation="false" catchtap='tab_change' data-index="{{index}}" wx:for="{{good_type}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        {{item.name}}
+    </view>
+</view>
+<view class="product_wrap" hover-class="none" hover-stop-propagation="false">
+    <block wx:for="{{group_data}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <view class="item" hover-class="none" hover-stop-propagation="false" data-goodId='{{item.goods_id}}' bindtap='getmore'>
+            <view class="item_res" hover-class="none" hover-stop-propagation="false">
+                <view class="item_img_wrap" hover-class="none" hover-stop-propagation="false">
+                    <image class="tap" src="/static/images/type1.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                    <image class="" src="{{item.goods_thumb}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                </view>
+                <view class='item_res_wrap'>
+                    <view class="describe" hover-class="none" hover-stop-propagation="false">
+                        <view class="title line1" hover-class="none" hover-stop-propagation="false">
+                            {{item.goods_name}}
+                        </view>
+                        <view class="mintitle line2" hover-class="none" hover-stop-propagation="false">
+                            {{item.goods_brief}}
+                        </view>
+                    </view>
+                    <image class="t_tap" src="/static/images/tuan_select.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                </view>
+            </view>
+            <view class="item_scope" hover-class="none" hover-stop-propagation="false">
+            <!-- <view class='item_scope_unprice'></view> -->
+            <!-- <view class='item_scope_price'> -->
+             <view class="price" selectable="false" space="false" decode="false">
+                    ¥ {{item.eight_group_price}} <view class='number_type'>8人团</view>
+                </view>
+                <view class="buied_number" selectable="false" space="false" decode="false">
+                    {{item.goods_sell_num}} 人已买
+                </view>
+            </view>
+               
+            <!-- </view> -->
+        </view>
+    </block>
+</view>
+<!-- <view class="tab_group p_t" hover-class="none" hover-stop-propagation="false">
+    拼团活动
+    <text class="iconfont iconjiantou" selectable="false" space="false" decode="false"></text>
+</view> -->
+<!-- <Have_a_look list="{{group_data}}" bind:getId="getId"></Have_a_look> -->

@@ -95,6 +95,7 @@ Page({
   },
   //切换产品或服务
   tab_change(e) {
+    console.log(e)
     let list
     switch (parseInt(e.target.dataset.id)) {
       case 0:

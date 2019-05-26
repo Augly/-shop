@@ -1,13 +1,12 @@
 <view class="head_group">
   <view class='point_group'>
     我的积分：
-    <text class='point_number'>100</text>
+    <text class='point_number'>{{total_integral}}</text>
   </view>
   <view class='grade_group'>
     当前等级
     <view class='grade_number'>V2</view>
   </view>
-
   <view class='pro_group'>
     <text class='title'>V1</text>
     <text class='mintitle'>成长值 100/200</text>
@@ -15,23 +14,18 @@
     <view class='pro_now' style='width:40%'></view>
   </view>
 </view>
-
-<view class='list_wrap'>
+<scroll-view class="list_wrap" wx:if="{{records.length>0}}" style="height:{{myheight}}px" scroll-y bindscrolltolower="getInit">
   <view class='list_head'>积分明细</view>
   <view class='list_content'>
-    <view class='list_item'>
-      <view class='item_date'>2019/03/05 15:30</view>
-      <view class='item_res'>
-        <view class='res_left'>购买单部位脂肪管理</view>
-        <view class='res_score'>+ 50</view>
+    <block wx:for="{{records}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+      <view class='list_item'>
+        <view class='item_date'>{{item.update_time}}</view>
+        <view class='item_res'>
+          <view class='res_left'>{{item.integral_msg}}</view>
+          <view class='res_score'>{{item.integral}}</view>
+        </view>
       </view>
-    </view>
-    <view class='list_item'>
-      <view class='item_date'>2019/03/05 15:30</view>
-      <view class='item_res'>
-        <view class='res_left'>购买单部位脂肪管理</view>
-        <view class='res_score'>+ 50</view>
-      </view>
-    </view>
+    </block>
   </view>
-</view>
+</scroll-view>
+<view class='nodata' wx:else>暂无积分明细</view>

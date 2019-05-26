@@ -27,7 +27,6 @@ Component({
         datatype: 1
       }
       this.triggerEvent('getId', eventDetail)
-
     }
   }
 })

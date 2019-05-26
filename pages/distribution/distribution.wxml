@@ -1,0 +1,19 @@
+<view class="personl_group">
+    <view class="personl_avater" hover-class="none" hover-stop-propagation="false"></view>
+    <view class="p_name" hover-class="none" hover-stop-propagation="false">某某某</view>
+    <view class="p_tap" hover-class="none" hover-stop-propagation="false">普通用户</view>
+</view>
+<view class='grid_wrap'>
+    <view class='grid_item' bindtap='to_child'>
+        <image class='item_logo' mode='aspectFit' src='/static/images/p2.png'></image>
+        <view class='item_title'>我的下级</view>
+    </view>
+    <view class='grid_item' bindtap='to_record'>
+        <image class='item_logo' mode='aspectFit' src='/static/images/p3.png'></image>
+        <view class='item_title'>分销记录</view>
+    </view>
+    <view class='grid_item' bindtap='to_post'>
+        <image class='item_logo' mode='aspectFit' src='/static/images/p5.png'></image>
+        <view class='item_title'>推广海报</view>
+    </view>
+</view>

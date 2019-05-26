@@ -29,3 +29,6 @@
   </view>
   <view class='look_all' wx:if="{{showAll}}">查看全部评价</view>
 </view>
+<view class='nodata' wx:else>
+  暂无任何评论~
+</view>

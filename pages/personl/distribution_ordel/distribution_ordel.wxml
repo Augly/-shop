@@ -1,23 +1,28 @@
-<view class="item">
+<view class="item" wx:if="{{list.length>0}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
   <view class='item_head_group'>
-    <image class='avater'></image>
-    <view class='name'>某某某</view>
-    <view class='date'>2019/03/05 15:30</view>
+    <image class='avater' src="{{item.head_url}}"></image>
+    <view class='name'>{{item.nick_name}}</view>
+    <!-- <view class='date'>2019/03/05 15:30</view> -->
   </view>
-  <view class='item_content'>
-    <view class='content_list'>
-      <image class='avater'></image>
-      <view class='list_res'>
-        <view class='title'>基础水光肌管理</view>
-        <view class='mintitle'>
-          数量：1
-          <text class='score'>积分：100</text>
+  <block wx:for="{{list.orders}}" wx:for-item="citem" wx:for-index="cindex" wx:key="c{{index}}">
+    <view class='item_content'>
+      <view class='content_list'>
+        <image class='avater' src="{{citem.goods_thumb}}"></image>
+        <view class='list_res'>
+          <view class='title'>{{citem.goods_name}}</view>
+          <view class='mintitle'>
+            数量：{{citem.goods_num}}
+            <text class='score'>积分：{{citem.goods_price}}</text>
+          </view>
         </view>
       </view>
     </view>
-  </view>
-  <view class='item_result'>
-    <text class='title'>所获积分：</text>
-    100
-  </view>
+    <view class='item_result'>
+      <text class='title'>所获积分：</text>
+      {{citem.goods_price}}×{{item.ratio*100}}%={{citem.goods_price*item.ratio}}
+    </view>
+  </block>
+</view>
+<view class="nodata" hover-class="none" hover-stop-propagation="false" wx:if="{{list.length==0}}">
+  暂无数据~
 </view>

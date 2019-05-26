@@ -11,6 +11,21 @@ Page({
     list: [],
     sum: 0,
     maxPrice: 0,
+    buyermsg: '',
+    wl_type: [{
+      label: '快递',
+      value: 0
+    }, {
+      label: '自提',
+      value: 1
+    }],
+    wl_index: 0,
+    leaderorderid: 0,
+  },
+  bindPickerChange(e) {
+    this.setData({
+      wl_index: e.detail.value
+    })
   },
   /**
    * 选择收货地址
@@ -24,9 +39,89 @@ Page({
     })
   },
   /**
+   * 
+   * 获取买家留言
+   * 
+   * @param {any} e 
+   */
+  getBuyermsg(e) {
+    console.log(e)
+    this.setData({
+      buyermsg: e.detail.value
+    })
+  },
+  /**
+   * 
+   * 提交订单
+   * 
+   */
+  sumbit_ordel() {
+    if (this.data.number) {
+      if (this.data.defautAdder == '') {
+        app.config.mytoast('请选择收货地址')
+        return false
+      }
+      let list = this.data.list.map((item) => {
+        return {
+          goodid: item.goods_id,
+          goodnum: item.goods_num
+        }
+      })
+
+      app.config.ajax('POST', {
+        token: wx.getStorageSync('token'),
+        addrid: this.data.defautAdder.id,
+        goods: JSON.stringify(list),
+        totalprice: this.data.sum,
+        expressprice: this.data.maxPrice,
+        takemethod: this.data.wl_index,
+        buyermsg: this.data.buyermsg
+      }, `order/submit`, (res) => {
+        console.log(res.data)
+        app.config.pay(res.data, (res) => {
+          console.log(res)
+        })
+      })
+    } else {
+      if (this.data.defautAdder == '') {
+        app.config.mytoast('请选择收货地址')
+        return false
+      }
+      let goodid = this.data.list[0].goods_id
+
+      app.config.ajax('POST', {
+        token: wx.getStorageSync('token'),
+        addrid: this.data.defautAdder.id,
+        goodid: goodid,
+        groupnum: this.data.number,
+        leaderorderid: this.data.leaderorderid,
+        totalprice: this.data.sum,
+        expressprice: this.data.maxPrice,
+        takemethod: this.data.wl_index,
+        buyermsg: this.data.buyermsg
+      }, `order/submitgroup`, (res) => {
+        console.log(res.data)
+        app.config.pay(res.data, (res) => {
+          console.log(res)
+        })
+      })
+    }
+
+  },
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (options.number) {
+      this.setData({
+        groupnum: options.number
+      })
+    }
+    if (options.id) {
+      this.setData({
+        leaderorderid: options.id
+      })
+    }
     if (options.list && options.shopName) {
       let arr = JSON.parse(options.list).map((item) => {
         return item.de_price
@@ -37,7 +132,7 @@ Page({
         shopName: options.shopName,
         maxPrice: Boolean(Math.max(arr)) ? Math.max(arr) : 0
       })
-      this.defautAdder()
+      this.getDefautAdder()
       this.sumData()
     }
   },
@@ -103,7 +198,7 @@ Page({
   /**
    * 获取默认地址
    */
-  defautAdder() {
+  getDefautAdder() {
     app.config.ajax('GET', {
       token: wx.getStorageSync('token'),
     }, `address/getdefault`, (res) => {

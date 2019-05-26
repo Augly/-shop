@@ -1,20 +1,45 @@
 // pages/personl/distribution_ordel/distribution_ordel.js
+let app = getApp();
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getInit()
   },
-
+  /**
+   * 初始化数据
+   * 
+   */
+  getInit() {
+    app.config.ajax('GET', {
+      token: wx.getStorageSync('token')
+    }, `order/lowerorder`, (res) => {
+      if (res.data.orders_data.length > 0) {
+        let list = res.data.orders_data
+        lisr.forEach(item => {
+          item.orders = item.orders.map((citem) => {
+            citem.payment_time = app.config.timeForm(citem.payment_time).chatTime.year + '/' + app.config.timeForm(citem.payment_time).chatTime.month + '/' + app.config.timeForm(citem.payment_time).chatTime.day + '  ' + app.config.timeForm(citem.payment_time).chatTime.hour + ':' + app.config.timeForm(citem.payment_time).chatTime.minute + ':00'
+            return citem
+          })
+        });
+        this.setData({
+          list: list,
+          ratio: res.data.ratio
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -83,11 +83,11 @@ function mytoast(main, successData) {
       if (successData) {
         setTimeout((res) => {
           successData(res)
-        }, 1500)
+        }, 1000)
       }
     },
-    fail: function (res) {},
-    complete: function (res) {},
+    fail: function (res) { },
+    complete: function (res) { },
   })
 }
 /**
@@ -139,8 +139,8 @@ function rem(height, successData) {
       }
       successData(myheight)
     },
-    fail: function (res) {},
-    complete: function (res) {},
+    fail: function (res) { },
+    complete: function (res) { },
   })
 }
 
@@ -154,8 +154,8 @@ function remW(height, successData) {
       }
       successData(myheight)
     },
-    fail: function (res) {},
-    complete: function (res) {},
+    fail: function (res) { },
+    complete: function (res) { },
   })
 }
 /**
@@ -190,8 +190,8 @@ function getuid(successData, errorData) {
         }
       })
     },
-    fail: function (res) {},
-    complete: function (res) {},
+    fail: function (res) { },
+    complete: function (res) { },
   })
 }
 /**
@@ -241,9 +241,9 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   wx.showLoading({
     title: '数据加载中',
     mask: true,
-    success: function (res) {},
-    fail: function (res) {},
-    complete: function (res) {},
+    success: function (res) { },
+    fail: function (res) { },
+    complete: function (res) { },
   })
   if (Type != 'img') {
     wx.request({
@@ -309,7 +309,35 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
 
   }
 };
-
+//支付函数
+function pay(res, successData) {
+  console.log(res)
+  wx.requestPayment({
+    "timeStamp": res.timestamp,
+    "nonceStr": res.nonceStr,
+    "package": res.package,
+    "signType": "MD5",
+    "paySign": res.paySign,
+    "success": function (res) {
+      wx.showToast({
+        title: '支付完成',
+        icon: "success",
+        duration: 1500,
+        success: function (data) {
+          successData(data)
+        }
+      })
+    },
+    "fail": function (res) {
+      console.log(res)
+      wx.showToast({
+        title: '取消支付成功！',
+        icon: "success",
+        duration: 1500,
+      })
+    }
+  })
+}
 //导出模块
 module.exports = {
   ajax: ajax,
@@ -319,4 +347,5 @@ module.exports = {
   getData: getData,
   mytoast: mytoast,
   timeForm: timeForm,
+  pay: pay
 }

@@ -1,6 +1,6 @@
 <view class="tip" bindtap='select_adder' wx:if="{{list.length>0}}">
   <text class='iconfont iconweizhi1'></text>
-  <text class='tip_title'>{{defautAdder==''?'显示默认收货地址':defautAdder}}</text>
+  <text class='tip_title line1'>{{defautAdder==''?'显示默认收货地址':defautAdder}}</text>
   <text class='iconfont iconjiantou'></text>
 </view>
 <view class='scope_group' wx:if="{{list.length>0}}">

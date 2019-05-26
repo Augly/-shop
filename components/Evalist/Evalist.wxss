@@ -151,3 +151,11 @@
   font-weight: 400;
   color: rgba(136, 136, 136, 1);
 }
+.nodata{
+  width: 100%;
+  height: 400rpx;
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+  text-align: center;
+  line-height: 400rpx;
+}

@@ -77,6 +77,12 @@
   float: left;
   margin-top: 20rpx;
   margin-right: 24rpx;
+  box-sizing: border-box;
+  padding: 33rpx 0rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .grid_item:nth-child(3n) {
@@ -193,4 +199,13 @@
   font-family: PingFangSC-Regular;
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
+}
+.item_logo{
+  width: 75rpx;
+}
+.item_title{
+  font-size:32rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(53,53,53,1);
 }

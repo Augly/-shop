@@ -1,11 +1,14 @@
 <view class='content'>
   <view class='adder_info'>
-    <view class='adder_res'>
-      <view class='adder_userinfo'>{{defautAdder.name}}  {{defautAdder.mobile}}</view>
+    <view class='adder_res' wx:if="{{defautAdder}}">
+      <view class='adder_userinfo'>{{defautAdder.name}} {{defautAdder.mobile}}</view>
       <view class='adder_adder'>
         <view class='adder_tip'>默认</view>
         <view class='adder_detail'>{{defautAdder.add_less}}{{defautAdder.add_more}}</view>
       </view>
+    </view>
+    <view class='adder_res' wx:else>
+      <view class='adder_userinfo'>请选择默认地址</view>
     </view>
     <text class='iconfont iconjiantou'></text>
   </view>
@@ -21,40 +24,39 @@
         </view>
       </view>
       <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
-      <view class='item_content' >
-      <image class='item_logo' src='{{item.goods_thumb}}'></image>
-        <!-- <view class="item_logo"></view> -->
-        <view class='item_res'>
-          <view class='item_title line2'>
-           {{item.goods_name}}
-          </view>
-          <view class='item_price_group'>
-            <view class='item_p_price'>
-              <!-- <view class='item_unprice'>item.goods_name</view> -->
-              <view class='item_price'>¥ {{item.shop_price}}</view>
-              <!-- <view class='item_number'>6人团</view> -->
+        <view class='item_content'>
+          <image class='item_logo' src='{{item.goods_thumb}}'></image>
+          <!-- <view class="item_logo"></view> -->
+          <view class='item_res'>
+            <view class='item_title line2'>{{item.goods_name}}</view>
+            <view class='item_price_group'>
+              <view class='item_p_price'>
+                <view class='item_unprice'>{{item.goods_brief?item.goods_brief:'暂无描述'}}</view>
+                <view class='item_price'>¥ {{item.shop_price}}</view>
+                <!-- <view class='item_number'>6人团</view> -->
+              </view>
             </view>
           </view>
         </view>
-      </view>
-      <view class='item_buy_number'>
-        <text>购买数量</text>
-        <view class='buy_group'>
-          <text class='iconfont iconjian' catchtap='plus'  data-index='{{index}}'></text>
-          {{item.goods_num}}
-          <text class='iconfont iconjia' catchtap='reduce'  data-index='{{index}}'></text>
+        <view class='item_buy_number' wx:if="{{!groupnum}}">
+          <text>购买数量</text>
+          <view class='buy_group'>
+            <text class='iconfont iconjian' catchtap='plus' data-index='{{index}}'></text> {{item.goods_num}}
+            <text class='iconfont iconjia' catchtap='reduce' data-index='{{index}}'></text>
+          </view>
         </view>
-      </view>
       </block>
-      <view class='item_buy_number'>
-        <text>配送方式</text>
-        <text>默认邮寄</text>
-      </view>
+      <picker class="" mode="selector" range="{{wl_type}}" range-key="label" value="{{wl_index}}" bindchange="bindPickerChange">
+        <view class='item_buy_number'>
+          <text>配送方式</text>
+          <text>{{wl_type[wl_index].label}}</text>
+        </view>
+      </picker>
     </view>
   </view>
   <view class='ordel_info'>
     <text class='ordel_info_title'>留言</text>
-    <textarea class='text_wrap' placeholder='建议留言前先与商家沟通确认' placeholder-class=''></textarea>
+    <textarea class='text_wrap' placeholder='建议留言前先与商家沟通确认' placeholder-class='' value='{{buyermsg}}' bindinput='getBuyermsg'></textarea>
   </view>
   <view class='price_info'>
     <view class='main_title'>
@@ -63,7 +65,14 @@
     </view>
     <view class='main_title' style='border-bottom:none'>
       <text>运费</text>
-      <text>{{maxPrice==0?'包邮':'+ ¥'+maxPrice}} </text>
+      <text>{{maxPrice==0?'包邮':'+ ¥'+maxPrice}}</text>
     </view>
   </view>
+</view>
+
+<view class='bottom_group'>
+  <view class='bottom_title'>
+    ¥ {{maxPrice+sum}}
+  </view>
+  <view class='bottom_button' catchtap='sumbit_ordel'>提交订单</view>
 </view>

@@ -1,21 +1,20 @@
-
 <view class='page' bindtap='hide'>
-<view class="banner_wrap" hover-class="none" hover-stop-propagation="false">
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" interval="{{interval}}" duration="{{duration}}" class="swiper_wrap">
-    <block wx:for="{{imgUrls}}">
-      <swiper-item class="swiper_item">
-        <image src="{{item}}" class="slide-image" />
-      </swiper-item>
-    </block>
-  </swiper>
-  <Tapswiper list="{{latest_data}}" />
-</view>
-<view class='price_group'>
-  <view class='price_l'>
-    <view class='un_price'>¥ {{details.market_price}}</view>
-    <view class='price'>¥ {{details.shop_price}}</view>
+  <view class="banner_wrap" hover-class="none" hover-stop-propagation="false">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" interval="{{interval}}" duration="{{duration}}" class="swiper_wrap">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item class="swiper_item">
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <Tapswiper list="{{latest_data}}" />
   </view>
-  <!-- <view class='time_group'>
+  <view class='price_group'>
+    <view class='price_l'>
+      <view class='un_price'>¥ {{details.market_price}}</view>
+      <view class='price'>¥ {{details.shop_price}}</view>
+    </view>
+    <!-- <view class='time_group'>
     <view class='time_group_title'>距离结束还剩</view>
     <view class='time_group_group'>
       <view class='time_group_group_item'>10</view>
@@ -28,41 +27,40 @@
       秒
     </view>
   </view> -->
+  </view>
+  <view class='product_res'>
+    <view class='res_top'>
+      <view class='title'>{{details.goods_name}}</view>
+      <view class='mintitle'>{{details.goods_brief}}</view>
+    </view>
+    <view class='res_bottom'>
+      <view class='res_type'></view>
+      <view class='res_number_group'>{{details.goods_sell_num}}人已拼</view>
+    </view>
+  </view>
+  <Have_a_look bind:getId="getId" list="{{hot_data}}" />
+  <view class="more_group Augly-fadeinL" wx:if="{{showmore}}">
+    <view class='more_item' style=' background: rgba(69, 208, 174, 0.3);' data-number='3' catchtap='creact_ordel'>
+      <view class='shop_title'>¥ {{details.three_group_price}}</view>
+      <view class='shop_mintitle'>三人团</view>
+    </view>
+    <view class='more_item' style=' background: rgba(69, 208, 174, 0.5);' data-number='5' catchtap='creact_ordel'>
+      <view class='shop_title'>¥ {{details.five_group_price}}</view>
+      <view class='shop_mintitle'>五人团</view>
+    </view>
+    <view class='more_item' style=' background: rgba(69, 208, 174, 0.7);' data-number='8' catchtap='creact_ordel'>
+      <view class='shop_title'>¥ {{details.eight_group_price}}</view>
+      <view class='shop_mintitle'>八人团</view>
+    </view>
+  </view>
+  <view class='shop_group'>
+    <view class='shop_item zj' data-number='1' catchtap='creact_ordel'>
+      <view class='shop_title'>¥ {{details.market_price}}</view>
+      <view class='shop_mintitle'>直接购买</view>
+    </view>
+    <view class='shop_item pt' catchtap='fq'>
+      <view class='shop_title'>¥ {{details.shop_price}}</view>
+      <view class='shop_mintitle'>发起拼团</view>
+    </view>
+  </view>
 </view>
-<view class='product_res'>
-  <view class='res_top'>
-    <view class='title'>{{details.goods_name}}</view>
-    <view class='mintitle'>{{details.goods_brief}}</view>
-  </view>
-  <view class='res_bottom'>
-    <view class='res_type'></view>
-    <view class='res_number_group'>{{details.goods_sell_num}}人已拼</view>
-  </view>
-</view>
-<Have_a_look list="{{hot_data}}" />
-<view class="more_group Augly-fadeinL" wx:if="{{showmore}}">
-  <view class='more_item' style=' background: rgba(69, 208, 174, 0.3);'>
-    <view class='shop_title'>¥ {{details.three_group_price}}</view>
-    <view class='shop_mintitle'>三人团</view>
-  </view>
-  <view class='more_item' style=' background: rgba(69, 208, 174, 0.5);'>
-    <view class='shop_title'>¥ {{details.five_group_price}}</view>
-    <view class='shop_mintitle'>五人团</view>
-  </view>
-  <view class='more_item' style=' background: rgba(69, 208, 174, 0.7);'>
-    <view class='shop_title'>¥ {{details.eight_group_price}}</view>
-    <view class='shop_mintitle'>八人团</view>
-  </view>
-</view>
-<view class='shop_group'>
-  <view class='shop_item zj'>
-    <view class='shop_title'>¥ {{details.market_price}}</view>
-    <view class='shop_mintitle'>直接购买</view>
-  </view>
-  <view class='shop_item pt' catchtap='fq'>
-    <view class='shop_title'>¥ {{details.shop_price}}</view>
-    <view class='shop_mintitle'>发起拼团</view>
-  </view>
-</view>
-</view>
-

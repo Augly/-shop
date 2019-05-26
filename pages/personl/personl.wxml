@@ -1,25 +1,48 @@
 <view class="personl_group">
-    <view class="personl_avater" hover-class="none" hover-stop-propagation="false">
-        
-    </view>
-    <view class="p_name" hover-class="none" hover-stop-propagation="false">
-        某某某
-    </view>
-    <view class="p_tap" hover-class="none" hover-stop-propagation="false">
-        普通用户
-    </view>
+  <view class="personl_avater" hover-class="none" hover-stop-propagation="false">
+
+  </view>
+  <view class="p_name" hover-class="none" hover-stop-propagation="false">
+    某某某
+  </view>
+  <view class="p_tap" hover-class="none" hover-stop-propagation="false">
+    普通用户
+  </view>
 </view>
 
 <view class='grid_wrap'>
-
-  <view class='grid_item'></view>
-   <view class='grid_item'></view>
-    <view class='grid_item'></view>
-     <view class='grid_item'></view>
-      <view class='grid_item'></view>
-       <view class='grid_item'></view>
-        <view class='grid_item'></view>
-         <view class='grid_item'></view>
+  <view class='grid_item' bindtap='to_point'>
+    <image class='item_logo' mode='aspectFit' src='/static/images/p1.png'></image>
+    <view class='item_title'>我的积分</view>
+  </view>
+  <view class='grid_item' bindtap='to_adder'>
+    <image class='item_logo' mode='aspectFit' src='/static/images/p4.png'></image>
+    <view class='item_title'>收货地址</view>
+  </view>
+  <view class='grid_item' bindtap='to_product_ordel'>
+    <image class='item_logo' mode='aspectFit' src='/static/images/p6.png'></image>
+    <view class='item_title'>产品订单</view>
+  </view>
+  <view class='grid_item' bindtap='to_server'>
+    <image class='item_logo' mode='aspectFit' src='/static/images/p7.png'></image>
+    <view class='item_title'>服务订单</view>
+  </view>
+  <view class='grid_item' bindtap='to_pt'>
+    <image class='item_logo' mode='aspectFit' src='/static/images/p8.png'></image>
+    <view class='item_title'>我的拼团</view>
+  </view>
+  <view class='grid_item' bindtap='to_myshare_ordel'>
+    <image class='item_logo' mode='aspectFit' src='/static/images/p9.png'></image>
+    <view class='item_title'>我的分销</view>
+  </view>
+  <view class='grid_item'>
+    <image class='item_logo' mode='aspectFit' src='/static/images/p11.png'></image>
+    <view class='item_title'>关于我们</view>
+  </view>
+  <view class='grid_item'>
+    <image class='item_logo' mode='aspectFit' src='/static/images/p12.png'></image>
+    <view class='item_title'>联系客服</view>
+  </view>
 </view>
 
 <!-- <view class='other_wrap'>
@@ -77,4 +100,4 @@
     </view>
   </scroll-view>
 </view> -->
-<look_a_look></look_a_look>
+<!-- <look_a_look></look_a_look> -->

@@ -1,9 +1,22 @@
 {
   "pages": [
     
-    "pages/personl/shopping_cart/shopping_cart",
+    "pages/personl/personl",
+    "pages/distribution/distribution",
+    
+    
+    
+    "pages/personl/Regiment/Regiment",
+    
+    "pages/shop_index/shop_index",
     "pages/index/index/index",
+     
+    "pages/yy/index/index",
+    "pages/personl/product_ordel/product_ordel",
     "pages/index/selection/selection",
+    "pages/personl/shopping_cart/shopping_cart",
+    
+    
     "pages/personl/adder/adder",
     "pages/personl/adder_edit/adder_edit",
     
@@ -21,18 +34,18 @@
     
     "pages/personl/fill_order/fill_order",
     "pages/personl/ordel_details/ordel_details",
-    "pages/personl/product_ordel/product_ordel",
+    
     "pages/personl/service/service",
     "pages/personl/serve_ordel/serve_ordel",
-    "pages/personl/Regiment/Regiment",
+    
     "pages/personl/eva_ordel/eva_ordel",
     "pages/personl/serve_sale/serve_sale",
     "pages/personl/distribution_ordel/distribution_ordel",
     "pages/personl/subordinate/subordinate",
     "pages/personl/points/points",
-    "pages/index/productRes/comment_list/comment_list",
-    "pages/personl/personl",
-    "pages/yy/index/index"
+    "pages/index/productRes/comment_list/comment_list"
+    
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

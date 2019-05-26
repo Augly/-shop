@@ -2,12 +2,8 @@
 const app = getApp()
 Page({
   data: {
-    showmore:false,
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    ],
+    showmore: false,
+    imgUrls: [],
     indicatorDots: true,
     autoplay: true,
     indicatorColor: 'rgba(255, 255, 255, 1)',
@@ -16,7 +12,6 @@ Page({
     duration: 1000,
     details: null
   },
-  //options(Object)
   onLoad: function (options) {
     this.getDetail(options)
     this.getFirst(options)
@@ -28,10 +23,64 @@ Page({
       })
     })
   },
-  fq(e){
+  /**
+   * 
+   * 
+   * @param {any} e 
+   */
+  creact_ordel(e) {
+    let list = [{
+      goods_id: this.data.details.goods_id,
+      goods_num: 1,
+      goods_thumb: this.data.details.goods_thumb,
+      goods_name: this.data.details.goods_name,
+      shop_price: '',
+      check: true,
+      goods_brief: this.data.details.goods_brief,
+      de_price: this.data.details.de_price
+    }];
+    let shopName = '未知店铺'
+    console.log(e.currentTarget.dataset.number)
+    switch (e.currentTarget.dataset.number) {
+      case '3':
+        list[0].shop_price = this.data.details.three_group_price
+        break;
+      case '5':
+        list[0].shop_price = this.data.details.five_group_price
+        break;
+      case '8':
+        list[0].shop_price = this.data.details.eight_group_price
+        break;
+      default:
+        list[0].shop_price = this.data.details.market_price
+        break;
+    }
+    console.log(list)
+    list = JSON.stringify(list)
+    wx.navigateTo({
+      url: `/pages/personl/fill_order/fill_order?list=${list}&shopName=${shopName}&number=${e.currentTarget.dataset.number}`,
+      success: function (res) {},
+      fail: function (res) {},
+      complete: function (res) {},
+    })
+  },
+  //回到顶部
+  goTop: function () { // 一键回到顶部
+    if (wx.pageScrollTo) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+      })
+    }
+  },
+  fq(e) {
     console.log(e.scrollTop)
     this.setData({
-      showmore:true
+      showmore: true
     })
   },
   //获取产品详情
@@ -42,7 +91,7 @@ Page({
       this.setData({
         details: res.data.details,
         hot_data: res.data.hot_data,
-        latest_data: res.data.latest_data.map((item)=>{
+        latest_data: res.data.latest_data.map((item) => {
           item.payment_time = app.config.timeForm(item.payment_time).chatTime.timeStr
           return item
         })
@@ -77,9 +126,9 @@ Page({
     this.getFirst(e.detail)
     this.goTop()
   },
-  hide(){
+  hide() {
     this.setData({
-      showmore:false
+      showmore: false
     })
   },
   onReady: function () {
