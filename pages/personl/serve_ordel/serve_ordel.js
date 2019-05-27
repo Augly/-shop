@@ -8,6 +8,8 @@ Page({
   data: {
     type: 'serverOrdel',
     tab_index: 0,
+    page: 1,
+    list: [],
     tab: [{
       title: '待付款',
     }, {
@@ -20,14 +22,89 @@ Page({
   },
   tabChange(e) {
     this.setData({
-      tab_index: e.target.dataset.id
+      tab_index: e.target.dataset.id,
+      list: [],
+      page: 1
+    })
+    this.getInit()
+  },
+  /**
+   * 获取初始化数据
+   */
+  getInit() {
+    config.ajax('GET', {
+      token: wx.getStorageSync('token')
+    }, `order/services/${this.data.tab_index}/${this.data.page}`, (res) => {
+      if (res.data.length > 0) {
+        let list = this.data.list
+        let arr = res.data.map((item) => {
+          // item.create_time = config.timeForm(item.create_time).chatTime.year + '/' + config.timeForm(item.create_time).chatTime.month + '/' + config.timeForm(item.create_time).chatTime.day + '  ' + config.timeForm(item.create_time).chatTime.hour + ':' + config.timeForm(item.create_time).chatTime.minute + ':00'
+          return item
+        })
+        let page = this.data.page
+        page++
+        list.push.apply(list, arr);
+        this.setData({
+          page: page,
+          list: list
+        })
+      } else {
+        config.mytoast('暂无更多数据~')
+      }
     })
   },
-  swiperChange(e) {
-    console.log(e)
-    this.setData({
-      tab_index: e.detail.current
+  /**
+   * 取消订单
+   */
+  cendel_ordrl(e) {
+    config.ajax('GET', {
+      token: wx.getStorageSync('token')
+    }, `order/cancel/${e.target.dataset.id}/0`, (res) => {
+      let list = this.data.list
+      list.splice(e.target.dataset.index, 1)
+      this.setData({
+        list: list
+      })
     })
+  },
+  /**
+   * 订单支付
+   */
+  pay(e) {
+    config.ajax('POST', {
+      token: wx.getStorageSync('token'),
+      datatype: 0,
+      out_trade_no: e.target.dataset.ordelNo,
+      totalprice: e.target.dataset.totalPrice,
+    }, `order/pay`, (res) => {
+      config.pay(res.data, (res) => {
+
+      })
+    })
+  },
+  //申请售后
+  after_Sale(e){
+
+  },
+  //线下核销
+  writeoff(e){
+    // config.ajax('PUT', {
+    //   token: wx.getStorageSync('token'),
+    // }, `order/writeoff/${e.target.dataset.id}/${}/0`, (res) => {
+
+    // })
+  },
+  //评价
+  to_eval(e){
+
+  },
+  swiperChange(e) {
+    this.setData({
+      tab_index: e.detail.current,
+      list: [],
+      page: 1
+    })
+    this.getInit()
   },
   /**
    * 生命周期函数--监听页面加载
@@ -38,6 +115,7 @@ Page({
         myheight: res
       })
     })
+    this.getInit()
   },
   getmore(e) {
     console.log(1)

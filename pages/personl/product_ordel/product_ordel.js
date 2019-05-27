@@ -30,6 +30,55 @@ Page({
     })
     this.getInit()
   },
+  /**
+   * 取消订单
+   */
+  cendel_ordrl(e){
+    config.ajax('GET', {
+      token: wx.getStorageSync('token')
+    }, `order/cancel/${e.target.dataset.id}/0`, (res) => {
+      let list = this.data.list
+      list.splice(e.target.dataset.index, 1)
+      this.setData({
+        list: list
+      })
+    })
+  },
+  /**
+   * 订单支付
+   */
+  pay(e){
+    config.ajax('POST', {
+      token: wx.getStorageSync('token'),
+      datatype: 0,
+      out_trade_no: e.target.dataset.ordelNo,
+      totalprice: e.target.dataset.totalPrice,
+    }, `order/pay`, (res) => {
+      config.pay(res.data, (res) => {
+        
+      })
+    })
+  },
+  /**
+   * 确认收货
+   */
+  sureConfirm(e){
+    config.ajax('PUT', {
+      token: wx.getStorageSync('token'),
+    }, `order/confirm/${e.target.dataset.id}/0`, (res) => {
+      
+    })
+  },
+  /**
+   * 寄回商品
+   */
+  sendBack(e){
+    config.ajax('POST', {
+      token: wx.getStorageSync('token'),
+    }, `order/confirm/${e.target.dataset.id}/0`, (res) => {
+      
+    })
+  },
   getInit() {
     config.ajax('GET', {
       token: wx.getStorageSync('token')
@@ -55,9 +104,7 @@ Page({
   swiperChange(e) {
     console.log(e)
     this.setData({
-      tab_index: e.detail.current
-    })
-    this.setData({
+      tab_index: e.detail.current,
       list: [],
       page: 1
     })

@@ -8,6 +8,8 @@ Page({
   data: {
     type: 'serverOrdel',
     tab_index: 0,
+    list: [],
+    page: 1,
     tab: [{
       title: '全部',
     }, {
@@ -18,16 +20,49 @@ Page({
       title: '拼团失败',
     }]
   },
-  tabChange(e) {
-    this.setData({
-      tab_index: e.target.dataset.id
+  /**
+   * 获取初始化数据
+   */
+  getInit() {
+    config.ajax('GET', {
+      token: wx.getStorageSync('token')
+    }, `order/spells/${this.data.tab_index}/${this.data.page}`, (res) => {
+      if (res.data.length > 0) {
+        let list = this.data.list
+        let arr = res.data.map((item) => {
+          // item.start_time = setInterval((item) => {
+          //   item.start_time
+          // },1000)
+          // item.create_time = config.timeForm(item.create_time).chatTime.year + '/' + config.timeForm(item.create_time).chatTime.month + '/' + config.timeForm(item.create_time).chatTime.day + '  ' + config.timeForm(item.create_time).chatTime.hour + ':' + config.timeForm(item.create_time).chatTime.minute + ':00'
+          return item
+        })
+        let page = this.data.page
+        page++
+        list.push.apply(list, arr);
+        this.setData({
+          page: page,
+          list: list
+        })
+      } else {
+        config.mytoast('暂无更多数据~')
+      }
     })
   },
-  swiperChange(e) {
-    console.log(e)
+  tabChange(e) {
     this.setData({
-      tab_index: e.detail.current
+      tab_index: e.target.dataset.id,
+      list: [],
+      page: 1
     })
+    this.getInit()
+  },
+  swiperChange(e) {
+    this.setData({
+      tab_index: e.detail.current,
+      list: [],
+      page: 1
+    })
+    this.getInit()
   },
   /**
    * 生命周期函数--监听页面加载
@@ -38,9 +73,10 @@ Page({
         myheight: res
       })
     })
+    this.getInit()
   },
   getmore(e) {
-    console.log(1)
+    this.getInit()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

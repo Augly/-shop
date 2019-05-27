@@ -7,153 +7,186 @@
 </view>
 <swiper class='content_wrap' style="height:{{myheight}}px" current='{{tab_index}}' bindchange='swiperChange' duration="300">
     <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
-        <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore">
-            <view class="item">
-                <view class='item_head_group'>
-                    <block wx:if="type=='serverOrdel'">
-                        <view class="order_number" hover-class="none" hover-stop-propagation="false">
-                            05小时38分20秒后失效
-                        </view>
-                    </block>
-                    <!-- <view class='date'>2019/03/05 15:30</view> -->
-                    <view class='status'>待分享，差3人</view>
-                </view>
-                <view class='item_content'>
-                    <view class="item_logo">
-                        <view class='item_logo_tap'></view>
-                    </view>
-                    <view class='item_res'>
-                        <view class='item_title line2'>
-                            红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的
-                        </view>
-                        <view class='item_price_group'>
-                            <view class='item_p_price'>
-                                <view class='item_unprice'>¥ 588.00</view>
-                                <view class='item_price'>¥ 388</view>
-                                <view class='item_number'>6人团</view>
+        <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
+            <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+                <view class="item">
+                    <view class='item_head_group'>
+                        <block wx:if="type=='serverOrdel'">
+                            <view class="order_number" hover-class="none" hover-stop-propagation="false">
+                                {{item.create_time}}
                             </view>
-                            <view class='item_status_group'>
-                                
-                                <view class="finied_button" hover-class="none" hover-stop-propagation="false">我再想想</view>
-                                <!-- <view class="cendel_button" hover-class="none" hover-stop-propagation="false">邀请好友</view> -->
-                                <view class="sure_button" hover-class="none" hover-stop-propagation="false">邀请好友</view>
-                            </view>
+                        </block>
+                        <!-- <view class='date'>2019/03/05 15:30</view> -->
+                        <view class='status'>
+                            {{item.spell_is_success==2?'拼团成功!':item.spell_is_success==0?'待分享，差'+item.left_people_num+'人':'拼团失败，急速退款中'}}
                         </view>
                     </view>
+                    <view class='item_content'>
+                        <view class="item_logo">
+                            <image class="item_logo_img" src="{{item.goods_thumb}}" lazy-load />
+                            <view class='item_logo_tap'></view>
+                        </view>
+                        <view class='item_res'>
+                            <view class='item_title line2'>{{item.goods_name}}</view>
+                            <view class='item_price_group'>
+                                <view class='item_p_price'>
+                                    <view class='item_unprice'>¥ 588.00</view>
+                                    <view class='item_price'>¥ 388</view>
+                                    <view class='item_number'>{{item.goods_num}}人团</view>
+                                </view>
+                                <view class='item_status_group'>
+                                    <view class="finied_button" hover-class="none" hover-stop-propagation="false">
+                                        我再想想
+                                    </view>
+                                    <!-- <view class="cendel_button" hover-class="none" hover-stop-propagation="false">邀请好友</view> -->
+                                    <view class="sure_button" hover-class="none" hover-stop-propagation="false">
+                                        邀请好友
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
                 </view>
-            </view>
+            </block>
         </scroll-view>
+        <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">
+            暂无更多数据~
+        </view>
     </swiper-item>
     <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
-        <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore">
-            <view class="item">
-                <view class='item_head_group'>
-                    <block wx:if="type=='serverOrdel'">
-                        <view class="order_number" hover-class="none" hover-stop-propagation="false">
-                            05小时38分20秒后失效
-                        </view>
-                    </block>
-                    <!-- <view class='date'>2019/03/05 15:30</view> -->
-                    <view class='status'>待分享，差3人</view>
-                </view>
-                <view class='item_content'>
-                    <view class="item_logo">
-                        <view class='item_logo_tap'></view>
-                    </view>
-                    <view class='item_res'>
-                        <view class='item_title line2'>
-                            红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的
-                        </view>
-                        <view class='item_price_group'>
-                            <view class='item_p_price'>
-                                <view class='item_unprice'>¥ 588.00</view>
-                                <view class='item_price'>¥ 388</view>
-                                <view class='item_number'>6人团</view>
+        <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
+            <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+                <view class="item">
+                    <view class='item_head_group'>
+                        <block wx:if="type=='serverOrdel'">
+                            <view class="order_number" hover-class="none" hover-stop-propagation="false">
+                                {{item.create_time}}
                             </view>
-                            <view class='item_status_group'>
-                                <!-- <view class="finied_button" hover-class="none" hover-stop-propagation="false">我再想想</view> -->
-                                <!-- <view class="cendel_button" hover-class="none" hover-stop-propagation="false">邀请好友</view> -->
-                                <view class="sure_button" hover-class="none" hover-stop-propagation="false">邀请好友</view>
-                            </view>
+                        </block>
+                        <!-- <view class='date'>2019/03/05 15:30</view> -->
+                        <view class='status'>
+                            {{item.spell_is_success==2?'拼团成功!':item.spell_is_success==0?'待分享，差'+item.left_people_num+'人':'拼团失败，急速退款中'}}
                         </view>
                     </view>
+                    <view class='item_content'>
+                        <view class="item_logo">
+                            <image class="item_logo_img" src="{{item.goods_thumb}}" lazy-load />
+                            <view class='item_logo_tap'></view>
+                        </view>
+                        <view class='item_res'>
+                            <view class='item_title line2'>{{item.goods_name}}</view>
+                            <view class='item_price_group'>
+                                <view class='item_p_price'>
+                                    <view class='item_unprice'>¥ 588.00</view>
+                                    <view class='item_price'>¥ 388</view>
+                                    <view class='item_number'>{{item.goods_num}}人团</view>
+                                </view>
+                                <view class='item_status_group'>
+                                    <!-- <view class="finied_button" hover-class="none" hover-stop-propagation="false">
+                                        我再想想
+                                    </view> -->
+                                    <!-- <view class="cendel_button" hover-class="none" hover-stop-propagation="false">邀请好友</view> -->
+                                    <view class="sure_button" hover-class="none" hover-stop-propagation="false">
+                                        邀请好友
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
                 </view>
-            </view>
+            </block>
         </scroll-view>
+        <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">
+            暂无更多数据~
+        </view>
     </swiper-item>
     <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
-        <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore">
-            <view class="item">
-                <view class='item_head_group'>
-                    <block wx:if="type=='serverOrdel'">
-                        <view class="order_number" hover-class="none" hover-stop-propagation="false">
-                            05小时38分20秒后失效
-                        </view>
-                    </block>
-                    <!-- <view class='date'>2019/03/05 15:30</view> -->
-                    <view class='status'>待分享，差3人</view>
-                </view>
-                <view class='item_content'>
-                    <view class="item_logo">
-                        <view class='item_logo_tap'></view>
-                    </view>
-                    <view class='item_res'>
-                        <view class='item_title line2'>
-                            红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的
-                        </view>
-                        <view class='item_price_group'>
-                            <view class='item_p_price'>
-                                <view class='item_unprice'>¥ 588.00</view>
-                                <view class='item_price'>¥ 388</view>
-                                <view class='item_number'>6人团</view>
+        <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
+            <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+                <view class="item">
+                    <view class='item_head_group'>
+                        <block wx:if="type=='serverOrdel'">
+                            <view class="order_number" hover-class="none" hover-stop-propagation="false">
+                                {{item.create_time}}
                             </view>
-                            <view class='item_status_group'>
-                                 <!-- <view class="finied_button" hover-class="none" hover-stop-propagation="false">我再想想</view> -->
-                                
-                                <view class="sure_button" hover-class="none" hover-stop-propagation="false">订单详情</view>
-                                <view class="cendel_button" hover-class="none" hover-stop-propagation="false">拼团详情</view>
-                            </view>
+                        </block>
+                        <!-- <view class='date'>2019/03/05 15:30</view> -->
+                        <view class='status'>
+                            {{item.spell_is_success==2?'拼团成功!':item.spell_is_success==0?'待分享，差'+item.left_people_num+'人':'拼团失败，急速退款中'}}
                         </view>
                     </view>
+                    <view class='item_content'>
+                        <view class="item_logo">
+                            <image class="item_logo_img" src="{{item.goods_thumb}}" lazy-load />
+                            <view class='item_logo_tap'></view>
+                        </view>
+                        <view class='item_res'>
+                            <view class='item_title line2'>{{item.goods_name}}</view>
+                            <view class='item_price_group'>
+                                <view class='item_p_price'>
+                                    <view class='item_unprice'>¥ 588.00</view>
+                                    <view class='item_price'>¥ 388</view>
+                                    <view class='item_number'>{{item.goods_num}}人团</view>
+                                </view>
+                                <view class='item_status_group'>
+                                    <view class="sure_button" hover-class="none" hover-stop-propagation="false">
+                                        订单详情
+                                    </view>
+                                    <view class="cendel_button" hover-class="none" hover-stop-propagation="false">
+                                        拼团详情
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
                 </view>
-            </view>
+            </block>
         </scroll-view>
+        <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">
+            暂无更多数据~
+        </view>
     </swiper-item>
     <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
-        <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore">
-            <view class="item">
-                <view class='item_head_group'>
-                    <block wx:if="type=='serverOrdel'">
-                        <view class="order_number" hover-class="none" hover-stop-propagation="false">
-                            05小时38分20秒后失效
-                        </view>
-                    </block>
-                    <!-- <view class='date'>2019/03/05 15:30</view> -->
-                    <view class='status'>待分享，差3人</view>
-                </view>
-                <view class='item_content'>
-                    <view class="item_logo">
-                        <view class='item_logo_tap'></view>
-                    </view>
-                    <view class='item_res'>
-                        <view class='item_title line2'>
-                            红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的红是是都是大受打击奥斯卡大奖的拉动较大三等奖阿松大吉利的
-                        </view>
-                        <view class='item_price_group'>
-                            <view class='item_p_price'>
-                                <view class='item_unprice'>¥ 588.00</view>
-                                <view class='item_price'>¥ 388</view>
-                                <view class='item_number'>6人团</view>
+        <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
+            <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+                <view class="item">
+                    <view class='item_head_group'>
+                        <block wx:if="type=='serverOrdel'">
+                            <view class="order_number" hover-class="none" hover-stop-propagation="false">
+                                {{item.create_time}}
                             </view>
-                            <view class='item_status_group'>
-                                <view class="sure_button" hover-class="none" hover-stop-propagation="false">再拼一次</view>
-                                <!-- <view class="finied_button" hover-class="none" hover-stop-propagation="false">我再想想</view> -->
-                                <!-- <view class="cendel_button" hover-class="none" hover-stop-propagation="false">邀请好友</view> -->
-                            </view>
+                        </block>
+                        <!-- <view class='date'>2019/03/05 15:30</view> -->
+                        <view class='status'>
+                            {{item.spell_is_success==2?'拼团成功!':item.spell_is_success==0?'待分享，差'+item.left_people_num+'人':'拼团失败，急速退款中'}}
                         </view>
                     </view>
+                    <view class='item_content'>
+                        <view class="item_logo">
+                            <image class="item_logo_img" src="{{item.goods_thumb}}" lazy-load />
+                            <view class='item_logo_tap'></view>
+                        </view>
+                        <view class='item_res'>
+                            <view class='item_title line2'>{{item.goods_name}}</view>
+                            <view class='item_price_group'>
+                                <view class='item_p_price'>
+                                    <view class='item_unprice'>¥ 588.00</view>
+                                    <view class='item_price'>¥ 388</view>
+                                    <view class='item_number'>{{item.goods_num}}人团</view>
+                                </view>
+                                <view class='item_status_group'>
+                                    <view class="sure_button" hover-class="none" hover-stop-propagation="false">
+                                        再拼一次
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
                 </view>
-            </view>
+            </block>
         </scroll-view>
+        <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">
+            暂无更多数据~
+        </view>
     </swiper-item>
 </swiper>

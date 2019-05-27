@@ -1,6 +1,7 @@
 {
   "pages": [
-    
+    "pages/yy/index/index",
+    "pages/index/index/index",
     "pages/personl/personl",
     "pages/distribution/distribution",
     
@@ -9,9 +10,9 @@
     "pages/personl/Regiment/Regiment",
     
     "pages/shop_index/shop_index",
-    "pages/index/index/index",
+    
      
-    "pages/yy/index/index",
+    
     "pages/personl/product_ordel/product_ordel",
     "pages/index/selection/selection",
     "pages/personl/shopping_cart/shopping_cart",
