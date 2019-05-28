@@ -25,7 +25,7 @@
       <text class='iconfont iconliaotian'></text>
       <view class='more_title'>联系客服</view>
     </view>
-    <view class='more_item'>
+    <view class='more_item' bindtap='to_car'>
       <view class='brid' wx:if="{{car_count>0}}">{{car_count}}</view>
       <text class='iconfont icongouwuche'></text>
       <view class='more_title'>购物车</view>

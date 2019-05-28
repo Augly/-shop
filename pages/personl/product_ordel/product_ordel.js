@@ -48,16 +48,17 @@ Page({
    * 订单支付
    */
   pay(e){
-    config.ajax('POST', {
-      token: wx.getStorageSync('token'),
-      datatype: 0,
-      out_trade_no: e.target.dataset.ordelNo,
-      totalprice: e.target.dataset.totalPrice,
-    }, `order/pay`, (res) => {
-      config.pay(res.data, (res) => {
+    console.log(e)
+    // config.ajax('POST', {
+    //   token: wx.getStorageSync('token'),
+    //   datatype: 0,
+    //   out_trade_no: e.currentTarget.dataset.ordelNo,
+    //   totalprice: e.currentTarget.dataset.totalPrice,
+    // }, `order/pay`, (res) => {
+    //   config.pay(res.data, (res) => {
         
-      })
-    })
+    //   })
+    // })
   },
   /**
    * 确认收货
@@ -83,9 +84,9 @@ Page({
     config.ajax('GET', {
       token: wx.getStorageSync('token')
     }, `order/goods/${this.data.tab_index}/${this.data.page}`, (res) => {
-      if (res.data.length > 0) {
+      if (res.data.orders.length > 0) {
         let list = this.data.list
-        let arr = res.data.map((item) => {
+        let arr = res.data.orders.map((item) => {
           // item.create_time = config.timeForm(item.create_time).chatTime.year + '/' + config.timeForm(item.create_time).chatTime.month + '/' + config.timeForm(item.create_time).chatTime.day + '  ' + config.timeForm(item.create_time).chatTime.hour + ':' + config.timeForm(item.create_time).chatTime.minute + ':00'
           return item
         })

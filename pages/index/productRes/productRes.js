@@ -22,6 +22,14 @@ Page({
     this.getDetail(options)
     this.getFirst(options)
   },
+  to_car(){
+    wx.navigateTo({
+      url: '/pages/personl/shopping_cart/shopping_cart',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   //加入购物车
   join_cart(){
     app.config.ajax('PUT', {

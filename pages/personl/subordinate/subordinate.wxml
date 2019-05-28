@@ -1,7 +1,11 @@
-<view class="list_item">
-    <image class="avter" src="" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+
+<block wx:if="{{list.length>0}}">
+<view class="list_item" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+    <image class="avter" src="{{item.head_url}}"></image>
     <view class="item_res" hover-class="none" hover-stop-propagation="false">
-        <view class="title" hover-class="none" hover-stop-propagation="false">某某某</view>
-        <view class="data" hover-class="none" hover-stop-propagation="false">注册时间：2019/05/16</view>
+        <view class="title" hover-class="none" hover-stop-propagation="false">{{item.nick_name}}</view>
+        <view class="data" hover-class="none" hover-stop-propagation="false">注册时间：{{item.create_time}}</view>
     </view>
 </view>
+</block>
+<view class='nodata' wx:else>暂无任何数据~</view>

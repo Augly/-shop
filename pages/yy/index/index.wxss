@@ -72,3 +72,214 @@
   -ms-flex-pack: center;
   justify-content: center;
 }
+
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: RGBA(153, 153, 153, 0.5);
+  box-sizing: border-box;
+}
+
+.mask_wrap {
+  background-color: rgba(255, 255, 255, 1);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 900rpx;
+  left: 0;
+  box-sizing: border-box;
+  padding: 0rpx 24rpx;
+}
+
+.mask_title {
+  width: 100%;
+  height: 80rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid rgba(178, 178, 178, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  font-family: PingFangSC-Light;
+  font-weight: 300;
+  color: rgba(53, 53, 53, 1);
+}
+
+.mask_button {
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+  height: 164rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+}
+
+.mask_content {
+  width: 100%;
+  height: 650rpx;
+}
+
+.content_list {
+  width: 100%;
+  border-bottom: 1rpx solid rgba(178, 178, 178, 0.4);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20rpx 0rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content_list .scope {
+  width: 60rpx;
+  height: auto;
+  display: flex;
+  box-sizing: border-box;
+  padding-top: 10rpx;
+}
+
+.content_list .scope .iconunxuanze {
+  font-size: 26rpx;
+  color: rgba(136, 136, 136, 1);
+}
+.content_list .scope .iconxuanze {
+  font-size: 26rpx;
+  color: rgba(69, 208, 174, 1);
+}
+.content_list .list_wrap {
+  width: 95%;
+}
+
+.content_list .list_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.content_list .title {
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(63, 63, 63, 1);
+}
+
+.content_list .distance {
+  font-size: 28rpx;
+  font-family: PingFangSC-Light;
+  font-weight: 300;
+  color: rgba(69, 208, 174, 1);
+}
+
+.content_list .list_adder {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.content_list .iconweizhi {
+  font-size: 30rpx;
+  color: rgba(69, 208, 174, 1);
+}
+
+.content_list .adder {
+  font-size: 26rpx;
+  font-family: PingFangSC-Light;
+  font-weight: 300;
+  color: rgba(147, 147, 147, 1);
+  margin-left: 10rpx;
+}
+
+.mask_data_wrap {
+  width: 100%;
+  height: 92rpx;
+  white-space: nowrap;
+  border-bottom: 1rpx solid rgba(178, 178, 178, 0.3);
+}
+
+.mask_data_item {
+  width: 161rpx;
+  height: 92rpx;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 15rpx 0rpx 15rpx 0rpx;
+  /* position: relative; */
+  /* margin-right:  */
+}
+ .data_week{
+  font-size:26rpx;
+font-family:PingFangSC-Light;
+font-weight:300;
+color:rgba(136,136,136,1);
+text-align: center;
+}
+.mask_data_item_active .data_week{
+  color: rgba(69, 208, 174, 1) !important;
+}
+
+.data_data{
+  text-align: center;
+  font-size:26rpx;
+font-family:PingFangSC-Light;
+font-weight:300;
+color:rgba(136,136,136,1);
+}
+.mask_data_item_active .data_data{
+  color: rgba(69, 208, 174, 1) !important;
+}
+.mask_time_wrap{
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 12rpx 0rpx;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.mask_time_item{
+  width:161rpx;
+height:67rpx;
+border:1rpx solid rgba(178,178,178,1);
+border-radius:10rpx; 
+display: flex;
+align-items: center;
+justify-content: center;
+font-size:24rpx;
+font-family:PingFangSC-Light;
+font-weight:300;
+color:rgba(136,136,136,1);
+margin-right: 10rpx;
+margin-top: 20rpx;
+}
+.mask_time_item_active{
+  border:1rpx solid rgba(69, 208, 174, 1);
+  background-color: rgba(69, 208, 174, 1);
+  color: rgba(255, 255, 255, 1);
+}
+.button {
+  width: 638rpx;
+  height: 80rpx;
+  background: rgba(69, 208, 174, 1);
+  border-radius: 10rpx;
+  font-size: 33rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

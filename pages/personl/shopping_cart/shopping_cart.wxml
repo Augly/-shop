@@ -44,8 +44,9 @@
 </view>
 <view class='nav_bottom' wx:if="{{list.length>0}}">
   <text class="iconfont {{all_check?'iconxuanze':'iconunxuanze'}}" catchtap='checkAll'></text>
+  <text class='nav_tip'>全选</text>
   <block wx:if="{{!edit}}">
-    <text class='nav_tip'>全选</text>
+    
     <text class='nav_title'>合计：</text>
     <view class='nav_price'>￥{{sum}}</view>
   </block>

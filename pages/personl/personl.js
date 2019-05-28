@@ -27,12 +27,12 @@ Page({
   },
   //收货地址
   to_adder(){
-    // wx.navigateTo({
-    //   url: '/pages/personl/adder/adder',
-    //   success: function (res) { },
-    //   fail: function (res) { },
-    //   complete: function (res) { },
-    // })
+    wx.navigateTo({
+      url: '/pages/personl/adder/adder',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   },
   /**
    * 产品订单

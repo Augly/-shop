@@ -18,7 +18,7 @@
             </block>
             <view class='date'>{{item.create_time}}</view>
           </view>
-          <view class='item_content' wx:for="{{list.goods}}" wx:for-item="gitem" wx:for-index="gindex" wx:key="g{{gindex}}">
+          <view class='item_content' wx:for="{{item.goods}}" wx:for-item="gitem" wx:for-index="gindex" wx:key="g{{gindex}}">
             <view class='content_list'>
               <image class='avater' src="{{gitem.goods_thumb}}"></image>
               <view class='list_res'>
@@ -54,7 +54,7 @@
             </block>
             <view class='date'>{{item.create_time}}</view>
           </view>
-          <view class='item_content' wx:for="{{list.goods}}" wx:for-item="gitem" wx:for-index="gindex" wx:key="g{{gindex}}">
+          <view class='item_content' wx:for="{{item.goods}}" wx:for-item="gitem" wx:for-index="gindex" wx:key="g{{gindex}}">
             <view class='content_list'>
               <image class='avater' src="{{gitem.goods_thumb}}"></image>
               <view class='list_res'>
@@ -89,7 +89,7 @@
             </block>
             <view class='date'>{{item.create_time}}</view>
           </view>
-          <view class='item_content' wx:for="{{list.goods}}" wx:for-item="gitem" wx:for-index="gindex" wx:key="g{{gindex}}">
+          <view class='item_content' wx:for="{{item.goods}}" wx:for-item="gitem" wx:for-index="gindex" wx:key="g{{gindex}}">
             <view class='content_list'>
               <image class='avater' src="{{gitem.goods_thumb}}"></image>
               <view class='list_res'>
@@ -125,7 +125,7 @@
             </block>
             <view class='date'>{{item.create_time}}</view>
           </view>
-          <view class='item_content' wx:for="{{list.goods}}" wx:for-item="gitem" wx:for-index="gindex" wx:key="g{{gindex}}">
+          <view class='item_content' wx:for="{{item.goods}}" wx:for-item="gitem" wx:for-index="gindex" wx:key="g{{gindex}}">
             <view class='content_list'>
               <image class='avater' src="{{gitem.goods_thumb}}"></image>
               <view class='list_res'>

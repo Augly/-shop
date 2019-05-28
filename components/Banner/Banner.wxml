@@ -1,13 +1,13 @@
 <view class="banner_wrap" hover-class="none" hover-stop-propagation="false">
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" interval="{{interval}}" duration="{{duration}}" class="swiper_wrap">
-        <block wx:for="{{imgList}}">
-            <swiper-item class="swiper_item">
-                <image src="{{item.img_url}}" class="slide-image" />
-            </swiper-item>
-        </block>
-    </swiper>
-    <view class="search_group" hover-class="none" hover-stop-propagation="false" bindtap='select_shop'>
-        <view class="shop_name" hover-class="none" hover-stop-propagation="false">已选门店：{{shop.s_name?shop.s_name:'暂无选择'}}</view>
-        <text class="iconfont iconsaoyisao" selectable="false" space="false" decode="false"></text>
-    </view>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" interval="{{interval}}" duration="{{duration}}" class="swiper_wrap">
+    <block wx:for="{{imgList}}">
+      <swiper-item class="swiper_item">
+        <image src="{{item.img_url}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="search_group" hover-class="none" hover-stop-propagation="false" bindtap='select_shop'>
+    <view class="shop_name" hover-class="none" hover-stop-propagation="false">已选门店：{{shop.s_name?shop.s_name:'暂无选择'}}</view>
+    <text class="iconfont iconsaoyisao" selectable="false" space="false" decode="false"></text>
+  </view>
 </view>

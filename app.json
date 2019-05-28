@@ -1,9 +1,14 @@
 {
   "pages": [
-    "pages/yy/index/index",
     "pages/index/index/index",
-    "pages/personl/personl",
+    "pages/personl/subordinate/subordinate",
+    "pages/personl/delegation/delegation",
     "pages/distribution/distribution",
+    
+    "pages/yy/index/index",
+    "pages/Regiment_list/Regiment_list",
+    "pages/personl/personl",
+   
     
     
     
@@ -23,7 +28,7 @@
     
     "pages/index/productRes/productRes",
     "pages/personl/delegation_error/delegation_error",
-    "pages/personl/delegation/delegation",
+    
     "pages/personl/assemble_error/assemble_error",
     "pages/personl/delegation_success/delegation_success",
     "pages/personl/appointment_success/appointment_success",
@@ -42,7 +47,7 @@
     "pages/personl/eva_ordel/eva_ordel",
     "pages/personl/serve_sale/serve_sale",
     "pages/personl/distribution_ordel/distribution_ordel",
-    "pages/personl/subordinate/subordinate",
+   
     "pages/personl/points/points",
     "pages/index/productRes/comment_list/comment_list"
     
@@ -68,14 +73,20 @@
         "selectedIconPath": "/static/images/index_select.png"
       },
       {
-        "pagePath": "pages/personl/shopping_cart/shopping_cart",
+        "pagePath": "pages/shop_index/shop_index",
         "text": "商城",
         "iconPath": "/static/images/shop.png",
         "selectedIconPath": "/static/images/shop_select.png"
       },
       {
-        "pagePath": "pages/personl/adder/adder",
+        "pagePath": "pages/Regiment_list/Regiment_list",
         "text": "团购",
+        "iconPath": "/static/images/tuan.png",
+        "selectedIconPath": "/static/images/tuan_select.png"
+      },
+      {
+        "pagePath": "pages/yy/index/index",
+        "text": "预约",
         "iconPath": "/static/images/tuan.png",
         "selectedIconPath": "/static/images/tuan_select.png"
       },
