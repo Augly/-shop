@@ -34,7 +34,7 @@ Page({
    * 取消订单
    */
   cendel_ordrl(e){
-    config.ajax('GET', {
+    config.ajax('PUT', {
       token: wx.getStorageSync('token')
     }, `order/cancel/${e.target.dataset.id}/0`, (res) => {
       let list = this.data.list
@@ -49,16 +49,16 @@ Page({
    */
   pay(e){
     console.log(e)
-    // config.ajax('POST', {
-    //   token: wx.getStorageSync('token'),
-    //   datatype: 0,
-    //   out_trade_no: e.currentTarget.dataset.ordelNo,
-    //   totalprice: e.currentTarget.dataset.totalPrice,
-    // }, `order/pay`, (res) => {
-    //   config.pay(res.data, (res) => {
+    config.ajax('POST', {
+      token: wx.getStorageSync('token'),
+      datatype: 0,
+      out_trade_no: e.currentTarget.dataset.ordelno,
+      totalprice: e.currentTarget.dataset.totalprice,
+    }, `order/pay`, (res) => {
+      config.pay(res.data, (res) => {
         
-    //   })
-    // })
+      })
+    })
   },
   /**
    * 确认收货
@@ -66,8 +66,12 @@ Page({
   sureConfirm(e){
     config.ajax('PUT', {
       token: wx.getStorageSync('token'),
-    }, `order/confirm/${e.target.dataset.id}/0`, (res) => {
-      
+    }, `order/confirm/${e.currentTarget.dataset.id}/0`, (res) => {
+      let list = this.data.list
+      list.splice(e.target.dataset.index, 1)
+      this.setData({
+        list: list
+      })
     })
   },
   /**

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/personl/eva_ordel/eva_ordel",
     "pages/index/index/index",
     "pages/personl/subordinate/subordinate",
     "pages/personl/delegation/delegation",
@@ -44,7 +45,7 @@
     "pages/personl/service/service",
     "pages/personl/serve_ordel/serve_ordel",
     
-    "pages/personl/eva_ordel/eva_ordel",
+    
     "pages/personl/serve_sale/serve_sale",
     "pages/personl/distribution_ordel/distribution_ordel",
    

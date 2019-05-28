@@ -34,7 +34,7 @@
             <text class='title'>共1件商品，共计：</text>
             <text class="order_money">¥ {{item.total_price}}</text>
             <view class='status_group'>
-              <view class='cendel_button' catchtap='cendel_ordrl' data-id='item.id'>取消订单</view>
+              <view class='cendel_button' catchtap='cendel_ordrl' data-id='{{item.id}}'>取消订单</view>
               <view class='sure_button' catchtap='pay' data-index='{{index}}' data-ordelNo='{{item.trade_no}}' data-totalPrice='{{item.total_price}}'>去支付</view>
             </view>
           </view>
@@ -106,7 +106,7 @@
             <text class="order_money">¥ {{item.total_price}}</text>
             <view class='status_group'>
               <view class='cendel_button'>查看物流</view>
-              <view class='sure_button' catchtap='sureConfirm' data-id='{{item.id}}'>确认收货</view>
+              <view class='sure_button' catchtap='sureConfirm' data-id='{{item.id}}' data-index='{{index}}'>确认收货</view>
             </view>
           </view>
         </view>
