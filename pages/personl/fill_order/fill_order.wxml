@@ -1,5 +1,5 @@
 <view class='content'>
-  <view class='adder_info'>
+  <view class='adder_info' bindtap='select_adder'>
     <view class='adder_res' wx:if="{{defautAdder}}">
       <view class='adder_userinfo'>{{defautAdder.name}} {{defautAdder.mobile}}</view>
       <view class='adder_adder'>

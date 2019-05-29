@@ -1,3 +1,8 @@
+page {
+    box-sizing: border-box;
+    padding-bottom: 160rpx;
+}
+
 .wrap {
     width: 702rpx;
     height: auto;
@@ -18,7 +23,7 @@
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-
+        margin-bottom: 15rpx;
 
         .eva_img {
             width: 127rpx;
@@ -29,11 +34,17 @@
         .eva_name {
             width: 300rpx;
             height: 131rpx;
+            margin-left: 20rpx;
+            font-size: 30rpx;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(63, 63, 63, 1);
         }
 
         .eva_status {
             width: 124rpx;
             height: 107rpx;
+            margin-left: auto;
         }
     }
 
@@ -161,5 +172,31 @@
             font-weight: 300;
             color: rgba(53, 53, 53, 1);
         }
+    }
+}
+
+.button_group {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 160rpx;
+    background-color: RGBA(239, 239, 244, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .button_sure {
+        width: 638rpx;
+        height: 80rpx;
+        background: rgba(69, 208, 174, 1);
+        border-radius: 10rpx;
+        font-size: 33rpx;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

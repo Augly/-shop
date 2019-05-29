@@ -115,7 +115,7 @@ Page({
    * 选择收货地址
    */
   select_adder() {
-    wx.switchTab({
+    wx.navigateTo({
       url: '/pages/personl/adder/adder',
       success: function(res) {},
       fail: function(res) {},

@@ -13,7 +13,7 @@
                     <view class='item_head_group'>
                         <block wx:if="type=='serverOrdel'">
                             <view class="order_number" hover-class="none" hover-stop-propagation="false">
-                                {{item.create_time}}
+                                {{item.time}}
                             </view>
                         </block>
                         <!-- <view class='date'>2019/03/05 15:30</view> -->
@@ -30,9 +30,9 @@
                             <view class='item_title line2'>{{item.goods_name}}</view>
                             <view class='item_price_group'>
                                 <view class='item_p_price'>
-                                    <view class='item_unprice'>¥ 588.00</view>
-                                    <view class='item_price'>¥ 388</view>
-                                    <view class='item_number'>{{item.goods_num}}人团</view>
+                                    <view class='item_unprice'>¥ {{item.market_price}}</view>
+                                    <view class='item_price'>¥ {{item.goods_price}}</view>
+                                    <view class='item_number'>{{item.group_num}}人团</view>
                                 </view>
                                 <view class='item_status_group'>
                                     <view class="finied_button" hover-class="none" hover-stop-propagation="false">
@@ -60,7 +60,7 @@
                     <view class='item_head_group'>
                         <block wx:if="type=='serverOrdel'">
                             <view class="order_number" hover-class="none" hover-stop-propagation="false">
-                                {{item.create_time}}
+                                {{item.time}}
                             </view>
                         </block>
                         <!-- <view class='date'>2019/03/05 15:30</view> -->
@@ -77,9 +77,9 @@
                             <view class='item_title line2'>{{item.goods_name}}</view>
                             <view class='item_price_group'>
                                 <view class='item_p_price'>
-                                    <view class='item_unprice'>¥ 588.00</view>
-                                    <view class='item_price'>¥ 388</view>
-                                    <view class='item_number'>{{item.goods_num}}人团</view>
+                                    <view class='item_unprice'>¥ {{item.market_price}}</view>
+                                    <view class='item_price'>¥ {{item.goods_price}}</view>
+                                    <view class='item_number'>{{item.group_num}}人团</view>
                                 </view>
                                 <view class='item_status_group'>
                                     <!-- <view class="finied_button" hover-class="none" hover-stop-propagation="false">
@@ -123,10 +123,10 @@
                         <view class='item_res'>
                             <view class='item_title line2'>{{item.goods_name}}</view>
                             <view class='item_price_group'>
-                                <view class='item_p_price'>
-                                    <view class='item_unprice'>¥ 588.00</view>
-                                    <view class='item_price'>¥ 388</view>
-                                    <view class='item_number'>{{item.goods_num}}人团</view>
+                               <view class='item_p_price'>
+                                    <view class='item_unprice'>¥ {{item.market_price}}</view>
+                                    <view class='item_price'>¥ {{item.goods_price}}</view>
+                                    <view class='item_number'>{{item.group_num}}人团</view>
                                 </view>
                                 <view class='item_status_group'>
                                     <view class="sure_button" hover-class="none" hover-stop-propagation="false">
@@ -153,7 +153,7 @@
                     <view class='item_head_group'>
                         <block wx:if="type=='serverOrdel'">
                             <view class="order_number" hover-class="none" hover-stop-propagation="false">
-                                {{item.create_time}}
+                                {{item.time}}
                             </view>
                         </block>
                         <!-- <view class='date'>2019/03/05 15:30</view> -->
@@ -164,15 +164,15 @@
                     <view class='item_content'>
                         <view class="item_logo">
                             <image class="item_logo_img" src="{{item.goods_thumb}}" lazy-load />
-                            <view class='item_logo_tap'></view>
+                            <view class='item_logo_tap' wx:if="{{item.team_leader_user_id==1}}"></view>
                         </view>
                         <view class='item_res'>
                             <view class='item_title line2'>{{item.goods_name}}</view>
                             <view class='item_price_group'>
                                 <view class='item_p_price'>
-                                    <view class='item_unprice'>¥ 588.00</view>
-                                    <view class='item_price'>¥ 388</view>
-                                    <view class='item_number'>{{item.goods_num}}人团</view>
+                                    <view class='item_unprice'>¥ {{item.market_price}}</view>
+                                    <view class='item_price'>¥ {{item.goods_price}}</view>
+                                    <view class='item_number'>{{item.group_num}}人团</view>
                                 </view>
                                 <view class='item_status_group'>
                                     <view class="sure_button" hover-class="none" hover-stop-propagation="false">

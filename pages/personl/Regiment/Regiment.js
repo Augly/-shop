@@ -1,5 +1,6 @@
 // pages/personl/serve_ordel/serve_ordel.js
 const config = require('../../../utils/util.js')
+let allTime=null
 Page({
 
   /**
@@ -20,9 +21,46 @@ Page({
       title: '拼团失败',
     }]
   },
+  timeFormat(param) {//小于10的格式化函数
+    return param < 10 ? '0' + param : param;
+  },
   /**
-   * 获取初始化数据
+   * 倒计时函数
    */
+  countDown() {
+    let newTime = new Date().getTime();
+    let endTimeList = this.data.list;
+    let list = [];
+    endTimeList.forEach(item => {
+      let endTime = item.end_time*1000
+      let obj = null;
+      if (endTime - newTime > 0) {
+        let time = (endTime - newTime) / 1000;
+        let day = parseInt(time / (60 * 60 * 24));
+        let hou = parseInt(time % (60 * 60 * 24) / 3600);
+        let min = parseInt(time % (60 * 60 * 24) % 3600 / 60);
+        let sec = parseInt(time % (60 * 60 * 24) % 3600 % 60);
+        obj = {
+          day: this.timeFormat(day),
+          hou: this.timeFormat(hou),
+          min: this.timeFormat(min),
+          sec: this.timeFormat(sec)
+        }
+      } else {
+        obj = {
+          day: '00',
+          hou: '00',
+          min: '00',
+          sec: '00'
+        }
+        
+      }
+      item.time = `${obj.day}天${obj.hou}时${obj.min}分${obj.sec}秒`
+      list.push(item);
+    })
+    this.setData({ list: list})
+    setTimeout(this.countDown, 1000);
+  },
   getInit() {
     config.ajax('GET', {
       token: wx.getStorageSync('token')
@@ -33,16 +71,18 @@ Page({
           // item.start_time = setInterval((item) => {
           //   item.start_time
           // },1000)
+
           // item.create_time = config.timeForm(item.create_time).chatTime.year + '/' + config.timeForm(item.create_time).chatTime.month + '/' + config.timeForm(item.create_time).chatTime.day + '  ' + config.timeForm(item.create_time).chatTime.hour + ':' + config.timeForm(item.create_time).chatTime.minute + ':00'
           return item
         })
         let page = this.data.page
         page++
         list.push.apply(list, arr);
-        this.setData({
-          page: page,
-          list: list
-        })
+          this.setData({
+            page: page,
+            list: list
+          })
+        this.countDown()
       } else {
         config.mytoast('暂无更多数据~')
       }
@@ -54,7 +94,7 @@ Page({
       list: [],
       page: 1
     })
-    this.getInit()
+    // this.getInit()
   },
   swiperChange(e) {
     this.setData({

@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/personl/eva_ordel/eva_ordel",
     "pages/index/index/index",
+    "pages/personl/eva_ordel/eva_ordel",
+    
     "pages/personl/subordinate/subordinate",
     "pages/personl/delegation/delegation",
     "pages/distribution/distribution",

@@ -10,6 +10,7 @@ Page({
     details: null,
     mask:false,
     car_count:0,
+    goods_num:0,
   },
 
   /**
@@ -30,12 +31,46 @@ Page({
       complete: function(res) {},
     })
   },
+  plus(){
+    let num=this.data.goods_num
+    num==0?num=0:num--
+    this.setData({
+      goods_num:num
+    })
+  },
+  reduce(){
+    let num = this.data.goods_num
+    num++
+    this.setData({
+      goods_num: num
+    })
+  },
+  /**
+   * 直接购买
+   */
+  purchase(){
+    console.log(this.data)
+    let data=this.data.details
+    data.goods_num=this.data.goods_num
+    data.check=true
+    data.de_price = 0
+    let arr =[]
+    arr.push(data) 
+    let list = JSON.stringify(arr)
+    let shopName = this.data.data.shop_name
+    wx.navigateTo({
+      url: `/pages/personl/fill_order/fill_order?list=${list}&shopName=${shopName}`,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+
+  },
   //加入购物车
   join_cart(){
     app.config.ajax('PUT', {
       token: wx.getStorageSync('token'),
     }, `shop/addcart/${this.data.goodId}`, (res) => {
-      console.log(212)
       let car_count = this.data.car_count
       car_count++
       this.setData({
@@ -61,6 +96,7 @@ Page({
       token: wx.getStorageSync('token'),
     }, `shop/details/${options.goodId}/${options.datatype}`, (res) => {
       this.setData({
+        data:res.data,
         details: res.data.details,
         hot_data: res.data.hot_data,
         latest_data:   res.data.latest_data,

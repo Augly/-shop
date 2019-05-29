@@ -142,7 +142,7 @@
             <text class="order_money">¥ {{item.total_price}}</text>
             <view class='status_group'>
               <view class='cendel_button'>申请售后</view>
-              <view class='sure_button'>评价</view>
+              <view class='sure_button' catchtap='to_eval' data-item='{{item}}'>{{item.goods[0].is_evaluate==0?'评价':'已评价'}}</view>
             </view>
           </view>
         </view>
@@ -151,86 +151,37 @@
   </swiper-item>
   <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
     <scroll-view class='swiper_item' scroll-y>
-      <view class="item">
-        <view class='item_head_group'>
-          <block wx:if="type=='serverOrdel'">
-            <view class="order_number" hover-class="none" hover-stop-propagation="false">
-              订单编号：22222222
-            </view>
-          </block>
-          <view class='date'>2019/03/05 15:30</view>
-        </view>
-        <view class='item_content'>
-          <view class='content_list'>
-            <image class='avater'></image>
-            <view class='list_res'>
-              <view class='title'>基础水光肌管理</view>
-              <view class='mintitle'>
-                数量：1
-                <text class='score'>¥ 388</text>
+      <block>
+        <view class="item" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+          <view class='item_head_group'>
+            <block wx:if="type=='serverOrdel'">
+              <view class="order_number" hover-class="none" hover-stop-propagation="false">
+                订单编号：{{item.trade_no}}
+              </view>
+            </block>
+            <view class='date'>{{item.create_time}}</view>
+          </view>
+          <view class='item_content' wx:for="{{item.goods}}" wx:for-item="gitem" wx:for-index="gindex" wx:key="g{{gindex}}">
+            <view class='content_list'>
+              <image class='avater' src="{{gitem.goods_thumb}}"></image>
+              <view class='list_res'>
+                <view class='title'>{{gitem.goods_name}}</view>
+                <view class='mintitle'>
+                  数量：{{gitem.goods_num}}
+                  <text class='score'>¥ {{gitem.goods_price}}</text>
+                </view>
               </view>
             </view>
           </view>
-        </view>
-        <view class='item_result'>
-          <text class='title'>待商家同意</text>
-          <!-- <text class="order_money">¥ 388888</text> -->
-          <view class='status_group'>
-            <!-- <view class='cendel_button'>申请售后</view> -->
-            <view class='sure_button'>撤销申请</view>
-          </view>
-        </view>
-        <!-- <view class='item_userinfo'>
-          <view class='item_name'>
-            <view class='item_g'>
-              收件人：
-              <text class='item_g_title'>某某某</text>
-            </view>
-            <view class='item_g'>
-              联系电话：
-              <text class='item_g_title'>18888888888</text>
+          <view class='item_result'>
+            <text class='title'>待商家同意</text>
+            <!-- <text class="order_money">¥ 388888</text> -->
+            <view class='status_group'>
+              <!-- <view class='cendel_button'>申请售后</view> -->
+              <view class='sure_button'>撤销申请</view>
             </view>
           </view>
-          <view class='item_adder'>
-            <view class='item_adder_title'>
-              地址：
-            </view>
-            <view class='item_adder_res'>
-              地址地址地址地址地址地址地址地址地址地址地址地址
-            </view>
-          </view>
-        </view> -->
-      </view>
-      <view class="item">
-        <view class='item_head_group'>
-          <block wx:if="type=='serverOrdel'">
-            <view class="order_number" hover-class="none" hover-stop-propagation="false">
-              订单编号：22222222
-            </view>
-          </block>
-          <view class='date'>2019/03/05 15:30</view>
-        </view>
-        <view class='item_content'>
-          <view class='content_list'>
-            <image class='avater'></image>
-            <view class='list_res'>
-              <view class='title'>基础水光肌管理</view>
-              <view class='mintitle'>
-                数量：1
-                <text class='score'>¥ 388</text>
-              </view>
-            </view>
-          </view>
-        </view>
-        <view class='item_result'>
-          <text class='title'>待寄回商品</text>
-          <!-- <text class="order_money">¥ 388888</text> -->
-          <view class='status_group'>
-            <view class='cendel_button' catchtap='sendBack' data-id='{{item.id}}'>寄回商品</view>
-            <view class='sure_button'>撤销申请</view>
-          </view>
-        </view>
-        <view class='item_userinfo'>
+          <view class='item_userinfo'>
           <view class='item_name'>
             <view class='item_g'>
               收件人：
@@ -246,7 +197,8 @@
             <view class='item_adder_res'>地址地址地址地址地址地址地址地址地址地址地址地址</view>
           </view>
         </view>
-      </view>
+        </view>
+      </block>
     </scroll-view>
   </swiper-item>
 </swiper>

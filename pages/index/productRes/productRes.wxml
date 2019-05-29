@@ -39,22 +39,22 @@
 <view class='mask Augly-fadeinB' catchtouchmove="true" wx:if="{{mask}}" bindtap='hidemask'>
   <view class='mask_content' catchtap='showmask'>
     <view class='mask_shop'>
-      <image class='mask_shop_img'></image>
+      <image class='mask_shop_img' src='{{details.goods_thumb}}'></image>
       <view class='mask_shop_res'>
         <view class='mask_shop_title'>
-          ¥ 1
+          ¥ {{details.market_price}}
         </view>
-        <view class='mask_shop_mintitle'>库存 4000</view>
+        <view class='mask_shop_mintitle'>已售 {{details.goods_sell_num}}</view>
       </view>
     </view>
     <view class='mask_item'>
-        <view class='mask_item_title'>数量</view>
-        <view class='buy_group'>
-              <text class='iconfont iconjian'></text> 1
-              <text class='iconfont iconjia'></text>
-            </view>
+      <view class='mask_item_title'>数量</view>
+      <view class='buy_group'>
+        <text class='iconfont iconjian' catchtap='plus'></text> {{goods_num}}
+        <text class='iconfont iconjia' catchtap='reduce'></text>
+      </view>
     </view>
-    <view class='mask_sure_bottom' catchtap='join_cart'>
+    <view class='mask_sure_bottom' catchtap='purchase'>
       确 定
     </view>
   </view>

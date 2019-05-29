@@ -28,7 +28,7 @@ Page({
       list: [],
       page: 1
     })
-    this.getInit()
+
   },
   /**
    * 取消订单
@@ -43,6 +43,20 @@ Page({
         list: list
       })
     })
+  },
+  /**
+   * 评论订单
+   */
+  to_eval(e){
+    if (e.currentTarget.dataset.item.goods[0].is_evaluate==0){
+      wx.navigateTo({
+        url: '/pages/personl/eva_ordel/eva_ordel?data=' + JSON.stringify(e.currentTarget.dataset.item),
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
+    }
+
   },
   /**
    * 订单支付
@@ -142,7 +156,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getInit()
   },
 
   /**

@@ -10,7 +10,7 @@ Component({
     },
     score: {
       type: Number,
-      value: 0
+      value: 1
     },
     fontSize: {
       type: String,
@@ -34,7 +34,7 @@ Component({
 
       } else {
         this.setData({
-          score: e.currentTarget.dataset.index
+          score: e.currentTarget.dataset.index+1
         })
         const eventDetail = {
           score: this.data.score,

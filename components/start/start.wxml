@@ -4,6 +4,6 @@
         <text class="iconfont  {{index<score?'iconaixinkuaizhuang':' iconaixinxiantiao'}}" style="font-size:{{fontSize}}" wx:for="{{start}}" wx:for-index="index" wx:key="index" bindtap='tabStart' data-index='{{index}}'></text>
     </block>
     <block wx:else>
-        <text class="iconfont  {{score<index?'iconxingxingxian':'iconxingxing'}}" style="font-size:{{fontSize}}" wx:for="{{start}}" wx:for-index="index" wx:key="index" bindtap='tabStart' data-index='{{index}}'></text>
+        <text class="iconfont  {{index<score?'iconxingxing':'iconxingxingxian'}}" style="font-size:{{fontSize}}" wx:for="{{start}}" wx:for-index="index" wx:key="index" bindtap='tabStart' data-index='{{index}}'></text>
     </block>
 </view>

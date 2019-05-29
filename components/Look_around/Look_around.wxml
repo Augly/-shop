@@ -1,5 +1,5 @@
 <view class="p_t_wrap" hover-class="none" hover-stop-propagation="false" >
-    <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+    <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
         <view class="pt_item" hover-class="none" hover-stop-propagation="false" catchtap='getItem' data-id='{{item.goods_id}}'>
             <view class="pt_tap" hover-class="none" hover-stop-propagation="false"></view>
             <image class='pt_tap' src="/static/images/type{{item.group_rules}}.png"></image>

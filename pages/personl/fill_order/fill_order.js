@@ -28,14 +28,14 @@ Page({
     })
   },
   /**
-   * 选择收货地址
-   */
+ * 选择收货地址
+ */
   select_adder() {
-    wx.switchTab({
+    wx.navigateTo({
       url: '/pages/personl/adder/adder',
-      success: function (res) {},
-      fail: function (res) {},
-      complete: function (res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**
@@ -112,6 +112,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     if (options.number) {
       this.setData({
         groupnum: options.number
@@ -123,6 +124,8 @@ Page({
       })
     }
     if (options.list && options.shopName) {
+      console.log(options.list)
+      console.log(JSON.parse(options.list))
       let arr = JSON.parse(options.list).map((item) => {
         return item.de_price
       })
@@ -146,17 +149,6 @@ Page({
       list: list
     })
     this.sumData()
-  },
-  /**
-   * 选择收货地址
-   */
-  select_adder() {
-    wx.switchTab({
-      url: '/pages/personl/adder/adder',
-      success: function (res) {},
-      fail: function (res) {},
-      complete: function (res) {},
-    })
   },
   /**
    * 求和

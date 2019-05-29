@@ -86,8 +86,8 @@ function mytoast(main, successData) {
         }, 1000)
       }
     },
-    fail: function (res) { },
-    complete: function (res) { },
+    fail: function (res) {},
+    complete: function (res) {},
   })
 }
 /**
@@ -139,8 +139,8 @@ function rem(height, successData) {
       }
       successData(myheight)
     },
-    fail: function (res) { },
-    complete: function (res) { },
+    fail: function (res) {},
+    complete: function (res) {},
   })
 }
 
@@ -154,8 +154,8 @@ function remW(height, successData) {
       }
       successData(myheight)
     },
-    fail: function (res) { },
-    complete: function (res) { },
+    fail: function (res) {},
+    complete: function (res) {},
   })
 }
 /**
@@ -190,8 +190,8 @@ function getuid(successData, errorData) {
         }
       })
     },
-    fail: function (res) { },
-    complete: function (res) { },
+    fail: function (res) {},
+    complete: function (res) {},
   })
 }
 /**
@@ -225,7 +225,8 @@ function getData(e, name) {
 function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   var methonType = "application/json";
   //访问的主域名
-  var https = "https://shop.mayspie.com/api/"
+  // var https = "https://shop.mayspie.com/api/"
+  var https = "https://prize.frp.meditool.cn/api/"
   if (Type === 'PUT') {
     methonType = "application/x-www-form-urlencoded"
   }
@@ -241,9 +242,9 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   wx.showLoading({
     title: '数据加载中',
     mask: true,
-    success: function (res) { },
-    fail: function (res) { },
-    complete: function (res) { },
+    success: function (res) {},
+    fail: function (res) {},
+    complete: function (res) {},
   })
   if (Type != 'img') {
     wx.request({
@@ -283,12 +284,14 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
       wx.uploadFile({
         url: https + url,
         filePath: imgurl,
-        name: 'image',
+        name: 'evalfile',
         formData: params,
         success: (res) => {
+          console.log(res)
+          console.log(212121)
           wx.hideLoading()
           var data = JSON.parse(res.data)
-          if (data.code == 1) {
+          if (data.status == 0) {
             successData(data)
           } else {
             mytoast(data.msg)
