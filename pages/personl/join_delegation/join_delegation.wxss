@@ -229,7 +229,6 @@ page {
 .product_res .res_bottom .res_type {
   width: 160rpx;
   height: 40rpx;
-  background-color: red;
 }
 
 .product_res .res_bottom .res_number_group {

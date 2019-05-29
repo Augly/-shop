@@ -34,7 +34,7 @@
       <view class='mintitle'>{{details.goods_brief}}</view>
     </view>
     <view class='res_bottom'>
-      <view class='res_type'></view>
+      <image class='res_type' src='/static/images/bao.png'></image>
       <view class='res_number_group'>{{details.goods_sell_num}}人已拼</view>
     </view>
   </view>

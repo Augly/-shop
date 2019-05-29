@@ -90,7 +90,7 @@ Page({
   },
   to_datails(e){
     wx.navigateTo({
-      url: `/pages/personl/ordel_details/ordel_details?orderid=${e.currentTarget.dataset.id}&datatype=1`,
+      url: `/pages/personl/ordel_details/ordel_details?orderid=${e.currentTarget.dataset.trade_no}&datatype=1`,
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},

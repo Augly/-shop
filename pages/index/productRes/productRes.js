@@ -10,7 +10,7 @@ Page({
     details: null,
     mask:false,
     car_count:0,
-    goods_num:0,
+    goods_num:1,
   },
 
   /**
@@ -33,7 +33,7 @@ Page({
   },
   plus(){
     let num=this.data.goods_num
-    num==0?num=0:num--
+    num==1?num=1:num--
     this.setData({
       goods_num:num
     })
