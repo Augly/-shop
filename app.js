@@ -13,8 +13,9 @@ App({
             code: res.code
           }, 'user/login', (res) => {
             //获取用户token
-            console.log(res.data.token)
+            console.log(res.data)
             wx.setStorageSync('token', res.data.token)
+            wx.setStorageSync('user_info', res.data.user_info)
           })
         }
       })

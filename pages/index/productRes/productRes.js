@@ -58,6 +58,9 @@ Page({
     arr.push(data) 
     let list = JSON.stringify(arr)
     let shopName = this.data.data.shop_name
+    this.setData({
+      mask:false
+    })
     wx.navigateTo({
       url: `/pages/personl/fill_order/fill_order?list=${list}&shopName=${shopName}`,
       success: function (res) { },

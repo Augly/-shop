@@ -59,7 +59,7 @@ Page({
   cendel_ordrl(e) {
     config.ajax('GET', {
       token: wx.getStorageSync('token')
-    }, `order/cancel/${e.target.dataset.id}/0`, (res) => {
+    }, `order/cancel/${e.target.dataset.orderid}/0`, (res) => {
       let list = this.data.list
       list.splice(e.target.dataset.index, 1)
       this.setData({
@@ -74,8 +74,8 @@ Page({
     config.ajax('POST', {
       token: wx.getStorageSync('token'),
       datatype: 0,
-      out_trade_no: e.target.dataset.ordelNo,
-      totalprice: e.target.dataset.totalPrice,
+      out_trade_no: e.target.dataset.ordelno,
+      totalprice: e.target.dataset.totalprice,
     }, `order/pay`, (res) => {
       config.pay(res.data, (res) => {
 
@@ -95,7 +95,19 @@ Page({
     // })
   },
   //评价
-  to_eval(e){
+  /**
+   * 评论订单
+   */
+  to_eval(e) {
+    console.log(e)
+    if (e.currentTarget.dataset.item.is_evaluate == 0) {
+      wx.navigateTo({
+        url: '/pages/personl/eva_ordel/eva_ordel?data=' + JSON.stringify(e.currentTarget.dataset.item),
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
+    }
 
   },
   swiperChange(e) {

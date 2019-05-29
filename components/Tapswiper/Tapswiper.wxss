@@ -12,9 +12,14 @@
 .tap_swiper .tap_swiper_item {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0rpx 10rpx 0rpx 8rpx;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 

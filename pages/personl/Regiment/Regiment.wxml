@@ -9,7 +9,7 @@
     <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
         <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
             <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
-                <view class="item">
+                <view class="item" catchtap='to_datails' data-id='{{item.id}}'>
                     <view class='item_head_group'>
                         <block wx:if="type=='serverOrdel'">
                             <view class="order_number" hover-class="none" hover-stop-propagation="false">
@@ -56,7 +56,7 @@
     <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
         <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
             <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
-                <view class="item">
+               <view class="item" catchtap='to_datails' data-id='{{item.id}}'>
                     <view class='item_head_group'>
                         <block wx:if="type=='serverOrdel'">
                             <view class="order_number" hover-class="none" hover-stop-propagation="false">
@@ -103,7 +103,7 @@
     <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
         <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
             <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
-                <view class="item">
+                <view class="item" catchtap='to_datails' data-id='{{item.id}}'>
                     <view class='item_head_group'>
                         <block wx:if="type=='serverOrdel'">
                             <view class="order_number" hover-class="none" hover-stop-propagation="false">
@@ -149,7 +149,7 @@
     <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
         <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
             <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
-                <view class="item">
+               <view class="item" catchtap='to_datails' data-id='{{item.id}}'>
                     <view class='item_head_group'>
                         <block wx:if="type=='serverOrdel'">
                             <view class="order_number" hover-class="none" hover-stop-propagation="false">

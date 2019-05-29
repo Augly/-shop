@@ -2,33 +2,52 @@ page {
   position: relative;
   height: 100%;
 }
+
 page .wrap {
   position: relative;
   height: 100%;
   width: 100%;
   background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
+
 page .wrap .iconchenggong {
   font-size: 106rpx;
   color: #45d0ae;
 }
+
 page .wrap .tip {
   width: 100%;
   height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-size: 60rpx;
   font-family: PingFangSC-Medium;
   font-weight: 500;
   color: #45d0ae;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin-top: 25rpx;
   margin-bottom: 60rpx;
 }
+
 page .wrap .tip_content {
   width: 450rpx;
   height: 40rpx;
@@ -39,6 +58,7 @@ page .wrap .tip_content {
   margin: 0 auto;
   text-align: center;
 }
+
 page .wrap .tip_border {
   width: 150rpx;
   height: 48rpx;
@@ -50,6 +70,7 @@ page .wrap .tip_border {
   border-radius: 24rpx;
   margin-top: 150rpx;
 }
+
 page .look_around_title {
   width: 702rpx;
   height: 70rpx;

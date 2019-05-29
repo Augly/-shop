@@ -6,6 +6,7 @@
   padding: 0rpx 24rpx 24rpx 24rpx;
   background-color: #ffffff;
 }
+
 .edit_warp .list {
   width: 100%;
   height: 86rpx;
@@ -17,6 +18,7 @@
   -ms-flex-align: center;
   align-items: center;
 }
+
 .edit_warp .list .list_title {
   width: 145rpx;
   font-size: 28rpx;
@@ -26,12 +28,14 @@
   line-height: 86rpx;
   color: #353535;
 }
+
 .edit_warp .list .list_mintitle {
   font-size: 28rpx;
   font-family: PingFangSC-Light;
   font-weight: 300;
   color: #888888;
 }
+
 .edit_warp .list .list_detail {
   width: 520rpx;
   height: 100%;
@@ -41,6 +45,7 @@
   font-weight: 400;
   color: #b2b2b2;
 }
+
 .edit_warp .list .text_detail {
   width: 520rpx;
   height: 100%;
@@ -52,15 +57,18 @@
   font-weight: 400;
   color: #b2b2b2;
 }
+
 .edit_warp .list .iconjiantou {
   font-size: 35rpx;
   color: rgba(136, 136, 136, 0.3);
   margin-left: auto;
 }
+
 .edit_warp .tip {
   font-size: 22rpx;
   color: #888888;
 }
+
 .save_button {
   width: 638rpx;
   height: 79rpx;

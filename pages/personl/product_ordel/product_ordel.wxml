@@ -35,7 +35,9 @@
             <text class="order_money">¥ {{item.total_price}}</text>
             <view class='status_group'>
               <view class='cendel_button' catchtap='cendel_ordrl' data-id='{{item.id}}'>取消订单</view>
-              <view class='sure_button' catchtap='pay' data-index='{{index}}' data-ordelNo='{{item.trade_no}}' data-totalPrice='{{item.total_price}}'>去支付</view>
+              <view class='sure_button' catchtap='pay' data-index='{{index}}' data-ordelNo='{{item.trade_no}}' data-totalPrice='{{item.total_price}}'>
+                去支付
+              </view>
             </view>
           </view>
         </view>
@@ -65,12 +67,12 @@
                 </view>
               </view>
             </view>
-          </view>
-          <view class='item_result'>
-            <text class='title'>共1件商品，共计：</text>
-            <text class="order_money">¥ {{item.total_price}}</text>
-            <view class='status_group'>
-              <view class='sure_button'>申请售后</view>
+            <view class='item_result'>
+              <text class='title'>共{{gitem.goods_num}}件商品，共计：</text>
+              <text class="order_money">¥ {{gitem.goods_price*gitem.goods_num}}</text>
+              <view class='status_group'>
+                <view class='sure_button'>申请售后</view>
+              </view>
             </view>
           </view>
         </view>
@@ -106,7 +108,9 @@
             <text class="order_money">¥ {{item.total_price}}</text>
             <view class='status_group'>
               <view class='cendel_button'>查看物流</view>
-              <view class='sure_button' catchtap='sureConfirm' data-id='{{item.id}}' data-index='{{index}}'>确认收货</view>
+              <view class='sure_button' catchtap='sureConfirm' data-id='{{item.id}}' data-index='{{index}}'>
+                确认收货
+              </view>
             </view>
           </view>
         </view>
@@ -136,13 +140,15 @@
                 </view>
               </view>
             </view>
-          </view>
-          <view class='item_result'>
-            <text class='title'>共1件商品，共计：</text>
-            <text class="order_money">¥ {{item.total_price}}</text>
-            <view class='status_group'>
-              <view class='cendel_button'>申请售后</view>
-              <view class='sure_button' catchtap='to_eval' data-item='{{item}}'>{{item.goods[0].is_evaluate==0?'评价':'已评价'}}</view>
+            <view class='item_result'>
+              <text class='title'>共{{gitem.goods_num}}件商品，共计：</text>
+              <text class="order_money">¥ {{gitem.goods_price*gitem.goods_num}}</text>
+              <view class='status_group'>
+                <view class='cendel_button'>申请售后</view>
+                <view class='sure_button' catchtap='to_eval' data-item='{{gitem}}'>
+                  {{gitem.is_evaluate==0?'评价':'已评价'}}
+                </view>
+              </view>
             </view>
           </view>
         </view>
@@ -182,21 +188,21 @@
             </view>
           </view>
           <view class='item_userinfo'>
-          <view class='item_name'>
-            <view class='item_g'>
-              收件人：
-              <text class='item_g_title'>某某某</text>
+            <view class='item_name'>
+              <view class='item_g'>
+                收件人：
+                <text class='item_g_title'>某某某</text>
+              </view>
+              <view class='item_g'>
+                联系电话：
+                <text class='item_g_title'>18888888888</text>
+              </view>
             </view>
-            <view class='item_g'>
-              联系电话：
-              <text class='item_g_title'>18888888888</text>
+            <view class='item_adder'>
+              <view class='item_adder_title'>地址：</view>
+              <view class='item_adder_res'>地址地址地址地址地址地址地址地址地址地址地址地址</view>
             </view>
           </view>
-          <view class='item_adder'>
-            <view class='item_adder_title'>地址：</view>
-            <view class='item_adder_res'>地址地址地址地址地址地址地址地址地址地址地址地址</view>
-          </view>
-        </view>
         </view>
       </block>
     </scroll-view>

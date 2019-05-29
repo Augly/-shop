@@ -17,15 +17,12 @@ Page({
    */
   onLoad: function (options) {
     let data = JSON.parse(options.data)
-    data.goods = data.goods.map(item => {
-      item.evalmsg = '',
-        item.star = 3,
-        item.shopstar = 3,
-        item.servicestar = 3,
-        item.evalfile = '',
-        item.orderid = data.id
-      return item
-    })
+      data.evalmsg = '',
+      data.star = 3,
+      data.shopstar = 3,
+      data.servicestar = 3,
+      data.evalfile = '',
+      data.orderid = data.id 
     this.setData({
       data: data
     })
@@ -36,13 +33,11 @@ Page({
    * @param {*} e 
    */
   chooseImage(e) {
-    let list = this.data.data.goods
+    let data = this.data.data
     app.config.chooseImage((res) => {
-      console.log(res)
-      console.log(list)
-      list[e.currentTarget.dataset.index].evalfile = res.tempFilePaths[0]
+      data.evalfile = res.tempFilePaths[0]
       this.setData({
-        'data.goods': list
+        data: data
       })
     })
   },
@@ -51,10 +46,10 @@ Page({
    * @param {*} e 
    */
   delete(e) {
-    let list = this.data.data.goods
-    list[e.currentTarget.dataset.index].evalfile = ''
+    let data = this.data.data
+   data.evalfile = ''
     this.setData({
-      'data.goods': list
+      'data': data
     })
   },
   /**
@@ -62,10 +57,10 @@ Page({
    * @param {*} e 
    */
   tabStart(e) {
-    let list = this.data.data.goods
-    list[e.currentTarget.dataset.index].star = e.detail.score
+    let data = this.data.data
+   data.star = e.detail.score
     this.setData({
-      'data.goods': list
+      'data': data
     })
   },
   /**
@@ -73,10 +68,10 @@ Page({
    * @param {*} e 
    */
   shopstar(e) {
-    let list = this.data.data.goods
-    list[e.currentTarget.dataset.index].shopstar = e.detail.score
+    let data = this.data.data
+   data.shopstar = e.detail.score
     this.setData({
-      'data.goods': list
+      'data': data
     })
   },
   /**
@@ -84,10 +79,10 @@ Page({
    * @param {*} e 
    */
   servicestar(e) {
-    let list = this.data.data.goods
-    list[e.currentTarget.dataset.index].servicestar = e.detail.score
+    let data = this.data.data
+   data.servicestar = e.detail.score
     this.setData({
-      'data.goods': list
+      'data': data
     })
   },
   /**
@@ -100,10 +95,7 @@ Page({
    * 提交评论
    */
   sumbit() {
-    let s = this.data.data.goods.length
-    let n = 0
-    var upImg = (data) => {
-      console.log(data)
+    let data=this.data.data
       app.config.ajax('img', {
         token: wx.getStorageSync('token'),
         evalmsg: data.evalmsg,
@@ -111,25 +103,20 @@ Page({
         shopstar: data.shopstar,
         servicestar: data.servicestar,
         orderid: data.orderid,
-      }, `shop/evalsave/${this.data.data.id}`, (res) => {
-        n++
-        if (n < s) {
-          upImg(this.data.data.goods[n])
-        } else {
+      }, `shop/evalsave/${this.data.id}`, (res) => {
+       
           app.config.mytoast('提交评论成功!', () => {
             wx.navigateBack({
               delta: 1
             });
           })
-        }
-
+        
       }, (err) => {
 
       }, (res) => {
 
       }, data.evalfile)
-    }
-    upImg(this.data.data.goods[n])
+    
   },
   /**
    * 生命周期函数--监听页面显示

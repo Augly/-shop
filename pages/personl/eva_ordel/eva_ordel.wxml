@@ -1,17 +1,17 @@
-<block wx:for="{{data.goods}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+
   <view class='wrap'>
     <view class='eva_product'>
-      <image class='eva_img' src='{{item.goods_thumb}}'></image>
-      <view class='eva_name'>{{item.goods_name}}</view>
+      <image class='eva_img' src='{{data.goods_thumb}}'></image>
+      <view class='eva_name'>{{data.goods_name}}</view>
       <image class="eva_status" src="/static/images/success.png" />
     </view>
     <view class='start_group'>
-      <start only-read="{{read}}" score="{{item.star}}" font-size="{{fontSize}}" bind:tabStart="tabStart" data-index="{{index}}"></start>
+      <start only-read="{{read}}" score="{{data.star}}" font-size="{{fontSize}}" bind:tabStart="tabStart" data-index="{{index}}"></start>
     </view>
     <textarea class='text_wrap' placeholder='为了下次给您更好的服务，请留下您的宝贵意见，对您和我们都很重要' value='{{get_message}}' data-index='{{index}}'></textarea>
     <view class='eva_upimg_wrap'>
-      <view class='eva_upimg_mask' wx:if="{{item.evalfile}}">
-        <image class='eva_upimg' src='{{item.evalfile}}'></image>
+      <view class='eva_upimg_mask' wx:if="{{data.evalfile}}">
+        <image class='eva_upimg' src='{{data.evalfile}}'></image>
         <text class='iconfont iconshanchuguanbicha2' catchtap='delete' data-index='{{index}}'></text>
       </view>
       <view class='eva_upimg_wrap_add' wx:else catchtap='chooseImage' data-index='{{index}}'>
@@ -23,14 +23,13 @@
   <view class='start_wrap'>
     <view class='start_list'>
       <view class='start_list_title'>店铺环境</view>
-      <start only-read="{{read}}" bind:tabStart="shopstar"  score="{{item.shopstar}}"  data-index="{{index}}"></start>
+      <start only-read="{{read}}" bind:tabStart="shopstar"  score="{{data.shopstar}}"  data-index="{{index}}"></start>
     </view>
     <view class='start_list'>
       <view class='start_list_title'>服务态度</view>
-      <start only-read="{{read}}" bind:tabStart="servicestar" score="{{item.servicestar}}"  data-index="{{index}}"></start>
+      <start only-read="{{read}}" bind:tabStart="servicestar" score="{{data.servicestar}}"  data-index="{{index}}"></start>
     </view>
   </view>
-</block>
 <view class="button_group">
   <view class="button_sure" bindtap='sumbit'>提 交</view>
 </view>

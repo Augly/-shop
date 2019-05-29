@@ -1,7 +1,9 @@
 page {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding-bottom: 160rpx;
 }
+
 .wrap {
   width: 702rpx;
   height: auto;
@@ -13,6 +15,7 @@ page {
   margin: 0 auto;
   margin-top: 24rpx;
 }
+
 .wrap .eva_product {
   width: 100%;
   height: auto;
@@ -24,11 +27,13 @@ page {
   align-items: center;
   margin-bottom: 15rpx;
 }
+
 .wrap .eva_product .eva_img {
   width: 127rpx;
   height: 131rpx;
   border-radius: 10rpx;
 }
+
 .wrap .eva_product .eva_name {
   width: 300rpx;
   height: 131rpx;
@@ -38,11 +43,13 @@ page {
   font-weight: 400;
   color: #3f3f3f;
 }
+
 .wrap .eva_product .eva_status {
   width: 124rpx;
   height: 107rpx;
   margin-left: auto;
 }
+
 .wrap .start_group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -55,6 +62,7 @@ page {
   justify-content: center;
   height: 140rpx;
 }
+
 .wrap .text_wrap {
   width: 100%;
   height: 255rpx;
@@ -68,6 +76,7 @@ page {
   font-family: PingFangSC-Light;
   font-weight: 300;
 }
+
 .wrap .eva_upimg_wrap {
   width: 100%;
   height: auto;
@@ -79,6 +88,7 @@ page {
   margin-top: 20rpx;
   margin-bottom: 20rpx;
 }
+
 .wrap .eva_upimg_wrap .eva_upimg_mask {
   width: 158rpx;
   height: 158rpx;
@@ -87,10 +97,12 @@ page {
   margin-top: 11rpx;
   border-radius: 10rpx;
 }
+
 .wrap .eva_upimg_wrap .eva_upimg_mask .eva_upimg {
   width: 100%;
   height: 100%;
 }
+
 .wrap .eva_upimg_wrap .eva_upimg_mask .iconshanchuguanbicha2 {
   position: absolute;
   right: 0;
@@ -98,6 +110,7 @@ page {
   font-size: 30rpx;
   color: #353535;
 }
+
 .wrap .eva_upimg_wrap .eva_upimg_wrap_add {
   width: 158rpx;
   height: 158rpx;
@@ -120,10 +133,12 @@ page {
   -ms-flex-pack: center;
   justify-content: center;
 }
+
 .wrap .eva_upimg_wrap .eva_upimg_wrap_add .eva_upimg {
   width: 100%;
   height: 100%;
 }
+
 .wrap .eva_upimg_wrap .eva_upimg_wrap_add .iconshanchuguanbicha2 {
   position: absolute;
   right: 0;
@@ -131,16 +146,19 @@ page {
   font-size: 30rpx;
   color: #353535;
 }
+
 .wrap .eva_upimg_wrap .eva_upimg_wrap_add .iconzhaopian {
   font-size: 50rpx;
   color: #b2b2b2;
 }
+
 .wrap .eva_upimg_wrap .eva_upimg_wrap_add .eva_up_title {
   font-size: 20rpx;
   font-family: PingFangSC-Light;
   font-weight: 300;
   color: #b2b2b2;
 }
+
 .start_wrap {
   width: 702rpx;
   height: auto;
@@ -152,6 +170,7 @@ page {
   margin: 0 auto;
   margin-top: 21rpx;
 }
+
 .start_wrap .start_list {
   height: 80rpx;
   display: -webkit-box;
@@ -164,12 +183,14 @@ page {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+
 .start_wrap .start_list .start_list_title {
   font-size: 30rpx;
   font-family: PingFangSC-Light;
   font-weight: 300;
   color: #353535;
 }
+
 .button_group {
   position: fixed;
   bottom: 0;
@@ -177,10 +198,17 @@ page {
   width: 100%;
   height: 160rpx;
   background-color: #efeff4;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
+
 .button_group .button_sure {
   width: 638rpx;
   height: 80rpx;
@@ -190,7 +218,13 @@ page {
   font-family: PingFangSC-Regular;
   font-weight: 400;
   color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }

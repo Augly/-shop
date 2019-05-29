@@ -77,11 +77,21 @@
   float: left;
   margin-top: 20rpx;
   margin-right: 24rpx;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 33rpx 0rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -200,12 +210,14 @@
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
 }
-.item_logo{
+
+.item_logo {
   width: 75rpx;
 }
-.item_title{
-  font-size:32rpx;
-font-family:PingFangSC-Regular;
-font-weight:400;
-color:rgba(53,53,53,1);
+
+.item_title {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(53, 53, 53, 1);
 }

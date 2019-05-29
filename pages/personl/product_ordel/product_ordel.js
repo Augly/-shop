@@ -28,12 +28,12 @@ Page({
       list: [],
       page: 1
     })
-
+    this.getInit()
   },
   /**
    * 取消订单
    */
-  cendel_ordrl(e){
+  cendel_ordrl(e) {
     config.ajax('PUT', {
       token: wx.getStorageSync('token')
     }, `order/cancel/${e.target.dataset.id}/0`, (res) => {
@@ -47,8 +47,9 @@ Page({
   /**
    * 评论订单
    */
-  to_eval(e){
-    if (e.currentTarget.dataset.item.goods[0].is_evaluate==0){
+  to_eval(e) {
+    console.log(e)
+    if (e.currentTarget.dataset.item.is_evaluate == 0) {
       wx.navigateTo({
         url: '/pages/personl/eva_ordel/eva_ordel?data=' + JSON.stringify(e.currentTarget.dataset.item),
         success: function (res) { },
@@ -61,7 +62,7 @@ Page({
   /**
    * 订单支付
    */
-  pay(e){
+  pay(e) {
     console.log(e)
     config.ajax('POST', {
       token: wx.getStorageSync('token'),
@@ -70,14 +71,14 @@ Page({
       totalprice: e.currentTarget.dataset.totalprice,
     }, `order/pay`, (res) => {
       config.pay(res.data, (res) => {
-        
+
       })
     })
   },
   /**
    * 确认收货
    */
-  sureConfirm(e){
+  sureConfirm(e) {
     config.ajax('PUT', {
       token: wx.getStorageSync('token'),
     }, `order/confirm/${e.currentTarget.dataset.id}/0`, (res) => {
@@ -91,11 +92,11 @@ Page({
   /**
    * 寄回商品
    */
-  sendBack(e){
+  sendBack(e) {
     config.ajax('POST', {
       token: wx.getStorageSync('token'),
     }, `order/confirm/${e.target.dataset.id}/0`, (res) => {
-      
+
     })
   },
   getInit() {
@@ -121,7 +122,6 @@ Page({
     })
   },
   swiperChange(e) {
-    console.log(e)
     this.setData({
       tab_index: e.detail.current,
       list: [],
@@ -137,7 +137,7 @@ Page({
       this.setData({
         myheight: res
       })
-      this.getInit()
+      // this.getInit()
     })
   },
   getmore(e) {

@@ -59,7 +59,7 @@
       <view class='shop_mintitle'>直接购买</view>
     </view>
     <view class='shop_item pt' catchtap='fq'>
-      <view class='shop_title'>¥ {{details.shop_price}}</view>
+      <!-- <view class='shop_title'>¥ {{details.shop_price}}</view> -->
       <view class='shop_mintitle'>发起拼团</view>
     </view>
   </view>

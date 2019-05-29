@@ -18,7 +18,7 @@
             </block>
             <view class='date'>{{item.create_time}}</view>
           </view>
-          <block wx:for="{{list.goods}}" wx:key="g{{index}}" wx:for-item="gitem" wx:for-index="gindex">
+          <block wx:for="{{item.goods}}" wx:key="g{{index}}" wx:for-item="gitem" wx:for-index="gindex">
             <view class='item_content'>
               <view class='content_list'>
                 <image class='avater' src="{{gitem.goods_thumb}}"></image>
@@ -31,14 +31,54 @@
                 </view>
               </view>
             </view>
-            <view class='item_result'>
+            
+          </block>
+          <view class='item_result'>
               <text class='title'>共1件商品，共计：</text>
-              <text class="order_money">¥ {{gitem.goods_price}}</text>
+              <text class="order_money">¥ {{item.total_price}}</text>
               <view class='status_group'>
-                <view class='cendel_button' catchtap='cendel_ordrl' data-id='item.id'>取消订单</view>
+                <!-- <view class='cendel_button' catchtap='cendel_ordrl' data-index='{{index}}'  data-orderid='{{item.trade_no}}'>取消订单</view> -->
                 <view class='sure_button' catchtap='pay' data-index='{{index}}' data-ordelNo='{{item.trade_no}}' data-totalPrice='{{item.total_price}}'>去支付</view>
               </view>
             </view>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">暂无更多数据~</view>
+  </swiper-item>
+  <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
+    <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
+      <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        <view class="item">
+          <view class='item_head_group'>
+            <block wx:if="type=='serverOrdel'">
+              <view class="order_number" hover-class="none" hover-stop-propagation="false">
+                订单编号：{{item.trade_no}}
+              </view>
+            </block>
+            <view class='date'>{{item.create_time}}</view>
+          </view>
+          <block wx:for="{{item.goods}}" wx:key="g{{index}}" wx:for-item="gitem" wx:for-index="gindex">
+            <view class='item_content'>
+              <view class='content_list'>
+                <image class='avater' src="{{gitem.goods_thumb}}"></image>
+                <view class='list_res'>
+                  <view class='title'>{{gitem.goods_name}}</view>
+                  <view class='mintitle'>
+                    数量：{{gitem.goods_num}}
+                    <text class='score'>¥ {{gitem.goods_price}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class='item_result'>
+              <text class='title'>共{{gitem.goods_num}}件商品，共计：</text>
+              <text class="order_money">¥ {{gitem.goods_price*gitem.goods_num}}</text>
+              <view class='status_group'>
+                <view class='cendel_button' catchtap='after_Sale' data-id='{{gitem.id}}' data-orderid='{{item.trade_no}}'>申请售后</view>
+                <view class='sure_button' catchtap='writeoff' data-id='{{gitem.id}}' data-orderid='{{item.trade_no}}'>线下核销</view>
+              </view>
+            </view>
           </block>
         </view>
       </block>
@@ -57,7 +97,7 @@
             </block>
             <view class='date'>{{item.create_time}}</view>
           </view>
-          <block wx:for="{{list.goods}}" wx:key="g{{index}}" wx:for-item="gitem" wx:for-index="gindex">
+          <block wx:for="{{item.goods}}" wx:key="g{{index}}" wx:for-item="gitem" wx:for-index="gindex">
             <view class='item_content'>
               <view class='content_list'>
                 <image class='avater' src="{{gitem.goods_thumb}}"></image>
@@ -71,49 +111,10 @@
               </view>
             </view>
             <view class='item_result'>
-              <text class='title'>共1件商品，共计：</text>
-              <text class="order_money">¥ {{gitem.goods_price}}</text>
+              <text class='title'>共{{gitem.goods_num}}件商品，共计：</text>
+              <text class="order_money">¥ {{gitem.goods_price*gitem.goods_num}}</text>
               <view class='status_group'>
-                <view class='cendel_button' catchtap='after_Sale' data-id='{{item.id}}'>申请售后</view>
-                <view class='sure_button' catchtap='writeoff' data-id='{{item.id}}'>线下核销</view>
-              </view>
-            </view>
-          </block>
-        </view>
-      </block>
-    </scroll-view>
-    <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">暂无更多数据~</view>
-  </swiper-item>
-  <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
-    <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
-      <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
-        <view class="item">
-          <view class='item_head_group'>
-            <block wx:if="type=='serverOrdel'">
-              <view class="order_number" hover-class="none" hover-stop-propagation="false">
-                订单编号：{{item.trade_no}}
-              </view>
-            </block>
-            <view class='date'>{{item.create_time}}</view>
-          </view>
-          <block wx:for="{{list.goods}}" wx:key="g{{index}}" wx:for-item="gitem" wx:for-index="gindex">
-            <view class='item_content'>
-              <view class='content_list'>
-                <image class='avater' src="{{gitem.goods_thumb}}"></image>
-                <view class='list_res'>
-                  <view class='title'>{{gitem.goods_name}}</view>
-                  <view class='mintitle'>
-                    数量：{{gitem.goods_num}}
-                    <text class='score'>¥ {{gitem.goods_price}}</text>
-                  </view>
-                </view>
-              </view>
-            </view>
-            <view class='item_result'>
-              <text class='title'>共1件商品，共计：</text>
-              <text class="order_money">¥ {{gitem.goods_price}}</text>
-              <view class='status_group'>
-                <view class='sure_button' style='margin-right:23rpx;' catchtap='to_eval' data-id='{{item.id}}'>评价</view>
+                <view class='sure_button' style='margin-right:23rpx;' catchtap='to_eval' data-item='{{gitem}}'>{{gitem.is_evaluate==0?'评价':'已评价'}}</view>
                 <view class='finished_button'>完成</view>
               </view>
             </view>
@@ -135,7 +136,7 @@
             </block>
             <view class='date'>{{item.create_time}}</view>
           </view>
-          <block wx:for="{{list.goods}}" wx:key="g{{index}}" wx:for-item="gitem" wx:for-index="gindex">
+          <block wx:for="{{item.goods}}" wx:key="g{{index}}" wx:for-item="gitem" wx:for-index="gindex">
             <view class='item_content'>
               <view class='content_list'>
                 <image class='avater' src="{{gitem.goods_thumb}}"></image>

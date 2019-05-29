@@ -107,7 +107,7 @@ Page({
    */
   onShow: function () {
     this.setData({
-      shop: wx.getStorageSync('shop')
+      shop: wx.getStorageSync('user_info')
     })
   },
 
