@@ -1,63 +1,79 @@
+<!-- <Tapswiper /> -->
+<view class='detail'>
+    <image class='detail_img' src="{{data.goods_detail.goods_thumb}}"></image>
+    <view class='detail_title_group'>
+        <view class='detail_title'>{{data.goods_detail.goods_name}}</view>
+        <view class='detail_mintitle'>每人每天限参与一次</view>
+    </view>
+    <view class='price_group'>
+        <view class='price'>¥ {{data.goods_detail.group_price}}</view>
+        <view class='price_more'>拼省{{data.goods_detail.save_price}}元</view>
+        <view class='price_number'>{{data.goods_detail.goods_sell_num}}人已拼</view>
+    </view>
+</view>
 <view class='wrap'>
-    <!-- <Tapswiper /> -->
-    <!-- <text class='iconfont iconchenggong'></text> -->
-    <view class='tip'>开团成功</view>
-    <view class='time_group'>
-        <view class='time_group_group'>
-            剩 余
-            <view class='time_group_group_item'>10</view>
-            天
-            <view class='time_group_group_item'>46</view>
-            时
-            <view class='time_group_group_item'>30</view>
-            分
-            <view class='time_group_group_item'>10</view>
-            秒
+    <block wx:if="{{data.goods_detail.spell_is_success==2}}">
+        <text class='iconfont iconchenggong'></text>
+        <view class='tip'>拼团成功</view>
+        <view class='status'>您的好友太给力啦！</view>
+        <view class='time_group'>
+            <view class='time_group_group'>耐心等待哦！宝贝已经整装待发啦！</view>
+        </view>
+    </block>
+    <view class='error' wx:if="{{data.goods_detail.spell_is_success==1}}">
+        <view class='tip'>已成团</view>
+        <view class='time_group'>
+            <view class='time_group_group'>亲来晚一步了！</view>
         </view>
     </view>
-    <view class='status'>
-        还差
-        <text class='status_number'>5人</text>
-        ，赶快邀请好友来拼团吧
-    </view>
-    
+    <block wx:if="{{data.goods_detail.spell_is_success==0}}">
+        <view class='tip'>距结束</view>
+        <view class='time_group'>
+            <view class='time_group_group'>
+                剩 余
+                <view class='time_group_group_item'>{{data.goods_detail.timeGroup.day}}</view>
+                天
+                <view class='time_group_group_item'>{{data.goods_detail.timeGroup.hou}}</view>
+                时
+                <view class='time_group_group_item'>{{data.goods_detail.timeGroup.min}}</view>
+                分
+                <view class='time_group_group_item'>{{data.goods_detail.timeGroup.sec}}</view>
+                秒
+            </view>
+        </view>
+    </block>
     <view class='personl_group'>
-        <view class='personl_item'>
-            <view class='personl_logo'></view>
-        </view>
-        <view class='personl_item'>
-            <view class='personl_logo'></view>
-        </view>
-        <view class='personl_item'>
-            <view class='personl_logo'></view>
-        </view>
-        <view class='personl_item'>
-            <view class='personl_logo'></view>
-        </view>
-        <view class='personl_item'>
-            <view class='personl_logo'></view>
-        </view>
-        <view class='personl_item'>
-            <view class='personl_logo'></view>
+        <view class='personl_item' wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+            <image src='/static/images/tuanzhang1.png' class='personl_top' wx:if="{{team_leader_user_img==item.head_url}}"></image>
+            <image class='personl_logo' src='{{item.head_url}}'></image>
         </view>
     </view>
-    <view class='sure_button'>邀请好友参团</view>
-    <!-- <view class='note_tip'>分享好友越多，成团越快</view> -->
+    <view class='sure_button'>
+        {{data.goods_detail.spell_is_success==0?`一键参团 ¥ ${data.goods_detail.group_price}`:data.goods_detail.spell_is_success==1?'再接再励 重新开团':'查看我的拼团'}}
+    </view>
+    <!-- <view class='note_tip'>
+        {{data.goods_detail.spell_is_success==2?'我还要团！团！团！':'分享好友越多，成团越快'}}
+    </view> -->
+</view>
+<view class='rule'>
+    <view class='rule_title'>拼团须知</view>
+    <view class='rule_mintitle'>好友拼团/人满发货/不满极速退款</view>
+    <text class='iconfont iconjiantou'></text>
 </view>
 <view class='res'>
     <view class='res_item'>
         <view class='item_title'>拼团商品</view>
-        <view class='item_mintitle'>水木莳酵石斛修复四件套</view>
+        <view class='item_mintitle'>{{data.goods_detail.goods_name}}</view>
         <text class='iconfont iconjiantou'></text>
     </view>
     <view class='res_item'>
         <view class='item_title'>拼团时间</view>
-        <view class='item_mintitle'>2019-03-05-11:30:20</view>
+        <view class='item_mintitle'>{{data.goods_detail.group_buying_time}}</view>
     </view>
     <view class='res_item' style='border:none'>
         <view class='item_title'>拼团进度</view>
     </view>
 </view>
-<Step active_step='3' />
-<!-- <view class='look_around_title'>随便逛逛</view> -->
+<Step active_step='{{data.goods_detail.spell_is_success+1}}' />
+<view class='look_around_title'>随便逛逛</view>
 <Look_around></Look_around>

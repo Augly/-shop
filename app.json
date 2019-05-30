@@ -1,11 +1,14 @@
 {
   "pages": [
+    "pages/personl/delegation_error/delegation_error",
+    "pages/personl/delegation_success/delegation_success",
+    "pages/personl/assemble_result/assemble_result",
     "pages/index/index/index",
     "pages/personl/assemble_success/assemble_success",
     "pages/personl/delegation/delegation",
     
-    "pages/personl/delegation_success/delegation_success",
-    "pages/personl/delegation_error/delegation_error",
+   
+    
     
     
     
@@ -17,7 +20,7 @@
     
     
     
-    "pages/personl/assemble_result/assemble_result",
+    
     "pages/personl/join_delegation/join_delegation",
     "pages/Regiment_list/Regiment_list",
     "pages/personl/subordinate/subordinate",

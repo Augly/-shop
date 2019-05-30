@@ -24,6 +24,9 @@ Page({
     let s = setInterval(() => {
       console.log(wx.getStorageSync('token'))
       if (wx.getStorageSync('token')) {
+        this.setData({
+          shop: wx.getStorageSync('user_info')
+        })
         clearInterval(s)
         app.config.ajax('GET', {
           token: wx.getStorageSync('token'),

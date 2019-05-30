@@ -99,7 +99,7 @@ Page({
   },
   getDetail(e){
     wx.navigateTo({
-      url: `/pages/personl/ordel_details/ordel_details?orderid=${e.currentTarget.dataset.trade_no}&datatype=0`,
+      url: `/pages/personl/ordel_details/ordel_details?orderid=${e.currentTarget.dataset.trade_no}&datatype=1`,
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },

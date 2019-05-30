@@ -6,7 +6,7 @@
       </swiper-item>
     </block>
   </swiper>
-  <view class="search_group" hover-class="none" hover-stop-propagation="false" bindtap='select_shop' wx:if="{{!shop}}">
+  <view class="search_group" hover-class="none" hover-stop-propagation="false" bindtap='select_shop' wx:if="{{!shop.shop_id}}">
     <view class="shop_name" hover-class="none" hover-stop-propagation="false">已选门店：暂无选择</view>
     <text class="iconfont iconsaoyisao" selectable="false" space="false" decode="false"></text>
   </view>
