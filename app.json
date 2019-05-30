@@ -1,13 +1,22 @@
 {
   "pages": [
     "pages/index/index/index",
+    "pages/personl/assemble_success/assemble_success",
     "pages/personl/delegation/delegation",
-    "pages/personl/ordel_details/ordel_details",
-    "pages/personl/assemble_error/assemble_error",
-    "pages/personl/appointment_success/appointment_success",
+    
     "pages/personl/delegation_success/delegation_success",
     "pages/personl/delegation_error/delegation_error",
-    "pages/personl/assemble_success/assemble_success",
+    
+    
+    
+    
+    
+    "pages/personl/ordel_details/ordel_details",
+   
+    "pages/personl/appointment_success/appointment_success",
+    
+    
+    
     "pages/personl/assemble_result/assemble_result",
     "pages/personl/join_delegation/join_delegation",
     "pages/Regiment_list/Regiment_list",

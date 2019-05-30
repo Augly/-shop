@@ -9,7 +9,7 @@
   <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
     <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore">
       <block>
-        <view class="item" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        <view class="item" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" bindtap='to_datails' data-trade_no='{{item.trade_no}}'>
           <view class='item_head_group'>
             <block wx:if="type=='serverOrdel'">
               <view class="order_number" hover-class="none" hover-stop-propagation="false">
@@ -47,7 +47,7 @@
   <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
     <scroll-view class='swiper_item' scroll-y>
       <block>
-        <view class="item" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        <view class="item" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" bindtap='to_datails' data-trade_no='{{item.trade_no}}'>
           <view class='item_head_group'>
             <block wx:if="type=='serverOrdel'">
               <view class="order_number" hover-class="none" hover-stop-propagation="false">
@@ -71,7 +71,7 @@
               <text class='title'>共{{gitem.goods_num}}件商品，共计：</text>
               <text class="order_money">¥ {{gitem.goods_price*gitem.goods_num}}</text>
               <view class='status_group'>
-                <view class='sure_button'>申请售后</view>
+                <view class='sure_button' catchtap='sale' data-orderid='{{item.id}}' data-goodid='{{gitem.goods_id}}' data-datatype='0' >申请售后</view>
               </view>
             </view>
           </view>
@@ -81,8 +81,8 @@
   </swiper-item>
   <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
     <scroll-view class='swiper_item' scroll-y>
-      <block>
-        <view class="item" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+      <block >
+        <view class="item" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" bindtap='to_datails' data-trade_no='{{item.trade_no}}'>
           <view class='item_head_group'>
             <block wx:if="type=='serverOrdel'">
               <view class="order_number" hover-class="none" hover-stop-propagation="false">
@@ -120,7 +120,7 @@
   <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
     <scroll-view class='swiper_item' scroll-y>
       <block>
-        <view class="item" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        <view class="item" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" bindtap='to_datails' data-trade_no='{{item.trade_no}}'>
           <view class='item_head_group'>
             <block wx:if="type=='serverOrdel'">
               <view class="order_number" hover-class="none" hover-stop-propagation="false">
@@ -144,7 +144,7 @@
               <text class='title'>共{{gitem.goods_num}}件商品，共计：</text>
               <text class="order_money">¥ {{gitem.goods_price*gitem.goods_num}}</text>
               <view class='status_group'>
-                <view class='cendel_button'>申请售后</view>
+                <view class='cendel_button' catchtap='sale' data-orderid='{{item.id}}' data-goodid='{{gitem.goods_id}}' data-datatype='0' >申请售后</view>
                 <view class='sure_button' catchtap='to_eval' data-item='{{gitem}}'>
                   {{gitem.is_evaluate==0?'评价':'已评价'}}
                 </view>
@@ -158,7 +158,7 @@
   <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
     <scroll-view class='swiper_item' scroll-y>
       <block>
-        <view class="item" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        <view class="item" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" bindtap='to_datails' data-trade_no='{{item.trade_no}}'>
           <view class='item_head_group'>
             <block wx:if="type=='serverOrdel'">
               <view class="order_number" hover-class="none" hover-stop-propagation="false">

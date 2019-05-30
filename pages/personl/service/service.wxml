@@ -1,26 +1,29 @@
 <view class="title">您是否已经收到货？</view>
 <view class='tab_group'>
-    <view class="tab_item {{tab_item_active==0?'tab_item_active':''}}">未收货</view>
-    <view class="tab_item {{tab_item_active==1?'tab_item_active':''}}">已收货</view>
+  <view class="tab_item {{tab_index==0?'tab_item_active':''}}" bindtap='change_tab' data-index='0'>未收货</view>
+  <view class="tab_item {{tab_index==1?'tab_item_active':''}}" bindtap='change_tab' data-index='1'>已收货</view>
 </view>
 <view class='content'>
-    <view class='tap_wrap'>
-        <view class='tab_title'>温馨提示：</view>
-        <view class='tab_item'>1.温馨提示温馨提示温馨提示温馨提示温馨提示</view>
-        <view class='tab_item'>1.温馨提示温馨提示温馨提示温馨提示温馨提示</view>
-        <view class='tab_item'>1.温馨提示温馨提示温馨提示温馨提示温馨提示</view>
-        <view class='tab_item'>1.温馨提示温馨提示温馨提示温馨提示温馨提示</view>
-        <view class='tab_item'>1.温馨提示温馨提示温馨提示温馨提示温馨提示</view>
-        <view class='tab_item'>1.温馨提示温馨提示温馨提示温馨提示温馨提示</view>
-    </view>
+  <view class='tap_wrap'>
+    <view class='tab_title'>温馨提示：</view>
+    <view class='tab_item'>1.温馨提示温馨提示温馨提示温馨提示温馨提示</view>
+    <view class='tab_item'>1.温馨提示温馨提示温馨提示温馨提示温馨提示</view>
+    <view class='tab_item'>1.温馨提示温馨提示温馨提示温馨提示温馨提示</view>
+    <view class='tab_item'>1.温馨提示温馨提示温馨提示温馨提示温馨提示</view>
+    <view class='tab_item'>1.温馨提示温馨提示温馨提示温馨提示温馨提示</view>
+    <view class='tab_item'>1.温馨提示温馨提示温馨提示温馨提示温馨提示</view>
+  </view>
+  <picker mode='selector' range="{{resonlist}}" bindchange="change_reason">
     <view class='tab_list'>
-        <view class='tab_list_title'>退款原因：</view>
-        <view class='tab_list_select'>
-            请选择退款原因
-            <text class='iconfont   iconjiantou9'></text>
-        </view>
+      <view class='tab_list_title'>退款原因：</view>
+      <view class='tab_list_select'>
+        {{reson}}
+        <text class='iconfont   iconjiantou9'></text>
+      </view>
     </view>
-    <view class='tab_list'>
+  </picker>
+
+  <!-- <view class='tab_list'>
         <view class='tab_list_title'>退款联系人:</view>
         <input class="tab_list_select" type="text|number|idcard|digit|time|date" placeholder="请输入收件人"></input>
     </view>
@@ -31,11 +34,14 @@
     <view class='tab_list'>
         <view class='tab_list_title'>退款金额：</view>
          <input class="tab_list_select" type="text|number|idcard|digit|time|date" placeholder="请输入联系电话"></input>
+    </view> -->
+  <view class="tab_up_img">
+    <view class="tab_up_title">上传凭证</view>
+    <view class="up_img" bindtap='choose'>
+      <image class='img_wrap' wx:if="{{file}}" src='{{file}}'></image>
+      <text class='iconfont icontianjia' wx:else></text>
     </view>
-    <view class="tab_up_img">
-        <view class="tab_up_title">上传凭证</view>
-        <view class="up_img">
-          <text class='iconfont icontianjia'></text>
-        </view>
-    </view>
+  </view>
 </view>
+
+<view class='sure_button' bindtap='sure'>申请售后</view>

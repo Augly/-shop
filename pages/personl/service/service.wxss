@@ -1,9 +1,7 @@
 page {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 24rpx;
 }
-
 .title {
   width: 100%;
   height: 70rpx;
@@ -14,21 +12,13 @@ page {
   font-weight: 400;
   color: #353535;
 }
-
 .tab_group {
   width: 100%;
   height: 50rpx;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
-
 .tab_group .tab_item {
   width: 150rpx;
   height: 50rpx;
@@ -42,30 +32,25 @@ page {
   text-align: center;
   line-height: 50rpx;
 }
-
 .tab_group .tab_item_active {
   border: 1rpx solid #45d0ae;
   color: #ffffff;
   background-color: #45d0ae;
 }
-
 .content {
   width: 100%;
   height: auto;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 24rpx;
   border-radius: 10rpx;
   background-color: #ffffff;
   margin-top: 42rpx;
 }
-
 .content .tap_wrap {
   width: 100%;
   height: auto;
   margin-bottom: 60rpx;
 }
-
 .content .tap_wrap .tab_title {
   font-size: 26rpx;
   font-family: PingFangSC-Regular;
@@ -73,7 +58,6 @@ page {
   line-height: 40rpx;
   color: #353535;
 }
-
 .content .tap_wrap .tab_item {
   width: 100%;
   height: auto;
@@ -83,19 +67,13 @@ page {
   color: rgba(136, 136, 136, 0.8);
   line-height: 35rpx;
 }
-
 .content .tab_list {
   width: 100%;
   height: 75rpx;
   border-bottom: 1rpx solid #f3f4f7;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
-
 .content .tab_list .tab_list_title {
   width: 160rpx;
   height: 100%;
@@ -103,17 +81,10 @@ page {
   font-family: PingFangSC-Regular;
   font-weight: 400;
   color: #353535;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
 }
-
 .content .tab_list .tab_list_select {
   width: 500rpx;
   height: 100%;
@@ -121,29 +92,24 @@ page {
   font-family: PingFangSC-Light;
   font-weight: 300;
   color: #353535;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
-
 .content .tab_list .tab_list_select .iconjiantou9 {
   font-size: 26rpx;
   font-family: PingFangSC-Light;
   font-weight: 300;
   color: #353535;
 }
-
 .content .tab_up_img {
   width: 100%;
   height: auto;
 }
-
+.content .tab_up_img .img_wrap {
+  width: 100%;
+  height: 100%;
+}
 .content .tab_up_title {
   width: 100%;
   height: 70rpx;
@@ -153,23 +119,33 @@ page {
   color: #353535;
   line-height: 70rpx;
 }
-
 .content .up_img {
   width: 154rpx;
   height: 154rpx;
   background: rgba(178, 178, 178, 0.3);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
-
 .content .up_img .icontianjia {
   font-size: 20rpx;
   color: #353535;
+}
+.sure_button {
+  width: 638rpx;
+  height: 79rpx;
+  background: #45d0ae;
+  border-radius: 10rpx;
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-size: 33rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

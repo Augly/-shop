@@ -1,192 +1,194 @@
 <view class="tab_group" catchtap='tabChange'>
-    <block wx:for="{{tab}}" wx:for-index="index" wx:for-item="item" wx:key="index">
-        <view class="tab_item {{index==tab_index?'tab_item_active':''}}" data-id='{{index}}'>
-            {{item.title}}
-        </view>
-    </block>
+  <block wx:for="{{tab}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <view class="tab_item {{index==tab_index?'tab_item_active':''}}" data-id='{{index}}'>
+      {{item.title}}
+    </view>
+  </block>
 </view>
 <swiper class='content_wrap' style="height:{{myheight}}px" current='{{tab_index}}' bindchange='swiperChange' duration="300">
-    <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
-        <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
-            <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
-                <view class="item" catchtap='to_datails' data-id='{{item.id}}'>
-                    <view class='item_head_group'>
-                        <block wx:if="type=='serverOrdel'">
-                            <view class="order_number" hover-class="none" hover-stop-propagation="false">
-                                {{item.time}}
-                            </view>
-                        </block>
-                        <!-- <view class='date'>2019/03/05 15:30</view> -->
-                        <view class='status'>
-                            {{item.spell_is_success==2?'拼团成功!':item.spell_is_success==0?'待分享，差'+item.left_people_num+'人':'拼团失败，急速退款中'}}
-                        </view>
-                    </view>
-                    <view class='item_content'>
-                        <view class="item_logo">
-                            <image class="item_logo_img" src="{{item.goods_thumb}}" lazy-load />
-                            <view class='item_logo_tap'></view>
-                        </view>
-                        <view class='item_res'>
-                            <view class='item_title line2'>{{item.goods_name}}</view>
-                            <view class='item_price_group'>
-                                <view class='item_p_price'>
-                                    <view class='item_unprice'>¥ {{item.market_price}}</view>
-                                    <view class='item_price'>¥ {{item.goods_price}}</view>
-                                    <view class='item_number'>{{item.group_num}}人团</view>
-                                </view>
-                                <view class='item_status_group'>
-                                    <view class="finied_button" hover-class="none" hover-stop-propagation="false">
-                                        我再想想
-                                    </view>
-                                    <!-- <view class="cendel_button" hover-class="none" hover-stop-propagation="false">邀请好友</view> -->
-                                    <view class="sure_button" hover-class="none" hover-stop-propagation="false">
-                                        邀请好友
-                                    </view>
-                                </view>
-                            </view>
-                        </view>
-                    </view>
-                </view>
+  <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
+    <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
+      <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        <view class="item" catchtap='to_datails' data-id='{{item.id}}' data-leader_order_id='{{item. leader_order_id}}'>
+          <view class='item_head_group'>
+            <block wx:if="type=='serverOrdel'">
+              <view class="order_number" hover-class="none" hover-stop-propagation="false">
+                {{item.time}}
+              </view>
             </block>
-        </scroll-view>
-        <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">
-            暂无更多数据~
+            <!-- <view class='date'>2019/03/05 15:30</view> -->
+            <view class='status'>
+              {{item.spell_is_success==2?'拼团成功!':item.spell_is_success==0?'待分享，差'+item.left_people_num+'人':'拼团失败，急速退款中'}}
+            </view>
+          </view>
+          <view class='item_content'>
+            <view class="item_logo">
+              <image class="item_logo_img" src="{{item.goods_thumb}}" lazy-load />
+              <!-- <image class='item_logo_tap' src='/static/images/tuanzhang.png'></image> -->
+              <image class='item_logo_tap' src='/static/images/tuanzhang.png' wx:if="{{item.team_leader_user_id==1}}"></image>
+            </view>
+            <view class='item_res'>
+              <view class='item_title line2'>{{item.goods_name}}</view>
+              <view class='item_price_group'>
+                <view class='item_p_price'>
+                  <view class='item_unprice'>¥ {{item.market_price}}</view>
+                  <view class='item_price'>¥ {{item.goods_price}}</view>
+                  <view class='item_number'>{{item.group_num}}人团</view>
+                </view>
+                <view class='item_status_group'>
+                  <view class="finied_button" hover-class="none" hover-stop-propagation="false">
+                    我再想想
+                  </view>
+                  <!-- <view class="cendel_button" hover-class="none" hover-stop-propagation="false">邀请好友</view> -->
+                  <view class="sure_button" hover-class="none" hover-stop-propagation="false">
+                    邀请好友
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
         </view>
-    </swiper-item>
-    <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
-        <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
-            <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
-               <view class="item" catchtap='to_datails' data-id='{{item.id}}'>
-                    <view class='item_head_group'>
-                        <block wx:if="type=='serverOrdel'">
-                            <view class="order_number" hover-class="none" hover-stop-propagation="false">
-                                {{item.time}}
-                            </view>
-                        </block>
-                        <!-- <view class='date'>2019/03/05 15:30</view> -->
-                        <view class='status'>
-                            {{item.spell_is_success==2?'拼团成功!':item.spell_is_success==0?'待分享，差'+item.left_people_num+'人':'拼团失败，急速退款中'}}
-                        </view>
-                    </view>
-                    <view class='item_content'>
-                        <view class="item_logo">
-                            <image class="item_logo_img" src="{{item.goods_thumb}}" lazy-load />
-                            <view class='item_logo_tap'></view>
-                        </view>
-                        <view class='item_res'>
-                            <view class='item_title line2'>{{item.goods_name}}</view>
-                            <view class='item_price_group'>
-                                <view class='item_p_price'>
-                                    <view class='item_unprice'>¥ {{item.market_price}}</view>
-                                    <view class='item_price'>¥ {{item.goods_price}}</view>
-                                    <view class='item_number'>{{item.group_num}}人团</view>
-                                </view>
-                                <view class='item_status_group'>
-                                    <!-- <view class="finied_button" hover-class="none" hover-stop-propagation="false">
+      </block>
+    </scroll-view>
+    <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">
+      暂无更多数据~
+    </view>
+  </swiper-item>
+  <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
+    <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
+      <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        <view class="item" catchtap='to_datails' data-id='{{item.id}}' data-leader_order_id='{{item. leader_order_id}}'>
+          <view class='item_head_group'>
+            <block wx:if="type=='serverOrdel'">
+              <view class="order_number" hover-class="none" hover-stop-propagation="false">
+                {{item.time}}
+              </view>
+            </block>
+            <!-- <view class='date'>2019/03/05 15:30</view> -->
+            <view class='status'>
+              {{item.spell_is_success==2?'拼团成功!':item.spell_is_success==0?'待分享，差'+item.left_people_num+'人':'拼团失败，急速退款中'}}
+            </view>
+          </view>
+          <view class='item_content'>
+            <view class="item_logo">
+              <image class="item_logo_img" src="{{item.goods_thumb}}" lazy-load />
+              <image class='item_logo_tap' src='/static/images/tuanzhang.png' wx:if="{{item.team_leader_user_id==1}}"></image>
+            </view>
+            <view class='item_res'>
+              <view class='item_title line2'>{{item.goods_name}}</view>
+              <view class='item_price_group'>
+                <view class='item_p_price'>
+                  <view class='item_unprice'>¥ {{item.market_price}}</view>
+                  <view class='item_price'>¥ {{item.goods_price}}</view>
+                  <view class='item_number'>{{item.group_num}}人团</view>
+                </view>
+                <view class='item_status_group'>
+                  <!-- <view class="finied_button" hover-class="none" hover-stop-propagation="false">
                                         我再想想
                                     </view> -->
-                                    <!-- <view class="cendel_button" hover-class="none" hover-stop-propagation="false">邀请好友</view> -->
-                                    <view class="sure_button" hover-class="none" hover-stop-propagation="false">
-                                        邀请好友
-                                    </view>
-                                </view>
-                            </view>
-                        </view>
-                    </view>
+                  <!-- <view class="cendel_button" hover-class="none" hover-stop-propagation="false">邀请好友</view> -->
+                  <view class="sure_button" hover-class="none" hover-stop-propagation="false">
+                    邀请好友
+                  </view>
                 </view>
-            </block>
-        </scroll-view>
-        <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">
-            暂无更多数据~
+              </view>
+            </view>
+          </view>
         </view>
-    </swiper-item>
-    <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
-        <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
-            <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
-                <view class="item" catchtap='to_datails' data-id='{{item.id}}'>
-                    <view class='item_head_group'>
-                        <block wx:if="type=='serverOrdel'">
-                            <view class="order_number" hover-class="none" hover-stop-propagation="false">
-                                {{item.create_time}}
-                            </view>
-                        </block>
-                        <!-- <view class='date'>2019/03/05 15:30</view> -->
-                        <view class='status'>
-                            {{item.spell_is_success==2?'拼团成功!':item.spell_is_success==0?'待分享，差'+item.left_people_num+'人':'拼团失败，急速退款中'}}
-                        </view>
-                    </view>
-                    <view class='item_content'>
-                        <view class="item_logo">
-                            <image class="item_logo_img" src="{{item.goods_thumb}}" lazy-load />
-                            <view class='item_logo_tap'></view>
-                        </view>
-                        <view class='item_res'>
-                            <view class='item_title line2'>{{item.goods_name}}</view>
-                            <view class='item_price_group'>
-                               <view class='item_p_price'>
-                                    <view class='item_unprice'>¥ {{item.market_price}}</view>
-                                    <view class='item_price'>¥ {{item.goods_price}}</view>
-                                    <view class='item_number'>{{item.group_num}}人团</view>
-                                </view>
-                                <view class='item_status_group'>
-                                    <view class="sure_button" hover-class="none" hover-stop-propagation="false">
-                                        订单详情
-                                    </view>
-                                    <view class="cendel_button" hover-class="none" hover-stop-propagation="false">
-                                        拼团详情
-                                    </view>
-                                </view>
-                            </view>
-                        </view>
-                    </view>
+      </block>
+    </scroll-view>
+    <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">
+      暂无更多数据~
+    </view>
+  </swiper-item>
+  <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
+    <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
+      <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        <view class="item" catchtap='to_datails' data-id='{{item.id}}' data-leader_order_id='{{item. leader_order_id}}'>
+          <view class='item_head_group'>
+            <block wx:if="type=='serverOrdel'">
+              <view class="order_number" hover-class="none" hover-stop-propagation="false">
+                {{item.create_time}}
+              </view>
+            </block>
+            <!-- <view class='date'>2019/03/05 15:30</view> -->
+            <view class='status'>
+              {{item.spell_is_success==2?'拼团成功!':item.spell_is_success==0?'待分享，差'+item.left_people_num+'人':'拼团失败，急速退款中'}}
+            </view>
+          </view>
+          <view class='item_content'>
+            <view class="item_logo">
+              <image class="item_logo_img" src="{{item.goods_thumb}}" lazy-load />
+              <image class='item_logo_tap' src='/static/images/tuanzhang.png' wx:if="{{item.team_leader_user_id==1}}"></image>
+            </view>
+            <view class='item_res'>
+              <view class='item_title line2'>{{item.goods_name}}</view>
+              <view class='item_price_group'>
+                <view class='item_p_price'>
+                  <view class='item_unprice'>¥ {{item.market_price}}</view>
+                  <view class='item_price'>¥ {{item.goods_price}}</view>
+                  <view class='item_number'>{{item.group_num}}人团</view>
                 </view>
-            </block>
-        </scroll-view>
-        <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">
-            暂无更多数据~
-        </view>
-    </swiper-item>
-    <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
-        <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
-            <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
-               <view class="item" catchtap='to_datails' data-id='{{item.id}}'>
-                    <view class='item_head_group'>
-                        <block wx:if="type=='serverOrdel'">
-                            <view class="order_number" hover-class="none" hover-stop-propagation="false">
-                                {{item.time}}
-                            </view>
-                        </block>
-                        <!-- <view class='date'>2019/03/05 15:30</view> -->
-                        <view class='status'>
-                            {{item.spell_is_success==2?'拼团成功!':item.spell_is_success==0?'待分享，差'+item.left_people_num+'人':'拼团失败，急速退款中'}}
-                        </view>
-                    </view>
-                    <view class='item_content'>
-                        <view class="item_logo">
-                            <image class="item_logo_img" src="{{item.goods_thumb}}" lazy-load />
-                            <view class='item_logo_tap' wx:if="{{item.team_leader_user_id==1}}"></view>
-                        </view>
-                        <view class='item_res'>
-                            <view class='item_title line2'>{{item.goods_name}}</view>
-                            <view class='item_price_group'>
-                                <view class='item_p_price'>
-                                    <view class='item_unprice'>¥ {{item.market_price}}</view>
-                                    <view class='item_price'>¥ {{item.goods_price}}</view>
-                                    <view class='item_number'>{{item.group_num}}人团</view>
-                                </view>
-                                <view class='item_status_group'>
-                                    <view class="sure_button" hover-class="none" hover-stop-propagation="false">
-                                        再拼一次
-                                    </view>
-                                </view>
-                            </view>
-                        </view>
-                    </view>
+                <view class='item_status_group'>
+                  <view class="sure_button" hover-class="none" hover-stop-propagation="false" catchtap='getDetail' data-id='{{item.trade_no}}'>
+                 
+                    订单详情
+                  </view>
+                  <view class="cendel_button" hover-class="none" hover-stop-propagation="false">
+                    拼团详情
+                  </view>
                 </view>
-            </block>
-        </scroll-view>
-        <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">
-            暂无更多数据~
+              </view>
+            </view>
+          </view>
         </view>
-    </swiper-item>
+      </block>
+    </scroll-view>
+    <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">
+      暂无更多数据~
+    </view>
+  </swiper-item>
+  <swiper-item class="swiper_item" style="-webkit-box-sizing: border-box; box-sizing: border-box;padding-top: 20rpx;">
+    <scroll-view class='swiper_item' scroll-y bindscrolltolower="getmore" wx:if="{{list.length>0}}">
+      <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        <view class="item" catchtap='to_datails' data-id='{{item.id}}' data-leader_order_id='{{item.leader_order_id}}'>
+          <view class='item_head_group'>
+            <block wx:if="type=='serverOrdel'">
+              <view class="order_number" hover-class="none" hover-stop-propagation="false">
+                {{item.time}}
+              </view>
+            </block>
+            <!-- <view class='date'>2019/03/05 15:30</view> -->
+            <view class='status'>
+              {{item.spell_is_success==2?'拼团成功!':item.spell_is_success==0?'待分享，差'+item.left_people_num+'人':'拼团失败，急速退款中'}}
+            </view>
+          </view>
+          <view class='item_content'>
+            <view class="item_logo">
+              <image class="item_logo_img" src="{{item.goods_thumb}}" lazy-load />
+              <image class='item_logo_tap' src='/static/images/tuanzhang.png' wx:if="{{item.team_leader_user_id==1}}"></image>
+            </view>
+            <view class='item_res'>
+              <view class='item_title line2'>{{item.goods_name}}</view>
+              <view class='item_price_group'>
+                <view class='item_p_price'>
+                  <view class='item_unprice'>¥ {{item.market_price}}</view>
+                  <view class='item_price'>¥ {{item.goods_price}}</view>
+                  <view class='item_number'>{{item.group_num}}人团</view>
+                </view>
+                <view class='item_status_group'>
+                  <view class="sure_button" hover-class="none" hover-stop-propagation="false">
+                    再拼一次
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="nodata" wx:else hover-class="none" hover-stop-propagation="false">
+      暂无更多数据~
+    </view>
+  </swiper-item>
 </swiper>

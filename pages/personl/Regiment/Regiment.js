@@ -89,11 +89,20 @@ Page({
     })
   },
   to_datails(e){
+    console.log(e)
     wx.navigateTo({
-      url: `/pages/personl/ordel_details/ordel_details?orderid=${e.currentTarget.dataset.trade_no}&datatype=1`,
+      url: `/pages/personl/assemble_success/assemble_success?orderid=${e.currentTarget.dataset.id}&leaderorderid=${e.currentTarget.dataset.leader_order_id}`,
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
+    })
+  },
+  getDetail(e){
+    wx.navigateTo({
+      url: `/pages/personl/ordel_details/ordel_details?orderid=${e.currentTarget.dataset.trade_no}&datatype=0`,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   tabChange(e) {

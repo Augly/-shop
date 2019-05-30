@@ -30,6 +30,14 @@ Page({
     })
     this.getInit()
   },
+  to_datails(e) {
+    wx.navigateTo({
+      url: `/pages/personl/ordel_details/ordel_details?orderid=${e.currentTarget.dataset.trade_no}&datatype=0`,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
   /**
    * 取消订单
    */
@@ -42,6 +50,16 @@ Page({
       this.setData({
         list: list
       })
+    })
+  },
+  //申请售后
+  sale(e){
+    // e.currentTarget.dataset.
+    wx.navigateTo({
+      url: `/pages/personl/service/service?orderid=${e.currentTarget.dataset.orderid}&goodid="${e.currentTarget.dataset.goodid}&datatype=${e.currentTarget.dataset.datatype}`,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
     })
   },
   /**

@@ -1,5 +1,4 @@
-<Tapswiper />
-
+<!-- <Tapswiper /> -->
 <view class='detail'>
   <image class='detail_img'></image>
   <view class='detail_title_group'>
@@ -7,16 +6,12 @@
     <view class='detail_mintitle'>每人每天限参与一次</view>
   </view>
   <view class='price_group'>
-    <view class='price'>
-      ¥ 588
-    </view>
+    <view class='price'>¥ 588</view>
     <view class='price_more'>拼省70元</view>
     <view class='price_number'>4000人已拼</view>
   </view>
 </view>
-
 <view class='wrap'>
-
   <view class='tip'>拼团失败</view>
   <view class='status'>2019-02-15 07:20:10 拼团失败</view>
   <view class='time_group'>
