@@ -49,7 +49,7 @@
         </view>
     </view>
     <view class='sure_button'>
-        {{data.goods_detail.spell_is_success==0?`一键参团 ¥ ${data.goods_detail.group_price}`:data.goods_detail.spell_is_success==1?'再接再励 重新开团':'查看我的拼团'}}
+        {{data.goods_detail.spell_is_success==0?'一键参团 ¥'+data.goods_detail.group_price :data.goods_detail.spell_is_success==1?'再接再励 重新开团':'查看我的拼团'}}
     </view>
     <!-- <view class='note_tip'>
         {{data.goods_detail.spell_is_success==2?'我还要团！团！团！':'分享好友越多，成团越快'}}
