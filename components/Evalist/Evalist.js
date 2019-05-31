@@ -4,17 +4,17 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    showAll:{
-      type:Boolean,
-      value:false
+    showAll: {
+      type: Boolean,
+      value: false
     },
-    list:{
-      type:Array,
-      value:[]
+    list: {
+      type: Array,
+      value: []
     },
-    count:{
-      type:Number,
-      value:0
+    count: {
+      type: Number,
+      value: 0
     }
   },
   lifetimes: {
@@ -52,7 +52,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    read:true                                                              
+    read: true
   },
 
   /**

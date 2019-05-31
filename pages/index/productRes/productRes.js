@@ -8,9 +8,9 @@ Page({
    */
   data: {
     details: null,
-    mask:false,
-    car_count:0,
-    goods_num:1,
+    mask: false,
+    car_count: 0,
+    goods_num: 1,
   },
 
   /**
@@ -23,22 +23,22 @@ Page({
     this.getDetail(options)
     this.getFirst(options)
   },
-  to_car(){
+  to_car() {
     wx.navigateTo({
       url: '/pages/personl/shopping_cart/shopping_cart',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
-  plus(){
-    let num=this.data.goods_num
-    num==1?num=1:num--
+  plus() {
+    let num = this.data.goods_num
+    num == 1 ? num = 1 : num--
     this.setData({
-      goods_num:num
+      goods_num: num
     })
   },
-  reduce(){
+  reduce() {
     let num = this.data.goods_num
     num++
     this.setData({
@@ -48,18 +48,18 @@ Page({
   /**
    * 直接购买
    */
-  purchase(){
+  purchase() {
     console.log(this.data)
-    let data=this.data.details
-    data.goods_num=this.data.goods_num
-    data.check=true
+    let data = this.data.details
+    data.goods_num = this.data.goods_num
+    data.check = true
     data.de_price = 0
-    let arr =[]
-    arr.push(data) 
+    let arr = []
+    arr.push(data)
     let list = JSON.stringify(arr)
     let shopName = this.data.data.shop_name
     this.setData({
-      mask:false
+      mask: false
     })
     wx.navigateTo({
       url: `/pages/personl/fill_order/fill_order?list=${list}&shopName=${shopName}`,
@@ -70,7 +70,7 @@ Page({
 
   },
   //加入购物车
-  join_cart(){
+  join_cart() {
     app.config.ajax('PUT', {
       token: wx.getStorageSync('token'),
     }, `shop/addcart/${this.data.goodId}`, (res) => {
@@ -82,13 +82,13 @@ Page({
     })
   },
   //关闭弹框
-  hidemask(){
+  hidemask() {
     this.setData({
-      mask:false
+      mask: false
     })
   },
   //打开弹框
-  showmask(){
+  showmask() {
     this.setData({
       mask: true
     })
@@ -99,13 +99,13 @@ Page({
       token: wx.getStorageSync('token'),
     }, `shop/details/${options.goodId}/${options.datatype}`, (res) => {
       this.setData({
-        imgUrls:[{
-          img_url:res.data.details.goods_thumb
+        imgUrls: [{
+          img_url: res.data.details.goods_thumb
         }],
-        data:res.data,
+        data: res.data,
         details: res.data.details,
         hot_data: res.data.hot_data,
-        latest_data:   res.data.latest_data,
+        latest_data: res.data.latest_data,
         car_count: res.data.car_count
       })
       this.goTop()
@@ -124,7 +124,7 @@ Page({
   getId(e) {
     this.getDetail(e.detail)
     this.getFirst(e.detail)
-    
+
   },
   //回到顶部
   goTop: function () { // 一键回到顶部

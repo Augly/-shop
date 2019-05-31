@@ -1,6 +1,6 @@
 // pages/personl/serve_ordel/serve_ordel.js
 const config = require('../../../utils/util.js')
-let allTime=null
+let allTime = null
 Page({
 
   /**
@@ -24,7 +24,7 @@ Page({
   timeFormat(param) {//小于10的格式化函数
     return param < 10 ? '0' + param : param;
   },
-  none(){
+  none() {
 
   },
   /**
@@ -35,7 +35,7 @@ Page({
     let endTimeList = this.data.list;
     let list = [];
     endTimeList.forEach(item => {
-      let endTime = item.end_time*1000
+      let endTime = item.end_time * 1000
       let obj = null;
       if (endTime - newTime > 0) {
         let time = (endTime - newTime) / 1000;
@@ -56,12 +56,12 @@ Page({
           min: '00',
           sec: '00'
         }
-        
+
       }
       item.time = `${obj.day}天${obj.hou}时${obj.min}分${obj.sec}秒`
       list.push(item);
     })
-    this.setData({ list: list})
+    this.setData({ list: list })
     setTimeout(this.countDown, 1000);
   },
   getInit() {
@@ -81,26 +81,26 @@ Page({
         let page = this.data.page
         page++
         list.push.apply(list, arr);
-          this.setData({
-            page: page,
-            list: list
-          })
+        this.setData({
+          page: page,
+          list: list
+        })
         this.countDown()
       } else {
         config.mytoast('暂无更多数据~')
       }
     })
   },
-  to_datails(e){
+  to_datails(e) {
     console.log(e)
     wx.navigateTo({
       url: `/pages/personl/assemble_success/assemble_success?orderid=${e.currentTarget.dataset.id}&leaderorderid=${e.currentTarget.dataset.leader_order_id}`,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
-  getDetail(e){
+  getDetail(e) {
     wx.navigateTo({
       url: `/pages/personl/ordel_details/ordel_details?orderid=${e.currentTarget.dataset.trade_no}&datatype=1`,
       success: function (res) { },

@@ -13,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+
   },
 
   /**
@@ -40,7 +40,7 @@ Page({
   checkDefault(e) {
     app.config.ajax('PUT', {
       token: wx.getStorageSync('token')
-    }, `address/setdefault/${e.currentTarget.dataset.id}/${e.currentTarget.dataset.type==0?1:0}`, (res) => {
+    }, `address/setdefault/${e.currentTarget.dataset.id}/${e.currentTarget.dataset.type == 0 ? 1 : 0}`, (res) => {
       this.getAdderList()
     })
   },
@@ -51,9 +51,9 @@ Page({
   edit(e) {
     wx.navigateTo({
       url: `/pages/personl/adder_edit/adder_edit?type=edit&adderId=${e.currentTarget.dataset.id}`,
-      success: function (res) {},
-      fail: function (res) {},
-      complete: function (res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**
@@ -62,9 +62,9 @@ Page({
   addAdder(e) {
     wx.navigateTo({
       url: `/pages/personl/adder_edit/adder_edit?type=add`,
-      success: function (res) {},
-      fail: function (res) {},
-      complete: function (res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**

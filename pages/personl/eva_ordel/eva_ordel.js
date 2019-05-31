@@ -17,12 +17,12 @@ Page({
    */
   onLoad: function (options) {
     let data = JSON.parse(options.data)
-      data.evalmsg = '',
+    data.evalmsg = '',
       data.star = 3,
       data.shopstar = 3,
       data.servicestar = 3,
       data.evalfile = '',
-      data.orderid = data.id 
+      data.orderid = data.id
     this.setData({
       data: data
     })
@@ -47,7 +47,7 @@ Page({
    */
   delete(e) {
     let data = this.data.data
-   data.evalfile = ''
+    data.evalfile = ''
     this.setData({
       'data': data
     })
@@ -58,7 +58,7 @@ Page({
    */
   tabStart(e) {
     let data = this.data.data
-   data.star = e.detail.score
+    data.star = e.detail.score
     this.setData({
       'data': data
     })
@@ -69,7 +69,7 @@ Page({
    */
   shopstar(e) {
     let data = this.data.data
-   data.shopstar = e.detail.score
+    data.shopstar = e.detail.score
     this.setData({
       'data': data
     })
@@ -80,7 +80,7 @@ Page({
    */
   servicestar(e) {
     let data = this.data.data
-   data.servicestar = e.detail.score
+    data.servicestar = e.detail.score
     this.setData({
       'data': data
     })
@@ -95,28 +95,28 @@ Page({
    * 提交评论
    */
   sumbit() {
-    let data=this.data.data
-      app.config.ajax('img', {
-        token: wx.getStorageSync('token'),
-        evalmsg: data.evalmsg,
-        star: data.star,
-        shopstar: data.shopstar,
-        servicestar: data.servicestar,
-        orderid: data.orderid,
-      }, `shop/evalsave/${this.data.id}`, (res) => {
-       
-          app.config.mytoast('提交评论成功!', () => {
-            wx.navigateBack({
-              delta: 1
-            });
-          })
-        
-      }, (err) => {
+    let data = this.data.data
+    app.config.ajax('img', {
+      token: wx.getStorageSync('token'),
+      evalmsg: data.evalmsg,
+      star: data.star,
+      shopstar: data.shopstar,
+      servicestar: data.servicestar,
+      orderid: data.orderid,
+    }, `shop/evalsave/${this.data.id}`, (res) => {
 
-      }, (res) => {
+      app.config.mytoast('提交评论成功!', () => {
+        wx.navigateBack({
+          delta: 1
+        });
+      })
 
-      }, data.evalfile)
-    
+    }, (err) => {
+
+    }, (res) => {
+
+    }, data.evalfile)
+
   },
   /**
    * 生命周期函数--监听页面显示

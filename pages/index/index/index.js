@@ -92,8 +92,8 @@ Page({
       success: (result) => {
 
       },
-      fail: () => {},
-      complete: () => {}
+      fail: () => { },
+      complete: () => { }
     });
   },
   //切换产品或服务
@@ -122,8 +122,8 @@ Page({
       success: (result) => {
 
       },
-      fail: () => {},
-      complete: () => {}
+      fail: () => { },
+      complete: () => { }
     });
   },
   /**

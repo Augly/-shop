@@ -1,13 +1,13 @@
 // pages/personl/subordinate/subordinate.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list:[],
-    page:1
+    list: [],
+    page: 1
   },
 
   /**
@@ -23,7 +23,7 @@ Page({
       if (res.data.length > 0) {
         let list = this.data.list
         let arr = res.data.map((item) => {
-          item.create_time = config.timeForm(item.create_time).chatTime.year + '/' + config.timeForm(item.create_time).chatTime.month + '/' + config.timeForm(item.create_time).chatTime.day 
+          item.create_time = config.timeForm(item.create_time).chatTime.year + '/' + config.timeForm(item.create_time).chatTime.month + '/' + config.timeForm(item.create_time).chatTime.day
           return item
         })
         let page = this.data.page

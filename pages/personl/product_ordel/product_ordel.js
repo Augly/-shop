@@ -53,12 +53,12 @@ Page({
     })
   },
   //申请售后
-  sale(e){
+  sale(e) {
     wx.navigateTo({
       url: `/pages/personl/service/service?orderid=${e.currentTarget.dataset.orderid}&goodid="${e.currentTarget.dataset.goodid}&datatype=${e.currentTarget.dataset.datatype}`,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**

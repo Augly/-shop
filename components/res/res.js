@@ -5,7 +5,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    res:{
+    res: {
       type: String,
       value: ''
     },
@@ -23,7 +23,7 @@ Component({
     },
     attached: function () {
       // 在组件实例进入页面节点树时执行
-     
+
     },
     ready: function () {
       // 在组件在视图层布局完成后执行
@@ -54,7 +54,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    gitInit(){
+    gitInit() {
       console.log(this.data.res)
       WxParse.wxParse('article', 'html', this.data.res, this, 0);
     }

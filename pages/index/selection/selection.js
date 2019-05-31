@@ -1,5 +1,5 @@
 // pages/index/selection/selection.js
-let app=getApp();
+let app = getApp();
 var timeout = null;
 Page({
 
@@ -7,10 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[],
-    keywords:'',
-    page:1,
-    bannerlist:[],
+    list: [],
+    keywords: '',
+    page: 1,
+    bannerlist: [],
     indicatorDots: true,
     autoplay: true,
     indicatorColor: 'rgba(255, 255, 255, 1)',
@@ -28,34 +28,34 @@ Page({
   /**
    * 选择门店
    */
-  setShop(e){
+  setShop(e) {
     let s = wx.getStorageSync(user_info)
-    app.config.ajax('PUT',{
-      token:wx.getStorageSync('token'),
-      inviterid:''
-    }, `appointment/bind/${e.currentTarget.dataset.id}`,(res)=>{
+    app.config.ajax('PUT', {
+      token: wx.getStorageSync('token'),
+      inviterid: ''
+    }, `appointment/bind/${e.currentTarget.dataset.id}`, (res) => {
       s.shop_id = e.currentTarget.dataset.id
       wx.setStorageSync('user_info', s)
       wx.switchTab({
         url: '/pages/index/index/index',
-        success: function(res) {},
-        fail: function(res) {},
-        complete: function(res) {},
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
       })
     })
-    
+
   },
   /**
    * 获取门店列表
    */
-  getList(){
-    app.config.ajax('GET',{
+  getList() {
+    app.config.ajax('GET', {
       token: wx.getStorageSync('token'),
       keywords: this.data.keywords,
-    },`appointment/shops/0/${this.data.page}`,(res)=>{
-      if(res.data.shops.length>0){  
-        let list=this.data.list
-        let page=this.data.page
+    }, `appointment/shops/0/${this.data.page}`, (res) => {
+      if (res.data.shops.length > 0) {
+        let list = this.data.list
+        let page = this.data.page
         page++
         list.push.apply(list, res.data.shops);
         console.log(list)
@@ -65,10 +65,10 @@ Page({
           list: list,
           banner: res.data.banners
         })
-      }else{
+      } else {
         app.config.mytoast('暂无更多数据~')
       }
-    })  
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -76,17 +76,17 @@ Page({
   onReady: function () {
 
   },
-  getValue(e){
+  getValue(e) {
     this.setData({
       keywords: e.detail.value
     })
     this.setData({
-      page:1,
-      list:[]
+      page: 1,
+      list: []
     })
     if (timeout !== null) {
-      clearTimeout(timeout);    
-    } 
+      clearTimeout(timeout);
+    }
     timeout = setTimeout(() => {
       this.getList()
     }, 1000);

@@ -14,7 +14,7 @@ Page({
     number: 0,
     edit: false,
     defautAdder: '',
-    maxPrice:0,
+    maxPrice: 0,
   },
   changeEdit() {
     this.setData({
@@ -48,9 +48,9 @@ Page({
       let shopName = this.data.shopName
       wx.navigateTo({
         url: `/pages/personl/fill_order/fill_order?list=${list}&shopName=${shopName}`,
-        success: function(res) {},
-        fail: function(res) {},
-        complete: function(res) {},
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
       })
     }
 
@@ -58,7 +58,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     this.getList()
     this.defautAdder()
     app.config.rem((78 + 78 + 80), (res) => {
@@ -104,9 +104,9 @@ Page({
     let list = this.data.list
     this.num_change(list[e.currentTarget.dataset.index].goods_id, 0, (res) => {
       list[e.currentTarget.dataset.index].goods_num++
-        this.setData({
-          list: list
-        })
+      this.setData({
+        list: list
+      })
       this.sumData()
     })
 
@@ -117,9 +117,9 @@ Page({
   select_adder() {
     wx.navigateTo({
       url: '/pages/personl/adder/adder',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**
@@ -172,9 +172,9 @@ Page({
     let list = this.data.list
     this.num_change(list[e.currentTarget.dataset.index].goods_id, 1, (res) => {
       list[e.currentTarget.dataset.index].goods_num == 1 ? 1 : list[e.currentTarget.dataset.index].goods_num--
-        this.setData({
-          list: list
-        })
+      this.setData({
+        list: list
+      })
       this.sumData()
     })
 
@@ -192,7 +192,7 @@ Page({
           item.de_price = Number(item.de_price)
           return item
         })
-        
+
         page++
         list.push.apply(list, newList);
         let arr = list.map((item) => {
@@ -202,7 +202,7 @@ Page({
           page: page,
           list: list,
           shopName: res.data.shop_name,
-          maxPrice: Boolean(Math.max(arr)) ? Math.max(arr):0
+          maxPrice: Boolean(Math.max(arr)) ? Math.max(arr) : 0
         })
       } else {
         app.config.mytoast('暂无更多数据~')
@@ -222,49 +222,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

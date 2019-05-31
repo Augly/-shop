@@ -4,24 +4,10 @@
     "pages/personl/delegation_error/delegation_error",
     "pages/personl/delegation_success/delegation_success",
     "pages/personl/assemble_result/assemble_result",
-    
     "pages/personl/assemble_success/assemble_success",
     "pages/personl/delegation/delegation",
-    
-   
-    
-    
-    
-    
-    
-    
     "pages/personl/ordel_details/ordel_details",
-   
     "pages/personl/appointment_success/appointment_success",
-    
-    
-    
-    
     "pages/personl/join_delegation/join_delegation",
     "pages/Regiment_list/Regiment_list",
     "pages/personl/subordinate/subordinate",
@@ -62,8 +48,7 @@
     "backgroundColor": "#45D0AE",
     "position": "bottom",
     "borderStyle": "black",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/index/index/index",
         "text": "首页",
         "iconPath": "/static/images/index.png",
