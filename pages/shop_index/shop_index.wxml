@@ -1,4 +1,4 @@
-<Banner img-list="{{imgUrls}}" shop="{{shop}}"></Banner>
+<Banner img-list="{{imgUrls}}"></Banner>
 <view class="tab_group tab_select" hover-class="none" hover-stop-propagation="false">
     <view class="tab_item {{index==tab_index?'tab_active':''}}" hover-class="none" hover-stop-propagation="false" catchtap='tab_change' data-index="{{index}}" wx:for="{{good_type}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
         {{item.name}}

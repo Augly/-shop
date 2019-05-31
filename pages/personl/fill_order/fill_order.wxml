@@ -74,5 +74,6 @@
   <view class='bottom_title'>
     ¥ {{maxPrice+sum}}
   </view>
-  <view class='bottom_button' catchtap='sumbit_ordel'>提交订单</view>
+  <button class='bottom_button' open-type='getUserInfo' lang="zh_CN" bindgetuserinfo="sumbit_ordel">提交订单</button>
+  <!-- <view class='bottom_button' catchtap='sumbit_ordel'></view> -->
 </view>

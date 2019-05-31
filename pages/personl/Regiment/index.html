@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>共享云店</title>
+</head>
+<body>
+    <h1>Hello word</h1>
+</body>
+<script>
+    function getQueryString(name){
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+    }
+    window.onload=function(){
+        alert(getQueryString('code'))
+    }
+   
+</script>
+</html>

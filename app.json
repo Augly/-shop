@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/index/index/index",
     "pages/personl/delegation_error/delegation_error",
     "pages/personl/delegation_success/delegation_success",
     "pages/personl/assemble_result/assemble_result",
-    "pages/index/index/index",
+    
     "pages/personl/assemble_success/assemble_success",
     "pages/personl/delegation/delegation",
     
@@ -49,6 +50,11 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "MIS’PIE",
     "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于获取周围商家距离"
+    }
   },
   "tabBar": {
     "color": "#FFFFFF",

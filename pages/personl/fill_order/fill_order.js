@@ -55,57 +55,87 @@ Page({
    * 提交订单
    * 
    */
-  sumbit_ordel() {
-    if (this.data.number) {
-      if (this.data.defautAdder == '') {
-        app.config.mytoast('请选择收货地址')
-        return false
-      }
-      let list = this.data.list.map((item) => {
-        return {
-          goodid: item.goods_id,
-          goodnum: item.goods_num
-        }
-      })
-
-      app.config.ajax('POST', {
-        token: wx.getStorageSync('token'),
-        addrid: this.data.defautAdder.id,
-        goods: JSON.stringify(list),
-        totalprice: this.data.sum,
-        expressprice: this.data.maxPrice,
-        takemethod: this.data.wl_index,
-        buyermsg: this.data.buyermsg
-      }, `order/submit`, (res) => {
-        console.log(res.data)
-        app.config.pay(res.data, (res) => {
+  sumbit_ordel(e) {
+    wx.showLoading({
+      title: '正在提交~',
+      mask: true,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+    wx.login({
+      success: function (res) {
+        app.config.ajax('POST', {
+          token: wx.getStorageSync('token'),
+          code: res.code,
+          encryptedData: e.detail.encryptedData,
+          iv: e.detail.iv,
+          datatype: 1,
+          lng: wx.getStorageSync('location').longitude,
+          lat: wx.getStorageSync('location').latitude,
+          nickname: e.detail.userInfo.nickName,
+          headurl: e.detail.userInfo.avatarUrl,
+          gender: e.detail.userInfo.gender
+        }, `user/update`, (res) => {
+          wx.hideLoading()
           console.log(res)
-        })
-      })
-    } else {
-      if (this.data.defautAdder == '') {
-        app.config.mytoast('请选择收货地址')
-        return false
-      }
-      let goodid = this.data.list[0].goods_id
+          if (this.data.number) {
+            if (this.data.defautAdder == '') {
+              app.config.mytoast('请选择收货地址')
+              return false
+            }
+            let list = this.data.list.map((item) => {
+              return {
+                goodid: item.goods_id,
+                goodnum: item.goods_num
+              }
+            })
 
-      app.config.ajax('POST', {
-        token: wx.getStorageSync('token'),
-        addrid: this.data.defautAdder.id,
-        goodid: goodid,
-        groupnum: this.data.number,
-        leaderorderid: this.data.leaderorderid,
-        totalprice: this.data.sum,
-        expressprice: this.data.maxPrice,
-        takemethod: this.data.wl_index,
-        buyermsg: this.data.buyermsg
-      }, `order/submitgroup`, (res) => {
-        console.log(res.data)
-        app.config.pay(res.data, (res) => {
-          console.log(res)
+            app.config.ajax('POST', {
+              token: wx.getStorageSync('token'),
+              addrid: this.data.defautAdder.id,
+              goods: JSON.stringify(list),
+              totalprice: this.data.sum,
+              expressprice: this.data.maxPrice,
+              takemethod: this.data.wl_index,
+              buyermsg: this.data.buyermsg
+            }, `order/submit`, (res) => {
+              console.log(res.data)
+              app.config.pay(res.data, (res) => {
+                console.log(res)
+              })
+            })
+          } else {
+            if (this.data.defautAdder == '') {
+              app.config.mytoast('请选择收货地址')
+              return false
+            }
+            let goodid = this.data.list[0].goods_id
+
+            app.config.ajax('POST', {
+              token: wx.getStorageSync('token'),
+              addrid: this.data.defautAdder.id,
+              goodid: goodid,
+              groupnum: this.data.number,
+              leaderorderid: this.data.leaderorderid,
+              totalprice: this.data.sum,
+              expressprice: this.data.maxPrice,
+              takemethod: this.data.wl_index,
+              buyermsg: this.data.buyermsg
+            }, `order/submitgroup`, (res) => {
+              console.log(res.data)
+              app.config.pay(res.data, (res) => {
+                console.log(res)
+              })
+            })
+          }
         })
-      })
-    }
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+    console.log(e)
+
 
   },
   /**

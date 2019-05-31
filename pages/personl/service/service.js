@@ -48,7 +48,7 @@ Page({
         if (data.status == 0) {
           
         } else {
-          mytoast(data.msg)
+          app.config.mytoast(data.msg)
         }
       },
       error(res) {

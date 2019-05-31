@@ -75,8 +75,8 @@
               <text class='title'>共{{gitem.goods_num}}件商品，共计：</text>
               <text class="order_money">¥ {{gitem.goods_price*gitem.goods_num}}</text>
               <view class='status_group'>
-                <view class='cendel_button' catchtap='after_Sale' data-id='{{gitem.id}}' data-orderid='{{item.trade_no}}'>申请售后</view>
-                <view class='sure_button' catchtap='writeoff' data-id='{{gitem.id}}' data-orderid='{{item.trade_no}}'>线下核销</view>
+               <view class='sure_button' style='margin-right:15rpx;' catchtap='sale' data-orderid='{{item.id}}' data-goodid='{{gitem.goods_id}}' data-datatype='0' >申请售后</view>
+                <view class='sure_button' catchtap='writeoff' data-id='{{gitem.goods_id}}' data-orderid='{{item.id}}'>线下核销</view>
               </view>
             </view>
           </block>
@@ -153,7 +153,7 @@
               <text class='title'>共1件商品，共计：</text>
               <text class="order_money">¥ {{gitem.goods_price}}</text>
               <view class='status_group'>
-                <view class='sure_button' style='margin-right:23rpx;'>评价</view>
+                 <view class='sure_button' style='margin-right:23rpx;' catchtap='to_eval' data-item='{{gitem}}'>{{gitem.is_evaluate==0?'评价':'已评价'}}</view>
                 <view class='finished_button'>完成</view>
               </view>
             </view>

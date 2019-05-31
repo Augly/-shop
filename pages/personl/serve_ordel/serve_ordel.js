@@ -29,6 +29,31 @@ Page({
     this.getInit()
   },
   /**
+ * 评论订单
+ */
+  to_eval(e) {
+    console.log(e)
+    if (e.currentTarget.dataset.item.is_evaluate == 0) {
+      wx.navigateTo({
+        url: '/pages/personl/eva_ordel/eva_ordel?data=' + JSON.stringify(e.currentTarget.dataset.item),
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
+    }
+
+  },
+  //申请售后
+  sale(e) {
+    // e.currentTarget.dataset.
+    wx.navigateTo({
+      url: `/pages/personl/service/service?orderid=${e.currentTarget.dataset.orderid}&goodid="${e.currentTarget.dataset.goodid}&datatype=${e.currentTarget.dataset.datatype}`,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  /**
    * 获取初始化数据
    */
   getInit() {
@@ -88,11 +113,11 @@ Page({
   },
   //线下核销
   writeoff(e){
-    // config.ajax('PUT', {
-    //   token: wx.getStorageSync('token'),
-    // }, `order/writeoff/${e.target.dataset.id}/${}/0`, (res) => {
-
-    // })
+    config.ajax('PUT', {
+      token: wx.getStorageSync('token'),
+    }, `order/writeoff/${e.currentTarget.dataset.orderid}/${e.currentTarget.dataset.id}/0`, (res) => {
+      config.mytoast('核销成功!')
+    })
   },
   //评价
   /**
@@ -145,7 +170,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      list: [],
+      page: 1
+    })
+    this.getInit()
   },
 
   /**

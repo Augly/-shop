@@ -18,10 +18,11 @@
 }
 
 .personl_avater {
-  width: 109rpx;
-  height: 109rpx;
-  border: 3rpx solid rgba(255, 255, 255, 1);
+  width: 112rpx;
+  height: 112rpx;
+  /* border: 3rpx solid rgba(255, 255, 255, 1); */
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .p_name {
@@ -45,6 +46,7 @@
   width: 111rpx;
   height: 32rpx;
   border: 1px solid rgba(255, 255, 255, 1);
+  background: rgba(69, 208, 174, 1);
   border-radius: 16rpx;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,6 +60,7 @@
   font-size: 20rpx;
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
+  padding: 0;
   margin-top: 18rpx;
 }
 
@@ -71,6 +74,8 @@
 }
 
 .grid_item {
+  padding: 0;
+  margin: 0;
   width: 218rpx;
   height: 218rpx;
   background: rgba(255, 255, 255, 1);
@@ -93,6 +98,7 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  line-height:2;
 }
 
 .grid_item:nth-child(3n) {

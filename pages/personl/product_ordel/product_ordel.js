@@ -54,7 +54,6 @@ Page({
   },
   //申请售后
   sale(e){
-    // e.currentTarget.dataset.
     wx.navigateTo({
       url: `/pages/personl/service/service?orderid=${e.currentTarget.dataset.orderid}&goodid="${e.currentTarget.dataset.goodid}&datatype=${e.currentTarget.dataset.datatype}`,
       success: function(res) {},
@@ -174,6 +173,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData
     this.getInit()
   },
 

@@ -10,7 +10,42 @@ Page({
     list: [],
     data: null,
   },
-
+  more() {
+    if (this.data.data.goods_detail.spell_is_success == 1) {
+      wx.switchTab({
+        url: '/pages/Regiment_list/Regiment_list',
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
+    } else if (this.data.data.goods_detail.spell_is_success == 2) {
+      wx.redirectTo({
+        url: '/pages/personl/Regiment/Regiment',
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
+    }else{
+      let list = [{
+        goods_id: this.data.data.goods_detail.goods_id,
+        goods_num: 1,
+        goods_thumb: this.data.data.goods_detail.goods_thumb,
+        goods_name: this.data.data.goods_detail.goods_name,
+        shop_price: this.data.data.goods_detail.group_price,
+        check: true,
+        goods_brief: this.data.data.goods_detail.goods_brief,
+        de_price: this.data.data.goods_detail.shop_price,
+      }];
+      let shopName = '未知店铺'
+      list = JSON.stringify(list)
+      wx.redirectTo({
+        url: `/pages/personl/fill_order/fill_order?list=${list}&shopName=${shopName}&number=${this.data.data.goods_detail.group_num}`,
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

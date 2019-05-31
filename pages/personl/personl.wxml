@@ -1,13 +1,10 @@
 <view class="personl_group">
-  <view class="personl_avater" hover-class="none" hover-stop-propagation="false">
-
-  </view>
+  <open-data type="userAvatarUrl" class='personl_avater' wx:if="{{!data.head_url}}"></open-data>
+  <image class='personl_avater' src='{{data.head_url}}' wx:else></image>
   <view class="p_name" hover-class="none" hover-stop-propagation="false">
-    某某某
+    {{data.nick_name}}
   </view>
-  <view class="p_tap" hover-class="none" hover-stop-propagation="false">
-    普通用户
-  </view>
+  <button class='p_tap' open-type='getUserInfo' lang="zh_CN" bindgetuserinfo="sumbit_ordel">更新资料</button>
 </view>
 
 <view class='grid_wrap'>
@@ -39,10 +36,13 @@
     <image class='item_logo' mode='aspectFit' src='/static/images/p11.png'></image>
     <view class='item_title'>关于我们</view>
   </view>
-  <view class='grid_item'>
+  <button open-type="contact" class='grid_item' bindcontact="handleContact">
     <image class='item_logo' mode='aspectFit' src='/static/images/p12.png'></image>
     <view class='item_title'>联系客服</view>
-  </view>
+  </button>
+  <!-- <view class='grid_item'>
+    
+  </view> -->
 </view>
 
 <!-- <view class='other_wrap'>

@@ -1,4 +1,4 @@
-<Banner></Banner>
+<Banner img-list="{{imgUrls}}"></Banner>
 <view class='product_res'>
   <view class='price_group'>
     <text class='price_title'>¥ {{details.market_price}}</text>
@@ -13,10 +13,12 @@
   </view>
 </view>
 <Evalist show-all="{{true}}" list="{{list}}" count="{{count}}"></Evalist>
+<res res="{{details.goods_desc}}" wx:if="{{details.goods_desc}}"/>
 <view class="tab_group p_t" hover-class="none" hover-stop-propagation="false">
   拼团活动
   <text class="iconfont iconjiantou" selectable="false" space="false" decode="false"></text>
 </view>
+
 <Look_around list="{{hot_data}}" bind:getId="getId"></Look_around>
 
 <view class='bottom_group'>

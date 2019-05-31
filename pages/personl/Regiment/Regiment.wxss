@@ -227,6 +227,8 @@
   justify-content: flex-end;
 }
 .item .item_content .item_res .item_price_group .item_status_group .sure_button {
+  padding: 0;
+  margin: 0;
   width: 138rpx;
   height: 48rpx;
   background: #45d0ae;

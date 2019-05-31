@@ -17,6 +17,34 @@ Page({
   onLoad: function(options) {
     this.getInit(options)
   },
+  //获取拼团活动
+  getId(e) {
+    wx.redirectTo({
+      url: `/pages/personl/join_delegation/join_delegation?goodId=${e.detail.goodId}&datatype=${e.detail.datatype}`,
+      success: (result) => {
+
+      },
+      fail: () => { },
+      complete: () => { }
+    });
+  },
+  more(){
+    if (this.data.data.goods_detail.spell_is_success==1){
+      wx.switchTab({
+        url: '/pages/Regiment_list/Regiment_list',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/personl/Regiment/Regiment',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }
+  },
   /**
  * 倒计时函数
  */
@@ -121,6 +149,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return {
+      title: '快来一起拼团吧',
+      path: `/pages/person/delegation_success/delegation_success?orderid=${e.target.dataset.id}&leaderorderid=${e.target.dataset.leader_order_id}`,
+      success: function (res) {
+        console.log("转发成功" + res);
+      }
+    }
   }
 })

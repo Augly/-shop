@@ -99,6 +99,9 @@ Page({
       token: wx.getStorageSync('token'),
     }, `shop/details/${options.goodId}/${options.datatype}`, (res) => {
       this.setData({
+        imgUrls:[{
+          img_url:res.data.details.goods_thumb
+        }],
         data:res.data,
         details: res.data.details,
         hot_data: res.data.hot_data,

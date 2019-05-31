@@ -8,8 +8,8 @@ Page({
     autoplay: true,
     indicatorColor: 'rgba(255, 255, 255, 1)',
     indicatorActiveColor: 'rgba(69, 208, 174, 1)',
-    interval: 1000,
-    duration: 1000,
+    interval: 2000,
+    duration: 500,
     details: null
   },
   onLoad: function (options) {
@@ -91,6 +91,9 @@ Page({
       this.setData({
         details: res.data.details,
         hot_data: res.data.hot_data,
+        imgUrls:[{
+          img_url: res.data.details.goods_thumb
+        }],
         latest_data: res.data.latest_data.map((item) => {
           item.payment_time = app.config.timeForm(item.payment_time).chatTime.timeStr
           return item

@@ -6,6 +6,15 @@ App({
   },
   config: config,
   getToken: function () {
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        console.log(res)
+        const latitude = res.latitude
+        const longitude = res.longitude
+        wx.setStorageSync('location', res)
+      }
+    })
     if (!wx.getStorageSync('token')) {
       wx.login({
         success: res => {
@@ -14,8 +23,17 @@ App({
           }, 'user/login', (res) => {
             //获取用户token
             console.log(res.data)
+
             wx.setStorageSync('token', res.data.token)
             wx.setStorageSync('user_info', res.data.user_info)
+            if (!res.data.user_info.shop_id){
+              wx.navigateTo({
+                url: '/pages/index/selection/selection',
+                success: function (res) { },
+                fail: function (res) { },
+                complete: function (res) { },
+              })
+            }
           })
         }
       })

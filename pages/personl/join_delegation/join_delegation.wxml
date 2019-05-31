@@ -3,7 +3,7 @@
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" interval="{{interval}}" duration="{{duration}}" class="swiper_wrap">
       <block wx:for="{{imgUrls}}">
         <swiper-item class="swiper_item">
-          <image src="{{item}}" class="slide-image" />
+          <image src="{{item.img_url}}" class="slide-image" />
         </swiper-item>
       </block>
     </swiper>
@@ -38,6 +38,7 @@
       <view class='res_number_group'>{{details.goods_sell_num}}人已拼</view>
     </view>
   </view>
+  <res res="{{details.goods_desc}}" wx:if="{{details.goods_desc}}"/>
   <Have_a_look bind:getId="getId" list="{{hot_data}}" />
   <view class="more_group Augly-fadeinL" wx:if="{{showmore}}">
     <view class='more_item' style=' background: rgba(69, 208, 174, 0.3);' data-number='3' catchtap='creact_ordel'>

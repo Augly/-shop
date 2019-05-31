@@ -29,10 +29,21 @@ Page({
    * 选择门店
    */
   setShop(e){
-    wx.setStorageSync('shop', e.currentTarget.dataset.id)
-    wx.navigateBack({
-      delta: 1,
+    let s = wx.getStorageSync(user_info)
+    app.config.ajax('PUT',{
+      token:wx.getStorageSync('token'),
+      inviterid:''
+    }, `appointment/bind/${e.currentTarget.dataset.id}`,(res)=>{
+      s.shop_id = e.currentTarget.dataset.id
+      wx.setStorageSync('user_info', s)
+      wx.switchTab({
+        url: '/pages/index/index/index',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
     })
+    
   },
   /**
    * 获取门店列表

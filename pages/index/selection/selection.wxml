@@ -14,7 +14,7 @@
   <text class='iconfont iconquxiao1'></text>
 </view>
 <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
-  <view class="list" hover-class="none" hover-stop-propagation="false" bindtap='setShop' data-id='{{item}}'>
+  <view class="list" hover-class="none" hover-stop-propagation="false" bindtap='setShop' data-id='{{item.id}}'>
     <view class="list_head" hover-class="none" hover-stop-propagation="false">
       <view class="title" selectable="false" space="false" decode="false">{{item.s_name}}</view>
       <view class="distance" selectable="false" space="false" decode="false">
