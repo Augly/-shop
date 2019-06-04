@@ -148,7 +148,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function(e) {
     return {
       title: '快来一起拼团吧',
       path: `/pages/person/delegation_success/delegation_success?orderid=${e.target.dataset.id}&leaderorderid=${e.target.dataset.leader_order_id}`,

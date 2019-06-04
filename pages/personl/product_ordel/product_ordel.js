@@ -65,10 +65,9 @@ Page({
    * 评论订单
    */
   to_eval(e) {
-    console.log(e)
     if (e.currentTarget.dataset.item.is_evaluate == 0) {
       wx.navigateTo({
-        url: '/pages/personl/eva_ordel/eva_ordel?data=' + JSON.stringify(e.currentTarget.dataset.item),
+        url: '/pages/personl/eva_ordel/eva_ordel?data=' + JSON.stringify(e.currentTarget.dataset.item) + '&orderid=' + e.currentTarget.dataset.orderid,
         success: function (res) { },
         fail: function (res) { },
         complete: function (res) { },

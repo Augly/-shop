@@ -1,7 +1,10 @@
 <view class="personl_group">
-    <view class="personl_avater" hover-class="none" hover-stop-propagation="false"></view>
-    <view class="p_name" hover-class="none" hover-stop-propagation="false">某某某</view>
-    <view class="p_tap" hover-class="none" hover-stop-propagation="false">普通用户</view>
+  <open-data type="userAvatarUrl" class='personl_avater' wx:if="{{!data.head_url}}"></open-data>
+  <image class='personl_avater' src='{{data.head_url}}' wx:else></image>
+  <view class="p_name" hover-class="none" hover-stop-propagation="false">
+    {{data.nick_name}}
+  </view>
+  <button class='p_tap' open-type='getUserInfo' lang="zh_CN" bindgetuserinfo="sumbit_ordel">更新资料</button>
 </view>
 <view class='grid_wrap'>
     <view class='grid_item' bindtap='to_child'>

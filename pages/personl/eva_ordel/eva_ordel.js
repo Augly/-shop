@@ -15,14 +15,15 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     let data = JSON.parse(options.data)
-      data.evalmsg = '',
-      data.star = 3,
-      data.shopstar = 3,
-      data.servicestar = 3,
-      data.evalfile = '',
-      data.orderid = data.id 
+    data.evalmsg = ''
+    data.star = 3
+    data.shopstar = 3
+    data.servicestar = 3
+    data.evalfile = ''
+    data.id = data.goods_id
+    data.orderid = options.orderid
     this.setData({
       data: data
     })
@@ -47,7 +48,7 @@ Page({
    */
   delete(e) {
     let data = this.data.data
-   data.evalfile = ''
+    data.evalfile = ''
     this.setData({
       'data': data
     })
@@ -58,7 +59,7 @@ Page({
    */
   tabStart(e) {
     let data = this.data.data
-   data.star = e.detail.score
+    data.star = e.detail.score
     this.setData({
       'data': data
     })
@@ -69,7 +70,7 @@ Page({
    */
   shopstar(e) {
     let data = this.data.data
-   data.shopstar = e.detail.score
+    data.shopstar = e.detail.score
     this.setData({
       'data': data
     })
@@ -80,7 +81,7 @@ Page({
    */
   servicestar(e) {
     let data = this.data.data
-   data.servicestar = e.detail.score
+    data.servicestar = e.detail.score
     this.setData({
       'data': data
     })
@@ -88,75 +89,75 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
   /**
    * 提交评论
    */
   sumbit() {
-    let data=this.data.data
-      app.config.ajax('img', {
-        token: wx.getStorageSync('token'),
-        evalmsg: data.evalmsg,
-        star: data.star,
-        shopstar: data.shopstar,
-        servicestar: data.servicestar,
-        orderid: data.orderid,
-      }, `shop/evalsave/${this.data.id}`, (res) => {
-       
-          app.config.mytoast('提交评论成功!', () => {
-            wx.navigateBack({
-              delta: 1
-            });
-          })
-        
-      }, (err) => {
+    let data = this.data.data
+    app.config.ajax('img', {
+      token: wx.getStorageSync('token'),
+      evalmsg: data.evalmsg,
+      star: data.star,
+      shopstar: data.shopstar,
+      servicestar: data.servicestar,
+      orderid: data.orderid,
+    }, `shop/evalsave/${data.id}`, (res) => {
 
-      }, (res) => {
+      app.config.mytoast('提交评论成功!', () => {
+        wx.navigateBack({
+          delta: 1
+        });
+      })
 
-      }, data.evalfile)
-    
+    }, (err) => {
+
+    }, (res) => {
+
+    }, data.evalfile)
+
   },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

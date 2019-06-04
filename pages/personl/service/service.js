@@ -28,8 +28,9 @@ Page({
     })
   },
   sure(){
+    console.log(this.data.data.datatype)
     wx.uploadFile({
-      url: 'https://shop.mayspie.com/api/order/apply',
+      url: 'https://prize.frp.meditool.cn/api/order/apply',
       filePath: this.data.file,
       name: 'file',
       formData: {
@@ -46,7 +47,11 @@ Page({
         wx.hideLoading()
         var data = JSON.parse(res.data)
         if (data.status == 0) {
-          
+         app.config.mytoast(data.msg,()=>{
+           wx.navigateBack({
+             delta: 1,
+           })
+         })
         } else {
           app.config.mytoast(data.msg)
         }

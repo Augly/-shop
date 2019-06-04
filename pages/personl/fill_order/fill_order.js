@@ -10,6 +10,7 @@ Page({
   data: {
     list: [],
     sum: 0,
+    number:1,
     maxPrice: 0,
     buyermsg: '',
     wl_type: [{
@@ -64,7 +65,7 @@ Page({
       complete: function (res) { },
     })
     wx.login({
-      success: function (res) {
+      success: (res)=> {
         app.config.ajax('POST', {
           token: wx.getStorageSync('token'),
           code: res.code,
@@ -100,9 +101,13 @@ Page({
               takemethod: this.data.wl_index,
               buyermsg: this.data.buyermsg
             }, `order/submit`, (res) => {
-              console.log(res.data)
               app.config.pay(res.data, (res) => {
-                console.log(res)
+                wx.redirectTo({
+                  url: '/pages/personl/Regiment/Regiment',
+                  success: function(res) {},
+                  fail: function(res) {},
+                  complete: function(res) {},
+                })
               })
             })
           } else {
@@ -125,7 +130,12 @@ Page({
             }, `order/submitgroup`, (res) => {
               console.log(res.data)
               app.config.pay(res.data, (res) => {
-                console.log(res)
+                wx.redirectTo({
+                  url: '/pages/personl/product_ordel/product_ordel',
+                  success: function(res) {},
+                  fail: function(res) {},
+                  complete: function(res) {},
+                })
               })
             })
           }

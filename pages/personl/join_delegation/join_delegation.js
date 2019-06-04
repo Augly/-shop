@@ -55,7 +55,7 @@ Page({
         list[0].shop_price = this.data.details.market_price
         break;
     }
-    console.log(list)
+    console.log(e)
     list = JSON.stringify(list)
     wx.navigateTo({
       url: `/pages/personl/fill_order/fill_order?list=${list}&shopName=${shopName}&number=${e.currentTarget.dataset.number}`,

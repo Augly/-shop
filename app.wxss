@@ -183,4 +183,5 @@ input {
   line-height: 400rpx;
 }
 ::-webkit-scrollbar {display:none}
+::-webkit-scrollbar {width:0;height:0;color:transparent}
 @import "/utils/animation.wxss"

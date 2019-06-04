@@ -145,7 +145,7 @@
               <text class="order_money">¥ {{gitem.goods_price*gitem.goods_num}}</text>
               <view class='status_group'>
                 <view class='cendel_button' catchtap='sale' data-orderid='{{item.id}}' data-goodid='{{gitem.goods_id}}' data-datatype='0' >申请售后</view>
-                <view class='sure_button' catchtap='to_eval' data-item='{{gitem}}'>
+                <view class='sure_button' catchtap='to_eval' data-item='{{gitem}}' data-orderid='{{item.id}}'>
                   {{gitem.is_evaluate==0?'评价':'已评价'}}
                 </view>
               </view>
