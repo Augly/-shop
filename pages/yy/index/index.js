@@ -31,6 +31,7 @@ Page({
     }, `appointment/timeslot/${this.data.shop.id}`, (res) => {
       console.log(res)
       this.setData({
+        
         type: null
       })
       // if(res.data.shops.length>0){  

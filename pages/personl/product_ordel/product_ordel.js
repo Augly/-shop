@@ -87,7 +87,11 @@ Page({
       totalprice: e.currentTarget.dataset.totalprice,
     }, `order/pay`, (res) => {
       config.pay(res.data, (res) => {
-
+        let list = this.data.list
+        list.splice(e.target.dataset.index, 1)
+        this.setData({
+          list: list
+        })
       })
     })
   },
