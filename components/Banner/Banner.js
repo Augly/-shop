@@ -4,9 +4,9 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    imgList:{
-      type:Array,
-      value:[]
+    imgList: {
+      type: Array,
+      value: []
     },
   },
 
@@ -56,12 +56,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    select_shop(){
+    select_shop() {
       wx.navigateTo({
         url: '/pages/index/selection/selection',
-        success: function(res) {},
-        fail: function(res) {},
-        complete: function(res) {},
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
       })
     }
   }

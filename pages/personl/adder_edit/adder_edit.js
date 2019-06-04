@@ -115,7 +115,7 @@ Page({
       }
     }
     app.config.ajax('POST', adder, `address/save`, (res) => {
-      app.config.mytoast(this.data.adderId ?'地址信息已修改':'已成功添加新地址', (res) => {
+      app.config.mytoast(this.data.adderId ? '地址信息已修改' : '已成功添加新地址', (res) => {
         wx.navigateBack({
           delta: 1
         });

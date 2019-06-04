@@ -25,7 +25,7 @@ Page({
         fail: function (res) { },
         complete: function (res) { },
       })
-    }else{
+    } else {
       let list = [{
         goods_id: this.data.data.goods_detail.goods_id,
         goods_num: 1,
@@ -50,7 +50,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getInit(options)
+    let s = setInterval(() => {
+      if (wx.getStorageSync('token')) {
+        this.getInit(options)
+        clearInterval(s)
+      }
+    }, 1000);
+
   },
   /**
  * 倒计时函数

@@ -108,11 +108,11 @@ Page({
     })
   },
   //申请售后
-  after_Sale(e){
+  after_Sale(e) {
 
   },
   //线下核销
-  writeoff(e){
+  writeoff(e) {
     config.ajax('PUT', {
       token: wx.getStorageSync('token'),
     }, `order/writeoff/${e.currentTarget.dataset.orderid}/${e.currentTarget.dataset.id}/0`, (res) => {

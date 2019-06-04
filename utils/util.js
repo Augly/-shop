@@ -86,8 +86,8 @@ function mytoast(main, successData) {
         }, 1000)
       }
     },
-    fail: function (res) {},
-    complete: function (res) {},
+    fail: function (res) { },
+    complete: function (res) { },
   })
 }
 /**
@@ -139,8 +139,8 @@ function rem(height, successData) {
       }
       successData(myheight)
     },
-    fail: function (res) {},
-    complete: function (res) {},
+    fail: function (res) { },
+    complete: function (res) { },
   })
 }
 
@@ -154,8 +154,8 @@ function remW(height, successData) {
       }
       successData(myheight)
     },
-    fail: function (res) {},
-    complete: function (res) {},
+    fail: function (res) { },
+    complete: function (res) { },
   })
 }
 /**
@@ -190,8 +190,8 @@ function getuid(successData, errorData) {
         }
       })
     },
-    fail: function (res) {},
-    complete: function (res) {},
+    fail: function (res) { },
+    complete: function (res) { },
   })
 }
 /**
@@ -242,9 +242,9 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   wx.showLoading({
     title: '数据加载中',
     mask: true,
-    success: function (res) {},
-    fail: function (res) {},
-    complete: function (res) {},
+    success: function (res) { },
+    fail: function (res) { },
+    complete: function (res) { },
   })
   if (Type != 'img') {
     wx.request({

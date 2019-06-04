@@ -59,9 +59,9 @@ Page({
     list = JSON.stringify(list)
     wx.navigateTo({
       url: `/pages/personl/fill_order/fill_order?list=${list}&shopName=${shopName}&number=${e.currentTarget.dataset.number}`,
-      success: function (res) {},
-      fail: function (res) {},
-      complete: function (res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   //回到顶部
@@ -91,7 +91,7 @@ Page({
       this.setData({
         details: res.data.details,
         hot_data: res.data.hot_data,
-        imgUrls:[{
+        imgUrls: [{
           img_url: res.data.details.goods_thumb
         }],
         latest_data: res.data.latest_data.map((item) => {

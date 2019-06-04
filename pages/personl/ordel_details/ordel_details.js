@@ -1,5 +1,5 @@
 // pages/personl/ordel_details/ordel_details.js
-let app=getApp()
+let app = getApp()
 Page({
 
   /**
@@ -13,10 +13,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-    app.config.ajax('PUT',{
+
+    app.config.ajax('PUT', {
       token: wx.getStorageSync('token')
-    }, `order/confirm/${options.orderid}/${options.datatype}`,(res)=>{
+    }, `order/confirm/${options.orderid}/${options.datatype}`, (res) => {
       console.log(res)
     })
   },

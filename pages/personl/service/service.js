@@ -1,5 +1,5 @@
 // pages/personl/service/service.js
-let app=getApp()
+let app = getApp()
 Page({
 
   /**
@@ -7,9 +7,9 @@ Page({
    */
   data: {
     tab_index: 0,
-    reson:'请选择退款原因',
-    resonlist: ['商品无货', '配送时间问题', '不想要了', '商品信息填写错误','地址信息填写错误'],
-    file:''
+    reson: '请选择退款原因',
+    resonlist: ['商品无货', '配送时间问题', '不想要了', '商品信息填写错误', '地址信息填写错误'],
+    file: ''
   },
 
   /**
@@ -17,11 +17,11 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      data:options
+      data: options
     })
   },
-  choose(){
-    app.config.chooseImage((res)=>{
+  choose() {
+    app.config.chooseImage((res) => {
       this.setData({
         file: res.tempFilePaths[0]
       })
@@ -57,20 +57,20 @@ Page({
         }
       },
       error(res) {
-        
+
       },
       complete(res) {
-        
+
       }
     })
   },
-  change_tab(e){
+  change_tab(e) {
     console.log(e)
     this.setData({
       tab_index: e.currentTarget.dataset.index
     })
   },
-  change_reason(e){
+  change_reason(e) {
     let list = this.data.resonlist
     this.setData({
       reson: list[e.detail.value]

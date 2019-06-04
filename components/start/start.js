@@ -64,7 +64,7 @@ Component({
 
       } else {
         this.setData({
-          score: e.currentTarget.dataset.index+1
+          score: e.currentTarget.dataset.index + 1
         })
         const eventDetail = {
           score: this.data.score,
