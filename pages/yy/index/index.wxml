@@ -12,7 +12,7 @@
     <text class='iconfont iconjiantou'></text>
   </view>
 </view>
-<view class='sure_button'>确 认 预 约</view>
+<!-- <view class='sure_button'>确 认 预 约</view> -->
 <view class='mask Augly-fadein' wx:if="{{type}}" bindtap='hideMask'>
   <view class="mask_wrap" hover-class="none" hover-stop-propagation="false" catchtap='showMask'>
     <view class='mask_title'>{{type=='yy'?'选择门店':'选择时间'}}</view>
@@ -51,7 +51,7 @@
       <input class='phone_ipt' placeholder='请输入预约手机号' value='{{phone}}' bindinput='getphone'></input>
     </view>
     <view class='mask_button'>
-      <view class='button' catchtap='save'>保 存</view>
+      <view class='button' catchtap='save'>{{type=='time'?'确 认 预 约':'保 存'}}</view>
     </view>
   </view>
 </view>
