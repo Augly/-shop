@@ -132,9 +132,9 @@ Page({
   },
   //切换产品或服务
   tab_change(e) {
-    let list = this.data.good_type[e.target.dataset.index].childtype ? this.data.good_type[e.target.dataset.index].childtype : []
+    // let list = this.data.good_type[e.target.dataset.index].childtype ? this.data.good_type[e.target.dataset.index].childtype : []
     this.setData({
-      kind_list: list,
+      kind_list: [],
       kind_list_index: 0,
       tab_index: parseInt(e.target.dataset.index)
     })
