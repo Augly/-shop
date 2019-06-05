@@ -22,11 +22,16 @@ Page({
   },
   tabChange(e) {
     this.setData({
-      tab_index: e.target.dataset.id,
       list: [],
       page: 1
     })
-    this.getInit()
+    if (e.target.dataset.id != this.data.tab_index) {
+      this.setData({
+        tab_index: e.target.dataset.id,
+      })
+    } else {
+      this.getInit()
+    }
   },
   /**
  * 评论订单
