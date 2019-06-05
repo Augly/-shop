@@ -3,8 +3,5 @@
     <view class='tip'>预约成功</view>
     <view class='tip_content'>预约后，客服会尽快给您致电，与您确定具体预约时间</view>
     <view class='tip_content'>保持手机畅通，请耐心等待，谢谢。</view>
-    <view class='tip_border'>我的预约</view>
+    <view class='tip_border' bindtap='to_serve'>我的预约</view>
 </view>
-<view class='look_around_title'>随便逛逛</view>
-<Look_around></Look_around>
-<Step active_step="3" />

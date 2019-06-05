@@ -41,13 +41,14 @@
     <view class='mask_content' wx:if="{{type=='time'}}">
       <scroll-view class='mask_data_wrap' scroll-x>
         <view class="mask_data_item {{data_index==index?'mask_data_item_active':''}}" wx:for="{{dataList}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" catchtap='select_data' data-index='{{index}}'>
-          <view class='data_week'>{{item.mon}}</view>
-          <view class='data_data'>{{item.date}}</view>
+          <view class='data_week'>{{item.time_week}}</view>
+          <view class='data_data'>{{item.time_day}}</view>
         </view>
       </scroll-view>
       <view class='mask_time_wrap'>
-        <view class="mask_time_item {{time_index==index?'mask_time_item_active':''}}" wx:for="{{timelist}}" catchtap='select_timeData' wx:for-index="index" wx:for-item="item" wx:key="{{index}}" data-index='{{index}}'>{{item}}</view>
+        <view class="mask_time_item {{time_index==gindex?'mask_time_item_active':''}}" wx:for="{{timelist}}" catchtap='select_timeData' wx:for-index="gindex" wx:for-item="gitem" wx:key="{{gindex}}" data-index='{{gindex}}'>{{gitem.time_interval}}</view>
       </view>
+      <input class='phone_ipt' placeholder='请输入预约手机号' value='{{phone}}' bindinput='getphone'></input>
     </view>
     <view class='mask_button'>
       <view class='button' catchtap='save'>保 存</view>

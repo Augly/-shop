@@ -1,22 +1,22 @@
-<view class='list' wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+<view class='list' wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}"  bindtap='checkDefault' data-id='{{item.id}}' data-type="{{item.is_default}}">
   <view class='list_user_group'>
     <view class='list_name'>
       <text class='title'>{{item.name}}</text>
       <text>{{item.mobile}}</text>
     </view>
     <view class='list_scope'>
-      <view class='scope_item' bindtap='edit' data-id='{{item.id}}'>
+      <view class='scope_item' catchtap='edit' data-id='{{item.id}}'>
         <text class='iconfont  iconiconset0136'></text>
         <text>编辑</text>
       </view>
-      <view class='scope_item' bindtap='delete' data-id='{{item.id}}'>
+      <view class='scope_item' catchtap='delete' data-id='{{item.id}}'>
         <text class='iconfont  iconshanchu'></text>
         <text>删除</text>
       </view>
     </view>
   </view>
   <view class='list_detail'>
-    <view class="list_tip {{item.is_default==0?'':'tip_active'}}" bindtap='checkDefault' data-id='{{item.id}}' data-type="{{item.is_default}}">
+    <view class="list_tip {{item.is_default==0?'':'tip_active'}}">
       默认
     </view>
     <view class='list_adder'>{{item.add_less}}{{item.add_more}}</view>

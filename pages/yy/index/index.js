@@ -14,6 +14,7 @@ Page({
     type: null,
     data_index: 0,
     time_index: 0,
+    phone:'',
   },
 
   /**
@@ -21,7 +22,7 @@ Page({
    */
   onLoad: function (options) {
     this.getList()
-    this.gitData()
+    // this.gitData()
   },
   /**
    * 获取某个门店的时间
@@ -31,7 +32,10 @@ Page({
       token: wx.getStorageSync('token'),
     }, `appointment/timeslot/${this.data.shop.id}`, (res) => {
       this.setData({
-        type: null
+        dataList: res.data,
+        timelist: res.data[0].time_group,
+        type: null,
+
       })  
       /**后台数据结构没处理完的话，自己处理的备用方案 */
       // let new_Arr = res.data.map((item)=>{
@@ -58,6 +62,11 @@ Page({
       //   }
       // }
       // obj = null; new_Arr=null
+    })
+  },
+  getphone(e){
+    this.setData({
+      phone: e.detail.value
     })
   },
   /**
@@ -110,25 +119,48 @@ Page({
       })
       this.setData({
         shop: item,
-
+        
       })
       this.getTimelist()
     } else if (this.data.type == 'time') {
-
+      if (!/^1[345789]\d{9}$/.test(this.data.phone)) {
+        app.config.mytoast('请输入正确的手机号!')
+        return false
+      }
+      app.config.ajax('POST', {
+        token: wx.getStorageSync('token'),
+        usertel: this.data.phone,
+        shopid: this.data.shop.id,
+        timeid: this.data.timelist[this.data.time_index].id,
+        time: this.data.dataList[this.data.data_index].time_day + this.data.timelist[this.data.time_index].time_interval
+      }, `appointment/submit`, (res) => {
+        this.setData({
+          type:null
+        })
+        wx.navigateTo({
+          url: '/pages/personl/assemble_result/assemble_result',
+          success: function(res) {},
+          fail: function(res) {},
+          complete: function(res) {},
+        })
+      })
     }
   },
   select_data(e) {
+    let arr = this.data.dataList[e.currentTarget.dataset.index].time_group
     this.setData({
-      data_index: e.currentTarget.dataset.index
+      timelist: arr,
+      data_index: e.currentTarget.dataset.index,
+      
     })
   },
   showMask() {
 
   },
   select_timeData(e) {
-
     this.setData({
-      time_index: e.currentTarget.dataset.index
+      time_index: e.currentTarget.dataset.index,
+      timeString: this.data.dataList[this.data.data_index].time_day + this.data.timelist[this.data.time_index].time_interval
     })
   },
   GetDateStr(AddDayCount) {
@@ -180,7 +212,8 @@ Page({
   select_time() {
     if (this.data.shop) {
       this.setData({
-        type: 'time'
+        type: 'time',
+        timeString: this.data.dataList[0].time_day + this.data.timelist[0].time_interval
       })
     } else {
       app.config.mytoast('请先选择门店')

@@ -40,7 +40,7 @@ Page({
   checkDefault(e) {
     app.config.ajax('PUT', {
       token: wx.getStorageSync('token')
-    }, `address/setdefault/${e.currentTarget.dataset.id}/${e.currentTarget.dataset.type == 0 ? 1 : 0}`, (res) => {
+    }, `address/setdefault/${e.currentTarget.dataset.id}/1`, (res) => {
       this.getAdderList()
     })
   },
