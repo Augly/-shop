@@ -9,6 +9,7 @@ Page({
     shop: null,
     list: [],
     page: 1,
+    timeString:'请选择预约时间',
     keywords: '',
     type: null,
     data_index: 0,
@@ -29,28 +30,34 @@ Page({
     app.config.ajax('GET', {
       token: wx.getStorageSync('token'),
     }, `appointment/timeslot/${this.data.shop.id}`, (res) => {
-      console.log(res)
       this.setData({
-        
         type: null
-      })
-      // if(res.data.shops.length>0){  
-      //   let list=this.data.list
-      //   let page=this.data.page
-      //   let newArr = res.data.shops.map((item)=>{
-      //     item.check=false
-      //     return item
-      //   })
-      //   page++
-      //   list.push.apply(list, newArr);
-      //   this.setData({
-      //     page: page,
-      //     list: list,
-      //     banner: res.data.banners
-      //   })
-      // }else{
-      //   app.config.mytoast('暂无更多数据~')
+      })  
+      /**后台数据结构没处理完的话，自己处理的备用方案 */
+      // let new_Arr = res.data.map((item)=>{
+      //   return item
+      // })
+      // var result = [];
+      // var obj = {};
+      // for (var i = 0; i < res.data.length; i++) {
+      //   if (!obj[res.data[i].time_day]) {
+      //     result.push(res.data[i]);
+      //     obj[res.data[i].time_day] = true;
+      //   }
       // }
+      // for (let s = 0; s < result.length;s++){
+      //   result[s].time_group=[]
+      //   for (let n = 0; n < new_Arr.length;n++){
+      //     if (result[s].time_day = new_Arr[n].time_day) {
+      //       result[s].time_group.push({
+      //         id: new_Arr[n].id,
+      //         interval_num: new_Arr[n].interval_num,
+      //         time_interval: new_Arr[n].time_interval
+      //       })
+      //     }
+      //   }
+      // }
+      // obj = null; new_Arr=null
     })
   },
   /**

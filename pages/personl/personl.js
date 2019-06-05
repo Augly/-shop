@@ -33,7 +33,9 @@ Page({
     wx.showLoading({
       title: '正在更新~',
       mask: true,
-      success: function (res) { },
+      success: (res)=>{ 
+        this.gitInit()
+      },
       fail: function (res) { },
       complete: function (res) { },
     })

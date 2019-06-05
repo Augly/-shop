@@ -149,9 +149,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function(e) {
+    let inviterid = wx.getStorageSync('inviterid')
     return {
       title: '快来一起拼团吧',
-      path: `/pages/person/delegation_success/delegation_success?orderid=${e.target.dataset.id}&leaderorderid=${e.target.dataset.leader_order_id}`,
+      path: `/pages/person/delegation_success/delegation_success?orderid=${e.target.dataset.id}&leaderorderid=${e.target.dataset.leader_order_id}&inviterid=${inviterid}`,
       success: function (res) {
         console.log("转发成功" + res);
       }

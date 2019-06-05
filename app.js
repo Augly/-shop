@@ -15,7 +15,7 @@ App({
                 wx.setStorageSync('location', res)
             }
         })
-        if (!wx.getStorageSync('token')) {
+        // if (!wx.getStorageSync('token')) {
             wx.login({
                 success: res => {
                     config.ajax('POST', {
@@ -23,10 +23,10 @@ App({
                     }, 'user/login', (res) => {
                         //获取用户token
                         console.log(res.data)
-
                         wx.setStorageSync('token', res.data.token)
                         wx.setStorageSync('user_info', res.data.user_info)
-                        if (!res.data.user_info.shop_id) {
+                        wx.setStorageSync('inviterid', res.data.user_info.user_id)
+                      if (!res.data.user_info.shop_id || res.data.user_info.shop_id==0) {
                             wx.navigateTo({
                                 url: '/pages/index/selection/selection',
                                 success: function (res) { },
@@ -34,10 +34,14 @@ App({
                                 complete: function (res) { },
                             })
                         }
+                    },(err)=>{
+                      console.log(err)
+                    },(com)=>{
+                      console.log(com)
                     })
                 }
             })
-        }
+        // }
 
     },
     onLaunch: function () {

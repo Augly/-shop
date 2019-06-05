@@ -29,10 +29,10 @@ Page({
    * 选择门店
    */
   setShop(e) {
-    let s = wx.getStorageSync(user_info)
+    let s = wx.getStorageSync('user_info')||''
     app.config.ajax('PUT', {
       token: wx.getStorageSync('token'),
-      inviterid: ''
+      inviterid: wx.getStorageSync('inviterid'),
     }, `appointment/bind/${e.currentTarget.dataset.id}`, (res) => {
       s.shop_id = e.currentTarget.dataset.id
       wx.setStorageSync('user_info', s)

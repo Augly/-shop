@@ -40,6 +40,8 @@ Page({
             list: res.data.hot_product
           })
         })
+      }else{
+        
       }
     }, 1000);
     if (app.globalData.userInfo) {

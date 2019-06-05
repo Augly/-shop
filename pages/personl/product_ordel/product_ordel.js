@@ -38,6 +38,7 @@ Page({
       complete: function (res) { },
     })
   },
+  
   /**
    * 取消订单
    */
@@ -176,7 +177,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData
     this.getInit()
   },
 
