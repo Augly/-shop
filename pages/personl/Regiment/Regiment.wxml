@@ -14,7 +14,7 @@
           <view class='item_head_group'>
             <block wx:if="type=='serverOrdel'">
               <view class="order_number" hover-class="none" hover-stop-propagation="false">
-                {{item.time}}
+               {{item.time}}后失效
               </view>
             </block>
             <!-- <view class='date'>2019/03/05 15:30</view> -->

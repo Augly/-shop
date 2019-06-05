@@ -87,6 +87,14 @@ Page({
   onReady: function () {
 
   },
+  topt(){
+    wx.switchTab({
+      url: '/pages/Regiment_list/Regiment_list',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   //获取拼团活动
   getId(e) {
     wx.navigateTo({

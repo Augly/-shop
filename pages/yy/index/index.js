@@ -119,7 +119,7 @@ Page({
       })
       this.setData({
         shop: item,
-        
+        type:null
       })
       this.getTimelist()
     } else if (this.data.type == 'time') {

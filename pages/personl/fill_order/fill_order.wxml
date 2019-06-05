@@ -60,7 +60,7 @@
   </view>
   <view class='price_info'>
     <view class='main_title'>
-      <text>商品总额</text>
+      <text>商品金额</text>
       <text>¥ {{sum}}</text>
     </view>
     <view class='main_title' style='border-bottom:none'>

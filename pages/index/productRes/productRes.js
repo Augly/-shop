@@ -24,12 +24,17 @@ Page({
     this.getFirst(options)
   },
   to_car() {
-    wx.navigateTo({
-      url: '/pages/personl/shopping_cart/shopping_cart',
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
+    if (this.data.car_count==0){
+      app.config.mytoast('购物车为空')
+    }else{
+      wx.navigateTo({
+        url: '/pages/personl/shopping_cart/shopping_cart',
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
+    }
+    
   },
   plus() {
     let num = this.data.goods_num

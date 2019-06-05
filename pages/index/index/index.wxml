@@ -39,7 +39,7 @@
         </view>
     </block>
 </view>
-<view class="tab_group p_t" hover-class="none" hover-stop-propagation="false">
+<view class="tab_group p_t" hover-class="none" hover-stop-propagation="false" bindtap='topt'>
     拼团活动
     <text class="iconfont iconjiantou" selectable="false" space="false" decode="false"></text>
 </view>

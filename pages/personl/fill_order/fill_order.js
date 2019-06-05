@@ -152,7 +152,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
     if (options.number) {
       this.setData({
         groupnum: options.number
@@ -206,7 +205,7 @@ Page({
       return cur ? cur.goods_num + prev : 0 + prev;
     }, 0);
     this.setData({
-      sum: sum,
+      sum: parseFloat(sum.toFixed(2)),
       number: number
     })
   },
@@ -252,7 +251,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getDefautAdder()
   },
 
   /**
