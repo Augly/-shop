@@ -315,24 +315,32 @@
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
 
         .ordel_info_title {
             width: 70rpx;
             font-size: 24rpx;
+            line-height: 30rpx;
             color: rgba(53, 53, 53, 1);
         }
 
         .text_pclass {
             font-size: 24rpx;
+            line-height: 30rpx;
             color: rgba(178, 178, 178, 1);
         }
 
         .text_wrap {
-            padding-top: 3rpx;
+            // padding-top: 3rpx;
+            margin: 0;
+            padding: 0;
             display: block;
-            width: 400rpx;
+            width: 100%;
             height: 120rpx;
             font-size: 24rpx;
+            line-height: 30rpx;
             color: rgba(53, 53, 53, 1);
         }
     }
@@ -343,10 +351,17 @@
     bottom: 0;
     width: 100%;
     height: 80rpx;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 24rpx;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 1);
 
@@ -361,8 +376,14 @@
         width: 170rpx;
         height: 54rpx;
         background: rgba(69, 208, 174, 1);
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         border-radius: 10rpx;
         font-size: 24rpx;
